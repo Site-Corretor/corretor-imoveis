@@ -13,7 +13,7 @@
 }
 
 header {
-    background-color: black;
+    background-color: #333;
     padding: 20px 0;
     border-bottom: 4px solid red;
 }
@@ -26,7 +26,7 @@ header {
 
 .menu a {
     color: white;
-    font-size: 14px;
+    font-size: 20px;
     text-decoration: none;
     margin: 20px;
     transition: 0.5s;
@@ -232,4 +232,23 @@ section.main {
 
 .house-button {
     margin: 20px;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
 }
