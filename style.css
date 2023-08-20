@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+.center {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display: flex;
+}
+
+header {
+    background-color: black;
+    padding: 20px 0;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.menu {
+    width: 80%;
+    padding: 20px;
+    text-align: right;
+}
+
+.menu a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 20px;
+    transition: 0.5s;
+}
+
+.menu a:hover {
+    color: blue;
+}
+
+/*section main*/
+
+section.main {
+    padding: 50px 0;
+}
+
+.main-chamada {
+    width: 100%;
+    margin: 60px 0;
+    text-align: center;
+}
+
+.main-chamada h2 {
+    font-size: 40px;
+
+}
+
+.main-chamada p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.main-chamada button {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 22px;
+    border: 0;
+    cursor: pointer;
+}
+
+.main-chamada button:hover {
+    background-color: blue;
+}
+
+.atuacoes {
+    padding: 50px 250px;
+    display: flex;
+    text-align: center;
+}
+
+.atuacao {
+    border-radius: 10px;
+    background-color: rgba(140, 140, 141, 0.205);
+    width: 23%;
+    margin-right: 2%;
+    padding: 50px 20px;
+}
+
+.atuacao h2 {
+    font-size: 17px;
+}
+
+.atuacao p {
+    padding: 10px 0 0 0;
+    font-size: 14px;
+}
