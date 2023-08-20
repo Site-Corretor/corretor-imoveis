@@ -233,3 +233,59 @@ section.main {
 .house-button {
     margin: 20px;
 }
+.sobre{
+    background-color: #202121;
+    padding: 40px;
+    text-align: center;
+    max-width: 1200px;
+    /* Defina a largura máxima */
+    margin: 20px auto;
+    
+}
+
+.sobre img {
+    height: 200px;
+    width: 200px;
+}
+
+.descricao{
+    display: inline-block;
+    color: white;
+    max-width: 40%;
+    margin-left: 40px ;
+    text-align: left;
+}
+.descricao p, .descricao h3{
+    margin-bottom: 20px;
+   
+}
+
+.roda-pe{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    display: flex; /* Adicione display flex para alinhar os elementos */
+    align-items: center; /* Alinhe verticalmente ao centro */
+    justify-content: center; /* Alinhe horizontalmente ao centro */
+}
+
+.separa {
+    margin: 0 10px; /* Adicione uma margem entre as divs */
+}
+
+.itens{
+    display: flex;
+    align-items: center; /* Alinhe verticalmente ao centro */
+}
+.itens img {
+    margin-right: 10px; /* Adicione margem à direita para separar o ícone do número */
+}
+.itens p {
+    margin: 0; /* Remova as margens padrão dos parágrafos */
+    padding-left: 10px; /* Adicione espaçamento à esquerda dos parágrafos */
+}
