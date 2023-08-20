@@ -15,7 +15,7 @@
 header {
     background-color: black;
     padding: 20px 0;
-    border-bottom: 1px solid rgb(221, 221, 221);
+    border-bottom: 4px solid red;
 }
 
 .menu {
@@ -93,3 +93,88 @@ section.main {
     padding: 10px 0 0 0;
     font-size: 14px;
 }
+
+
+/* Começo das casas */
+
+.house-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch; /* Estica a altura das divs */
+    margin: 20px -10px 0;
+    
+}
+
+.house {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: calc(33.33% - 40px);
+    box-sizing: border-box;
+    text-align: center;
+    transition: border 0.3s ease-in-out, padding 0.3s ease-in-out;
+    margin: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.house img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.house img:hover {
+    transform: scale(1.05);
+}
+
+.house-details {
+    margin-top: 10px;
+}
+
+.house-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.house:hover {
+    border: 2px solid yellow; /* Adicione a borda amarela no hover */
+}
+
+/* conteudo do slider  */
+.slider-container {
+    overflow: hidden;
+    position: relative;
+  }
+  .slider {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+  .slider > div {
+    flex: 0 0 100%;
+  }
+  .slider img {
+    width: 100%;
+    height: auto;
+  }
+  .slider-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .slider-button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: gray;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .slider-button.active {
+    background-color: black;
+  }
