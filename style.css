@@ -44,24 +44,24 @@ section.main {
 
 .main-chamada {
     width: 100%;
-    margin: 60px 0;
+    margin: 40px 0;
     text-align: center;
 }
 
 .main-chamada h2 {
     font-size: 40px;
-
 }
 
 .main-chamada p {
-    font-size: 16px;
-    margin: 10px 0;
+    font-size: 20px;
+    margin: 20px 0;
 }
 
 .main-chamada button {
     display: inline-block;
+    margin: -20px 0 40px 0;
     padding: 8px 16px;
-    border-radius: 6px;
+    border-radius: 50px;
     font-size: 22px;
     border: 0;
     cursor: pointer;
@@ -72,6 +72,7 @@ section.main {
 }
 
 .atuacoes {
+    margin-top: -30px;
     padding: 50px 250px;
     display: flex;
     text-align: center;
@@ -91,7 +92,7 @@ section.main {
 
 .atuacao p {
     padding: 10px 0 0 0;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 
@@ -101,17 +102,21 @@ section.main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: stretch; /* Estica a altura das divs */
+    align-items: stretch;
+    /* Estica a altura das divs */
     margin: 20px -10px 0;
-    justify-content: center; /* Centraliza horizontalmente */
-    margin: 20px auto; /* Margens automáticas para centralizar verticalmente */
-    max-width: 1200px; /* Defina a largura máxima */
-    
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    margin: 20px auto;
+    /* Margens automáticas para centralizar verticalmente */
+    max-width: 1200px;
+    /* Defina a largura máxima */
+
 }
 
 .house {
     border: 1px solid #ddd;
-  
+
     width: calc(33.33% - 40px);
     box-sizing: border-box;
     text-align: center;
@@ -122,7 +127,7 @@ section.main {
     flex-direction: column;
     justify-content: space-between;
     margin-top: 10px;
-   
+
 }
 
 .house img {
@@ -148,44 +153,52 @@ section.main {
     padding: 5px 10px;
     cursor: pointer;
 }
+
 .house:hover {
-    border: 2px solid yellow; /* Adicione a borda amarela no hover */
+    border: 2px solid yellow;
+    /* Adicione a borda amarela no hover */
 }
 
 /* conteudo do slider  */
 .slider-container {
     overflow: hidden;
     position: relative;
-  }
-  .slider {
+}
+
+.slider {
     display: flex;
     transition: transform 0.3s ease-in-out;
-  }
-  .slider > div {
+}
+
+.slider>div {
     flex: 0 0 100%;
-  }
-  .slider img {
+}
+
+.slider img {
     width: 100%;
     height: auto;
-  }
-  .slider-buttons {
+}
+
+.slider-buttons {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-  }
-  .slider-button {
+}
+
+.slider-button {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: gray;
     margin: 0 5px;
     cursor: pointer;
-  }
-  .slider-button.active {
-    background-color: black;
-  }
+}
 
-  .botao-veja-mais{
+.slider-button.active {
+    background-color: black;
+}
+
+.botao-veja-mais {
     background-color: blue;
     color: white;
     border-radius: 50px;
@@ -195,24 +208,28 @@ section.main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: stretch; /* Estica a altura das divs */
+    align-items: stretch;
+    /* Estica a altura das divs */
     margin: 20px -10px 0;
-    justify-content: center; /* Centraliza horizontalmente */
-    margin: 20px auto; /* Margens automáticas para centralizar verticalmente */
-    max-width: 1200px; /* Defina a largura máxima */
-  }
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    margin: 20px auto;
+    /* Margens automáticas para centralizar verticalmente */
+    max-width: 1200px;
+    /* Defina a largura máxima */
+}
 
- 
-  .texto-descricao{
+
+.texto-descricao {
     padding-bottom: 5px;
     border-bottom: 0.5px solid rgb(194, 194, 194);
-  }
+}
 
-  .descricao-casa{
-    padding-top:10px;
+.descricao-casa {
+    padding-top: 10px;
     padding-bottom: 10px;
-  }
+}
 
-  .house-button{
-    margin:20px;
-  }
+.house-button {
+    margin: 20px;
+}
