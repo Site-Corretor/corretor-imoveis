@@ -103,12 +103,15 @@ section.main {
     justify-content: space-between;
     align-items: stretch; /* Estica a altura das divs */
     margin: 20px -10px 0;
+    justify-content: center; /* Centraliza horizontalmente */
+    margin: 20px auto; /* Margens automáticas para centralizar verticalmente */
+    max-width: 1200px; /* Defina a largura máxima */
     
 }
 
 .house {
     border: 1px solid #ddd;
-    padding: 20px;
+  
     width: calc(33.33% - 40px);
     box-sizing: border-box;
     text-align: center;
@@ -118,6 +121,8 @@ section.main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 10px;
+   
 }
 
 .house img {
@@ -133,6 +138,7 @@ section.main {
 
 .house-details {
     margin-top: 10px;
+    margin-bottom: 40px;
 }
 
 .house-button {
@@ -177,4 +183,36 @@ section.main {
   }
   .slider-button.active {
     background-color: black;
+  }
+
+  .botao-veja-mais{
+    background-color: blue;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch; /* Estica a altura das divs */
+    margin: 20px -10px 0;
+    justify-content: center; /* Centraliza horizontalmente */
+    margin: 20px auto; /* Margens automáticas para centralizar verticalmente */
+    max-width: 1200px; /* Defina a largura máxima */
+  }
+
+ 
+  .texto-descricao{
+    padding-bottom: 5px;
+    border-bottom: 0.5px solid rgb(194, 194, 194);
+  }
+
+  .descricao-casa{
+    padding-top:10px;
+    padding-bottom: 10px;
+  }
+
+  .house-button{
+    margin:20px;
   }
