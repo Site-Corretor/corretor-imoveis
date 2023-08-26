@@ -105,14 +105,17 @@ section.main {
 
 
 /* Começo das casas */
-
+.destaque{
+    text-align: center; 
+    font-size: 40px;
+}
 .house-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
     /* Estica a altura das divs */
-    margin: 20px -10px 0;
+    margin: 2px -10px 0;
     justify-content: center;
     /* Centraliza horizontalmente */
     margin: 20px auto;
@@ -152,15 +155,19 @@ section.main {
 
 .house-details {
     margin-top: 10px;
-    margin-bottom: 40px;
 }
 
 .house-button {
-    background-color: #007bff;
-    color: white;
+    background-color: #A49585;
     border: none;
-    padding: 5px 10px;
+    font-size: 17px;
+    border-radius: 50px;
+    padding: 8px 16px;
     cursor: pointer;
+}
+
+.house-button:hover{
+    background-color:#703D13;
 }
 
 .house:hover {
@@ -185,7 +192,7 @@ section.main {
 
 .slider img {
     width: 100%;
-    height: auto;
+    height: 550px;
 }
 
 .slider-buttons {
@@ -237,17 +244,22 @@ section.main {
     padding-bottom: 5px;
     border-bottom: 0.5px solid rgb(194, 194, 194);
 }
+.border-descrica-casa{
+    padding-bottom: 20px;
+    border-bottom: 0.5px solid rgb(194, 194, 194);
+}
 
 .descricao-casa {
     padding-top: 10px;
     padding-bottom: 10px;
+    text-align: left;
 }
 
 .house-button {
     margin: 20px;
 }
 .sobre{
-    background-color: #202121;
+    background-color: #A49585;
     padding: 40px;
     text-align: center;
     max-width: 1200px;
@@ -263,7 +275,6 @@ section.main {
 
 .descricao{
     display: inline-block;
-    color: white;
     max-width: 40%;
     margin-left: 40px ;
     text-align: left;
@@ -309,6 +320,11 @@ section.main {
     align-items: center;
     background-color: #f0f0f0;
     padding: 20px;
+}
+
+.favicon{
+    margin-left: 10px;
+    margin-right: 5px;
 }
 
 footer {
