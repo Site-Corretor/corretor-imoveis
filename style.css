@@ -4,7 +4,8 @@
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
 }
-body{
+
+body {
     background-color: #eee;
 }
 
@@ -18,15 +19,14 @@ body{
 header {
     background-color: #333;
     padding: 20px 0;
-    border-bottom: 4px solid #A49585
-    ;
+    border-bottom: 4px solid #A49585;
 }
 
 .menu {
     width: 80%;
     padding: 20px;
     text-align: right;
-    
+
 }
 
 .menu a {
@@ -91,8 +91,8 @@ section.main {
     width: 23%;
     margin-right: 2%;
     padding: 50px 20px;
-    background-color:#A49585;
-    }
+    background-color: #A49585;
+}
 
 .atuacao h2 {
     font-size: 17px;
@@ -222,16 +222,22 @@ section.main {
     margin: 20px -10px 0;
     justify-content: center;
     /* Centraliza horizontalmente */
-    margin: 20px auto;
+    margin: 30px auto 40px;
     /* Margens automáticas para centralizar verticalmente */
     max-width: 1200px;
     /* Defina a largura máxima */
 }
+
 .botao-veja-mais:hover {
     background-color: #703D13;
     color: white;
 }
 
+.sombrasepara {
+    display: block;
+    margin: 20px auto 80px;
+    /* Isso centraliza horizontalmente */
+}
 
 .texto-descricao {
     padding-bottom: 5px;
@@ -246,14 +252,15 @@ section.main {
 .house-button {
     margin: 20px;
 }
-.sobre{
+
+.sobre {
     background-color: #202121;
     padding: 40px;
     text-align: center;
     max-width: 1200px;
     /* Defina a largura máxima */
     margin: 20px auto;
-    
+
 }
 
 .sobre img {
@@ -261,19 +268,21 @@ section.main {
     width: 200px;
 }
 
-.descricao{
+.descricao {
     display: inline-block;
     color: white;
     max-width: 40%;
-    margin-left: 40px ;
+    margin-left: 40px;
     text-align: left;
 }
-.descricao p, .descricao h3{
+
+.descricao p,
+.descricao h3 {
     margin-bottom: 20px;
-   
+
 }
 
-.roda-pe{
+.roda-pe {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -282,30 +291,40 @@ section.main {
     color: white;
     padding: 10px 0;
     text-align: center;
-    display: flex; /* Adicione display flex para alinhar os elementos */
-    align-items: center; /* Alinhe verticalmente ao centro */
-    justify-content: center; /* Alinhe horizontalmente ao centro */
+    display: flex;
+    /* Adicione display flex para alinhar os elementos */
+    align-items: center;
+    /* Alinhe verticalmente ao centro */
+    justify-content: center;
+    /* Alinhe horizontalmente ao centro */
 }
 
 .separa {
-    margin: 0 10px; /* Adicione uma margem entre as divs */
+    margin: 0 40px;
+    /* Adicione uma margem entre as divs */
 }
 
-.itens{
+.itens {
     display: flex;
-    align-items: center; /* Alinhe verticalmente ao centro */
+    align-items: center;
+    /* Alinhe verticalmente ao centro */
 }
+
 .itens img {
-    margin-right: 10px; /* Adicione margem à direita para separar o ícone do número */
+    margin-right: 10px;
+    /* Adicione margem à direita para separar o ícone do número */
 }
+
 .itens p {
-    margin: 0; /* Remova as margens padrão dos parágrafos */
-    padding-left: 10px; /* Adicione espaçamento à esquerda dos parágrafos */
+    margin: 0;
+    /* Remova as margens padrão dos parágrafos */
+    padding-left: 10px;
+    /* Adicione espaçamento à esquerda dos parágrafos */
 }
 
 .contact-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     background-color: #f0f0f0;
     padding: 20px;
