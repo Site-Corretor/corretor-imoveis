@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
 }
+body{
+    background-color: #eee;
+}
 
 .center {
     max-width: 1100px;
@@ -15,13 +18,15 @@
 header {
     background-color: #333;
     padding: 20px 0;
-    border-bottom: 4px solid red;
+    border-bottom: 4px solid #A49585
+    ;
 }
 
 .menu {
     width: 80%;
     padding: 20px;
     text-align: right;
+    
 }
 
 .menu a {
@@ -33,7 +38,7 @@ header {
 }
 
 .menu a:hover {
-    color: blue;
+    color: #A49585;
 }
 
 /*section main*/
@@ -65,10 +70,12 @@ section.main {
     font-size: 22px;
     border: 0;
     cursor: pointer;
+    background-color: #A49585;
 }
 
 .main-chamada button:hover {
-    background-color: blue;
+    background-color: #703D13;
+    color: white;
 }
 
 .atuacoes {
@@ -84,7 +91,8 @@ section.main {
     width: 23%;
     margin-right: 2%;
     padding: 50px 20px;
-}
+    background-color:#A49585;
+    }
 
 .atuacao h2 {
     font-size: 17px;
@@ -127,6 +135,7 @@ section.main {
     flex-direction: column;
     justify-content: space-between;
     margin-top: 10px;
+    background-color: white;
 
 }
 
@@ -137,8 +146,8 @@ section.main {
     transition: transform 0.3s ease-in-out;
 }
 
-.house img:hover {
-    transform: scale(1.05);
+.house:hover {
+    transform: scale(1.03);
 }
 
 .house-details {
@@ -155,7 +164,7 @@ section.main {
 }
 
 .house:hover {
-    border: 2px solid yellow;
+    border: 2px solid #703D13;
     /* Adicione a borda amarela no hover */
 }
 
@@ -199,13 +208,13 @@ section.main {
 }
 
 .botao-veja-mais {
-    background-color: blue;
-    color: white;
+    background-color: #A49585;
     border-radius: 50px;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 16px;
     cursor: pointer;
     display: flex;
+    font-size: 22px;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
@@ -217,6 +226,10 @@ section.main {
     /* Margens automáticas para centralizar verticalmente */
     max-width: 1200px;
     /* Defina a largura máxima */
+}
+.botao-veja-mais:hover {
+    background-color: #703D13;
+    color: white;
 }
 
 
