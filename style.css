@@ -105,10 +105,11 @@ section.main {
 
 
 /* Começo das casas */
-.destaque{
-    text-align: center; 
+.destaque {
+    text-align: center;
     font-size: 40px;
 }
+
 .house-list {
     display: flex;
     flex-wrap: wrap;
@@ -166,8 +167,8 @@ section.main {
     cursor: pointer;
 }
 
-.house-button:hover{
-    background-color:#703D13;
+.house-button:hover {
+    background-color: #703D13;
 }
 
 .house:hover {
@@ -250,7 +251,8 @@ section.main {
     padding-bottom: 5px;
     border-bottom: 0.5px solid rgb(194, 194, 194);
 }
-.border-descrica-casa{
+
+.border-descrica-casa {
     padding-bottom: 20px;
     border-bottom: 0.5px solid rgb(194, 194, 194);
 }
@@ -266,7 +268,7 @@ section.main {
 }
 
 
-.sobre{
+.sobre {
     background-color: #A49585;
     padding: 40px;
     text-align: center;
@@ -336,13 +338,13 @@ section.main {
 
 .contact-section {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     background-color: #f0f0f0;
     padding: 20px;
 }
 
-.favicon{
+.favicon {
     margin-left: 10px;
     margin-right: 5px;
 }
@@ -356,4 +358,16 @@ footer {
 
 footer p {
     margin-bottom: 100px;
+}
+
+.casa {
+    width: 100%;
+    margin: 40px 240px;
+    text-align: left;
+}
+
+.img-g-casa{
+    width: 100%;
+    margin: 40px 240px;
+    text-align: left;
 }
