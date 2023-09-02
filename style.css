@@ -444,3 +444,49 @@ footer p {
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+.descricao-casa-separada {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 1045px;
+    margin: 0 auto 20px;
+    /* Adicione margem inferior para criar espaço abaixo da descrição da casa */
+    text-align: center;
+}
+
+.centralizar-conteudo {
+    display: flex;
+    justify-content: center;
+    /* Centralizar horizontalmente */
+    align-items: center;
+    /* Centralizar verticalmente */
+    margin: 0 auto 20px;
+    /* Isso garante que a div ocupe a altura total da janela */
+}
+
+/* Estilo para o texto da descrição */
+.descricao-texto-casa-separada {
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: left;
+    /* Alinhar o texto à esquerda */
+    margin-bottom: 10px;
+    /* Adicionar espaço entre os parágrafos */
+}
+
+.voltar-button {
+    background-color: #A49585;
+    border: none;
+    font-size: 17px;
+    border-radius: 50px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.voltar-button:hover {
+    background-color: #703D13;
+}
