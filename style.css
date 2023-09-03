@@ -26,6 +26,7 @@ header {
     width: 80%;
     padding: 20px;
     text-align: right;
+    margin-left: 500px;
 
 }
 
@@ -128,7 +129,6 @@ section.main {
 
 .house {
     border: 1px solid #ddd;
-
     width: calc(33.33% - 40px);
     box-sizing: border-box;
     text-align: center;
@@ -367,7 +367,7 @@ footer p {
     padding: 0 0 0 240px;
 }
 
-.img-g-casa{
+.img-g-casa {
     width: 100%;
     margin: 40px 0px;
     text-align: left;
@@ -432,7 +432,6 @@ footer p {
     font-size: 20px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
-
 }
 
 .next {
@@ -458,7 +457,8 @@ footer p {
     text-align: left;
     margin-top: 20px;
 }
-.descricao-casa-separada h2{
+
+.descricao-casa-separada h2 {
     margin-bottom: 20px;
 }
 
@@ -493,4 +493,46 @@ footer p {
 
 .voltar-button:hover {
     background-color: #703D13;
+}
+
+.tipos-imoveis {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -30px;
+}
+
+.opcoes {
+    float: left;
+    width: 250px;
+    line-height: 25px;
+    padding: 5px;
+    background-color: #f1f1f1;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 5px solid;
+
+}
+
+.opcoes:hover {
+    border-color: #A49585;
+}
+
+.borda-ops {
+    border-color: #703D13;
+}
+
+.fundo-ops {
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sonho {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
