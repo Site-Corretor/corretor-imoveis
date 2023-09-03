@@ -455,7 +455,11 @@ footer p {
     max-width: 1045px;
     margin: 0 auto 20px;
     /* Adicione margem inferior para criar espaço abaixo da descrição da casa */
-    text-align: center;
+    text-align: left;
+    margin-top: 20px;
+}
+.descricao-casa-separada h2{
+    margin-bottom: 20px;
 }
 
 .centralizar-conteudo {
