@@ -536,3 +536,13 @@ footer p {
     margin-top: 60px;
     margin-bottom: 60px;
 }
+
+.botao-filtro{
+    text-decoration: none;
+    color: black;
+}
+.atuacao:hover{
+    background-color: #703D13;
+    transform: scale(1.03);
+   
+}
