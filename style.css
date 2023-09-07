@@ -542,4 +542,12 @@ footer p {
     font-size: 30px;
     margin-top: 20px;
     margin-bottom: 35px;
+.botao-filtro{
+    text-decoration: none;
+    color: black;
+}
+.atuacao:hover{
+    background-color: #703D13;
+    transform: scale(1.03);
+   
 }
