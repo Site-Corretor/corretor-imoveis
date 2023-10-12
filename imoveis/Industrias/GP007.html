@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link href="../../style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descrição do Imóvel</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="center">
+            <div class="logo">
+                <a href="../../index.html"><img src="../../imagens/logo-ricardo.png" width=145px height=70px> </a>
+            </div><!--logo-->
+            <div class="menu">
+                <a href="">
+                    Sobre Nós
+                </a>
+                <a href="../../geral/geral.html">
+                    Imóveis
+                </a>
+                <a href="/contatos.html">
+                    Contato
+                </a>
+            </div><!--menu-->
+        </div><!--center-->
+    </header>
+    <div class="linha-horinzontal"></div>
+
+    <section class="main-casa">
+
+        <div class="casa">
+            <h1>Excelente Galpão Industrial para Locação em Mogi das Cruzes - SP</h1>
+        </div>
+        <div class="img-g-casa">
+            <img src="../../imagens/Galpao/GP007 Galpao taboao/IMG_4460.JPG" alt="" width=915px height=450px>
+        </div>
+
+        <div class="roda-pe">
+            <div class="logo">
+                <a href="../../index.html"><img src="../../imagens/logo-ricardo.png" width=120px height=60px></a>
+            </div>
+            <div class="separa">
+                <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
+            </div>
+            <div class="itens">
+                <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank">
+                    <img src="../../imagens/Icones/whatsapp.png" width=40px height=40px>
+                </a>
+                <p>(11) 99999-9999</p>
+            </div>
+            <div class="separa">
+                <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
+            </div>
+            <div class="itens">
+                <img src="../../imagens/Icones/lupa.png" width=40px height=40px>
+                <p>Venda</p>
+                <p>Locação</p>
+                <p>Terrenos</p>
+            </div>
+        </div>
+    </section>
+    <div class="galeria">
+        <a href="../../imagens/Galpao/GP007 Galpao taboao/IMG_4460.JPG"
+            onclick="openModal('../../imagens/Galpao/GP007 Galpao taboao/IMG_4460.JPG'); return false;">
+            <img src="../../imagens/Galpao/GP007 Galpao taboao/IMG_4460.JPG" alt="Imagem 1" class="thumbnail">
+        </a>
+        <a href="../../imagens/Galpao/GP007 Galpao taboao/IMG_4461.JPG"
+            onclick="openModal('../../imagens/Galpao/GP007 Galpao taboao/IMG_4461.JPG'); return false;">
+            <img src="../../imagens/Galpao/GP007 Galpao taboao/IMG_4461.JPG" alt="Imagem 1" class="thumbnail">
+        </a>
+        <a href="../../imagens/Galpao/GP007 Galpao taboao/IMG_4462.JPG"
+            onclick="openModal('../../imagens/Galpao/GP007 Galpao taboao/IMG_4462.JPG'); return false;">
+            <img src="../../imagens/Galpao/GP007 Galpao taboao/IMG_4462.JPG" alt="Imagem 1" class="thumbnail">
+        </a>
+        <a href="../../imagens/Galpao/GP007 Galpao taboao/IMG_4463.JPG"
+            onclick="openModal('../../imagens/Galpao/GP007 Galpao taboao/IMG_4463.JPG'); return false;">
+            <img src="../../imagens/Galpao/GP007 Galpao taboao/IMG_4463.JPG" alt="Imagem 1" class="thumbnail">
+        </a>
+        <a href="../../imagens/Galpao/GP007 Galpao taboao/IMG_4465.JPG"
+            onclick="openModal('../../imagens/Galpao/GP007 Galpao taboao/IMG_4465.JPG'); return false;">
+            <img src="../../imagens/Galpao/GP007 Galpao taboao/IMG_4465.JPG" alt="Imagem 1" class="thumbnail">
+        </a>
+        <a href="../../imagens/Galpao/GP007 Galpao taboao/IMG_4467.JPG"
+            onclick="openModal('../../imagens/Galpao/GP007 Galpao taboao/IMG_4467.JPG'); return false;">
+            <img src="../../imagens/Galpao/GP007 Galpao taboao/IMG_4467.JPG" alt="Imagem 1" class="thumbnail">
+        </a>
+    </div>
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+        <img id="modalImage" class="modal-content">
+    </div>
+
+    <div class="descricao-casa-separada">
+        <h2>DESCRIÇÃO DO IMÓVEL</h2>
+        <p class="descricao-texto-casa-separada">
+            EXCELENTE GALPÃO INDUSTRIAL LOCALIZADO NO BAIRRO TABOÃO EM MOGI DAS CRUZES - SP
+        </p>
+        <p class="descricao-texto-casa-separada">
+            Área Total: 5.500m² | Área Construída: 3.820m² | Área Administrativa: 500m²
+        </p>
+        <p class="descricao-texto-casa-separada">
+            Pé direito 12m
+        </p>
+        <p class="descricao-texto-casa-separada">
+            Localizado a 3 km da rodovia Mogi Dutra. </p>
+        <p class="descricao-texto-casa-separada"> <b>----</b></p>
+    </div>
+
+    <div class="descricao-casa-separada">
+        <h2>CENTRAL DE NEGÓCIOS</h2>
+        <p class="descricao-texto-casa-separada">
+            Para ter mais informações sobre este imóvel:
+        </p>
+        <p class="descricao-texto-casa-separada">
+            Ricardo Souza: (11) 97035-5935
+        </p>
+        <p class="descricao-texto-casa-separada">
+            Victor Martins: (11) 95423-3209
+        </p>
+        <p class="descricao-texto-casa-separada">
+            Email: ricardosouzanegocios@gmail.com
+        </p>
+        <p class="descricao-texto-casa-separada">
+            Arujá - SP
+        </p>
+    </div>
+    <div class="centralizar-conteudo">
+        <a href="../../index.html"><button class="voltar-button">Início</button></a>
+        <a href="../../geral/geral.html"><button class="voltar-button">Voltar</button></a>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2023. Todos os direitos reservados.</p>
+    </footer>
+</body>
+<script>
+    var currentImageIndex = 0;
+    var images = ["../../imagens/Galpao/GP007 Galpao taboao/IMG_4460.JPG",
+        "../../imagens/Galpao/GP007 Galpao taboao/IMG_4461.JPG",
+        "../../imagens/Galpao/GP007 Galpao taboao/IMG_4462.JPG",
+        "../../imagens/Galpao/GP007 Galpao taboao/IMG_4463.JPG",
+        "../../imagens/Galpao/GP007 Galpao taboao/IMG_4465.JPG",
+        "../../imagens/Galpao/GP007 Galpao taboao/IMG_4467.JPG",
+
+    ]; // Preencha este array com os URLs das suas imagens
+
+    function openModal(imageUrl) {
+        var modal = document.getElementById("myModal");
+        var modalImage = document.getElementById("modalImage");
+        currentImageIndex = images.indexOf(imageUrl);
+        modal.style.display = "block";
+        modalImage.src = imageUrl;
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    function changeImage(n) {
+        currentImageIndex += n;
+        if (currentImageIndex < 0) {
+            currentImageIndex = images.length - 1;
+        } else if (currentImageIndex >= images.length) {
+            currentImageIndex = 0;
+        }
+        var modalImage = document.getElementById("modalImage");
+        modalImage.src = images[currentImageIndex];
+    }
+</script>
+
+</html>
