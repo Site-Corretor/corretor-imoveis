@@ -11,7 +11,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descrição da casa</title>
     <style>
+         .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            max-width: 100%;
+        }
 
+        .container {
+            max-width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .galeria-container {
+            max-width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            text-align: left; /* Alinha todo o conteúdo à esquerda */
+        }
     </style>
 </head>
 
@@ -36,155 +57,161 @@
     </header>
     <div class="linha-horinzontal"></div>
 
-    <section class="main-casa">
+    <div class="container">
+        <section class="main-casa">
 
-        <div class="casa">
-            <h1>Belissíma Casa de Alto Padrão.</h1>
+            <div class="casa">
+                <h1>Belissíma Casa de Alto Padrão.</h1>
+            </div>
+            <div class="img-g-casa">
+                <img src="../../imagens/Residencias/CA005/IMG_3736.JPG" alt="" width=915px height=450px>
+            </div>
+
+            <div class="roda-pe">
+                <div class="logo">
+                    <a href="../../index.html"><img src="../../imagens/logo-ricardo.png" width=120px height=60px></a>
+                </div>
+                <div class="separa">
+                    <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
+                </div>
+                <div class="itens">
+                    <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank">
+                        <img src="../../imagens/Icones/whatsapp.png" width=40px height=40px>
+                    </a>
+                    <p>(11) 99999-9999</p>
+                </div>
+                <div class="separa">
+                    <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
+                </div>
+                <div class="itens">
+                    <img src="../../imagens/Icones/lupa.png" width=40px height=40px>
+                    <p>Venda</p>
+                    <p>Locação</p>
+                    <p>Terrenos</p>
+                </div>
+            </div>
+        </section>
+        <div class="galeria-container">
+        <div class="galeria">
+            <a href="../../imagens/Residencias/CA005/IMG_3736.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3736.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3736.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            <a href="../../imagens/Residencias/CA005/IMG_3732.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3732.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3732.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            <a href="../../imagens/Residencias/CA005/IMG_3721.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3721.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3721.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            <a href="../../imagens/Residencias/CA005/IMG_3722.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3722.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3722.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            <a href="../../imagens/Residencias/CA005/IMG_3723.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3723.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3723.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            <a href="../../imagens/Residencias/CA005/IMG_3724.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3724.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3724.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            <a href="../../imagens/Residencias/CA005/IMG_3725.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3725.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3725.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            <a href="../../imagens/Residencias/CA005/IMG_3726.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3726.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3726.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            <a href="../../imagens/Residencias/CA005/IMG_3726.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3726.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3726.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            <a href="../../imagens/Residencias/CA005/IMG_3727.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3727.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3727.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            <a href="../../imagens/Residencias/CA005/IMG_3728.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3728.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3728.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            <a href="../../imagens/Residencias/CA005/IMG_3729.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3728.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3728.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+
+            <a href="../../imagens/Residencias/CA005/IMG_3729.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3729.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3729.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            <a href="../../imagens/Residencias/CA005/IMG_3730.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3730.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3730.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+
+            <a href="../../imagens/Residencias/CA005/IMG_3731.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3731.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3731.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            <a href="../../imagens/Residencias/CA005/IMG_3738.JPG"
+                onclick="openModal('../../imagens/Residencias/CA005/IMG_3738.JPG'); return false;">
+                <img src="../../imagens/Residencias/CA005/IMG_3738.JPG" alt="Imagem 1" class="thumbnail">
+            </a>
+            </a>
+
         </div>
-        <div class="img-g-casa">
-            <img src="../../imagens/Residencias/CA005/IMG_3736.JPG" alt="" width=915px height=450px>
+    </div>
+
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+            <span class="next" onclick="changeImage(1)">&#10095;</span>
+            <img id="modalImage" class="modal-content">
         </div>
 
-        <div class="roda-pe">
-            <div class="logo">
-                <a href="../../index.html"><img src="../../imagens/logo-ricardo.png" width=120px height=60px></a>
-            </div>
-            <div class="separa">
-                <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
-            </div>
-            <div class="itens">
-                <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank">
-                    <img src="../../imagens/Icones/whatsapp.png" width=40px height=40px>
-                </a>
-                <p>(11) 99999-9999</p>
-            </div>
-            <div class="separa">
-                <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
-            </div>
-            <div class="itens">
-                <img src="../../imagens/Icones/lupa.png" width=40px height=40px>
-                <p>Venda</p>
-                <p>Locação</p>
-                <p>Terrenos</p>
-            </div>
+        <div class="descricao-casa-separada">
+            <h2>DESCRIÇÃO DA CASA</h2>
+            <p class="descricao-texto-casa-separada">
+                BELÍSSIMA CASA DE ALTO PADRÃO NO CONDOMÍNIO: REAL PARK:
+            </p>
+            <p class="descricao-texto-casa-separada">
+                Área Total: 1.200 m² | Área Construída: 310m²
+            </p>
+            <p class="descricao-texto-casa-separada">
+                Casa toda decorada, mobiliada, móveis planejados e automação com Alexa e 100% climatizada.
+            </p>
+            <p class="descricao-texto-casa-separada">
+                Piscina | Área de churrasco | Três suítes | Sala de TV e lareira | Dependência de empregada | Cozinha
+                integrada| Casa e vestiário de piscina | Duas vagas cobertas.
+            </p>
+            <p class="descricao-texto-casa-separada"> <b>PREÇO: A DEFINIR</b></p>
         </div>
-    </section>
-    <div class="galeria">
-        <a href="../../imagens/Residencias/CA005/IMG_3736.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3736.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3736.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        <a href="../../imagens/Residencias/CA005/IMG_3732.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3732.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3732.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        <a href="../../imagens/Residencias/CA005/IMG_3721.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3721.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3721.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        <a href="../../imagens/Residencias/CA005/IMG_3722.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3722.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3722.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        <a href="../../imagens/Residencias/CA005/IMG_3723.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3723.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3723.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        <a href="../../imagens/Residencias/CA005/IMG_3724.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3724.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3724.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        <a href="../../imagens/Residencias/CA005/IMG_3725.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3725.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3725.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        <a href="../../imagens/Residencias/CA005/IMG_3726.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3726.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3726.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        <a href="../../imagens/Residencias/CA005/IMG_3726.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3726.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3726.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        <a href="../../imagens/Residencias/CA005/IMG_3727.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3727.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3727.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        <a href="../../imagens/Residencias/CA005/IMG_3728.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3728.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3728.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        <a href="../../imagens/Residencias/CA005/IMG_3729.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3728.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3728.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
 
-        <a href="../../imagens/Residencias/CA005/IMG_3729.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3729.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3729.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        <a href="../../imagens/Residencias/CA005/IMG_3730.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3730.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3730.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
+        <div class="descricao-casa-separada">
+            <h2>CENTRAL DE NEGÓCIOS</h2>
+            <p class="descricao-texto-casa-separada">
+                Para ter mais informações sobre este imóvel ligue:
+            </p>
+            <p class="descricao-texto-casa-separada">
+                Ricardo Souza: (11) 97035-5935.
+            </p>
+            <p class="descricao-texto-casa-separada">
+                Victor Martins: (11) 95423-3209.
+            </p>
+            <p class="descricao-texto-casa-separada">
+                Email: ricardosouzanegocios@gmail.com
+            </p>
+            <p class="descricao-texto-casa-separada">
+                Arujá - São Paulo.
+            </p>
 
-        <a href="../../imagens/Residencias/CA005/IMG_3731.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3731.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3731.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        <a href="../../imagens/Residencias/CA005/IMG_3738.JPG"
-            onclick="openModal('../../imagens/Residencias/CA005/IMG_3738.JPG'); return false;">
-            <img src="../../imagens/Residencias/CA005/IMG_3738.JPG" alt="Imagem 1" class="thumbnail">
-        </a>
-        </a>
-
-    </div>
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-        <span class="next" onclick="changeImage(1)">&#10095;</span>
-        <img id="modalImage" class="modal-content">
-    </div>
-
-    <div class="descricao-casa-separada">
-        <h2>DESCRIÇÃO DA CASA</h2>
-        <p class="descricao-texto-casa-separada">
-            BELÍSSIMA CASA DE ALTO PADRÃO NO CONDOMÍNIO: REAL PARK:
-        </p>
-        <p class="descricao-texto-casa-separada">
-            Área Total: 1.200 m² | Área Construída: 310m²
-        </p>
-        <p class="descricao-texto-casa-separada">
-            Casa toda decorada, mobiliada, móveis planejados e automação com Alexa e 100% climatizada.
-        </p>
-        <p class="descricao-texto-casa-separada">
-            Piscina | Área de churrasco | Três suítes | Sala de TV e lareira | Dependência de empregada | Cozinha integrada| Casa e vestiário de piscina | Duas vagas cobertas.
-        </p>
-        <p class="descricao-texto-casa-separada"> <b>PREÇO: A DEFINIR</b></p>
-    </div>
-
-    <div class="descricao-casa-separada">
-        <h2>CENTRAL DE NEGÓCIOS</h2>
-        <p class="descricao-texto-casa-separada">
-            Para ter mais informações sobre este imóvel ligue:
-        </p>
-        <p class="descricao-texto-casa-separada">
-            Ricardo Souza: (11) 97035-5935.
-        </p>
-        <p class="descricao-texto-casa-separada">
-            Victor Martins: (11) 95423-3209.
-        </p>
-        <p class="descricao-texto-casa-separada">
-            Email: ricardosouzanegocios@gmail.com
-        </p>
-        <p class="descricao-texto-casa-separada">
-            Arujá - São Paulo.
-        </p>
-
-    </div>
-    <div class="centralizar-conteudo">
-        <a href="../../index.html"><button class="voltar-button">Início</button></a>
-        <a href="../../geral/geral.html"><button class="voltar-button">Voltar</button></a>
+        </div>
+        <div class="centralizar-conteudo">
+            <a href="../../index.html"><button class="voltar-button">Início</button></a>
+            <a href="../../geral/geral.html"><button class="voltar-button">Voltar</button></a>
+        </div>
     </div>
 
 
