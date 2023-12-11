@@ -60,7 +60,7 @@ class Principal
         }
     }
 
-    public function residencia($codigo){
+    public function imovel($codigo){
         global $pdo; 
         $sql =$pdo->prepare("SELECT * FROM imoveis WHERE codigo = :codigo;");
         $sql->bindValue(":codigo", $codigo);
@@ -69,7 +69,7 @@ class Principal
         if($sql->rowCount() > 0)
         {		
             return $lista; 
-        }
+        }   
         else
         {
             return false;

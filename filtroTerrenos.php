@@ -27,7 +27,8 @@ $visualizar = $u->visualizar();
         <div class="center">
             <div class="logo">
                 <a href="index.php"><img src="imagens/logo-ricardo.png" width=145px height=70px> </a>
-            </div><!--logo-->
+            </div>
+            <!--logo-->
             <div class="menu">
                 <a href="">
                     Sobre Nós
@@ -38,8 +39,10 @@ $visualizar = $u->visualizar();
                 <a href="contato.php">
                     Contato
                 </a>
-            </div><!--menu-->
-        </div><!--center-->
+            </div>
+            <!--menu-->
+        </div>
+        <!--center-->
     </header>
 
     <div class="tipos-imoveis">
@@ -64,50 +67,61 @@ $visualizar = $u->visualizar();
                 for($i=0;$i<count($visualizar);$i++){
                     if($visualizar[$i]['tipo_imovel']=='terreno'){
                 ?>
-                <div class="house">
-                    <img src="../imagens/Residencias/CA001/25AA536A-5687-47F9-8B31-71FC6A96B16F.JPG" alt="CA001">
-                    <div class="house-details">
-                        <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo']?></h3>
-                        <p class="texto-descricao"><?php echo $visualizar[$i]['cidade']?></p>
-                        <p class="descricao-casa"><i class="fas fa-ruler-combined favicon"></i><?php echo $visualizar[$i]['total_area']?></p>
-                        <p class="descricao-casa"><i class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios']?></p>
-                        <p class="descricao-casa"><i class="fas fa-restroom favicon"></i><?php echo $visualizar[$i]['banheiros']?></p>
-                        <p class="descricao-casa"><i class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas']?></p>
-                        <p class="border-descrica-casa"></p>
-                        <a href=<?php echo "'imovel.php?codigo=".$visualizar[$i]['codigo']."'"?>><button class="house-button">Saber Mais</button></a>
-                    </div>
-                </div>  
-                <?php
+            <div class="house">
+                <img src="../imagens/Residencias/CA001/25AA536A-5687-47F9-8B31-71FC6A96B16F.JPG" alt="CA001">
+                <div class="house-details">
+                    <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo']?></h3>
+                    <p class="texto-descricao"><?php echo $visualizar[$i]['cidade']?></p>
+                    <p class="descricao-casa"><i
+                            class="fas fa-ruler-combined favicon"></i><?php echo $visualizar[$i]['total_area']?></p>
+                    <p class="descricao-casa"><i
+                            class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios']?></p>
+                    <p class="descricao-casa"><i
+                            class="fas fa-restroom favicon"></i><?php echo $visualizar[$i]['banheiros']?></p>
+                    <p class="descricao-casa"><i
+                            class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas']?></p>
+                    <p class="border-descrica-casa"></p>
+                    <a href=<?php echo "'imovel.php?codigo=".$visualizar[$i]['codigo']."'"?>><button
+                            class="house-button">Saber Mais</button></a>
+                </div>
+            </div>
+            <?php
                 }
                 }
             ?>
-        </div> 
-            
-            <div class="roda-pe">
-                <div class="logo">
-                    <a href="index.php"><img src="imagens/logo-ricardo.png" width=120px height=60px></a>
-                </div>
-                <div class="separa">
-                    <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
-                </div>
-                <div class="itens">
-                    <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank">
-                        <img src="imagens/Icones/whatsapp.png" width=40px height=40px>
-                    </a>
-                    <p>(11) 99999-9999</p>
-                </div>
-                <div class="separa">
-                    <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
-                </div>
-                <div class="itens">
-                    <img src="imagens/Icones/lupa.png" width=40px height=40px>
-                    <p>Venda</p>
-                    <p>Locação</p>
-                    <p>Terrenos</p>
-                </div>
-            </div>
+        </div>
 
-    </section><!--main-->
+        <div class="centralizar-conteudo">
+            <a href="index.php"><button class="voltar-button">Início</button></a>
+            <a href="geral.php"><button class="voltar-button">Voltar</button></a>
+        </div>
+
+        <div class="roda-pe">
+            <div class="logo">
+                <a href="index.php"><img src="imagens/logo-ricardo.png" width=120px height=60px></a>
+            </div>
+            <div class="separa">
+                <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
+            </div>
+            <div class="itens">
+                <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank">
+                    <img src="imagens/Icones/whatsapp.png" width=40px height=40px>
+                </a>
+                <p>(11) 99999-9999</p>
+            </div>
+            <div class="separa">
+                <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
+            </div>
+            <div class="itens">
+                <img src="imagens/Icones/lupa.png" width=40px height=40px>
+                <p>Venda</p>
+                <p>Locação</p>
+                <p>Terrenos</p>
+            </div>
+        </div>
+
+    </section>
+    <!--main-->
 
     <footer>
         <p>&copy; 2023. Todos os direitos reservados.</p>

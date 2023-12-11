@@ -27,19 +27,22 @@ $visualizar = $u->visualizar();
         <div class="center">
             <div class="logo">
                 <a href="index.php"><img src="imagens/logo-ricardo.png" width=145px height=70px> </a>
-            </div><!--logo-->
+            </div>
+            <!--logo-->
             <div class="menu">
                 <a href="#sobre">
                     Sobre Nós
                 </a>
                 <a href="geral.php">
                     Imóveis
-                </a>                    
+                </a>
                 <a href="contato.php">
                     Contato
                 </a>
-            </div><!--menu-->
-        </div><!--center-->
+            </div>
+            <!--menu-->
+        </div>
+        <!--center-->
     </header>
     <div class="linha-horinzontal"></div>
     <div class="slider-container">
@@ -73,12 +76,14 @@ $visualizar = $u->visualizar();
                 <h2>Referência em imóveis residenciais, <br /> comerciais e industriais</h2>
                 <p>Atuamos com vendas e locações de imóveis em toda região da Grande São Paulo e Litoral</p>
 
-            </div><!--main-chamada-->
-        </div><!--center-->
+            </div>
+            <!--main-chamada-->
+        </div>
+        <!--center-->
 
         <div class="atuacoes">
 
-            <div class="atuacao"> 
+            <div class="atuacao">
                 <a href="filtroResidencias.php" class="botao-filtro">
                     <i class="icon-atuacao"><img src="imagens/Icones/residencia_icon.png" width=60px height=60px></i>
                     <h2>Residencias</h2>
@@ -107,7 +112,8 @@ $visualizar = $u->visualizar();
                     <p>Diversas opções de lotes prontos para construção</p>
                 </a>
             </div>
-        </div><!--atuacoes-->
+        </div>
+        <!--atuacoes-->
 
         <div class="main-chamada">
             <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank"><button>Entrar em
@@ -115,9 +121,9 @@ $visualizar = $u->visualizar();
         </div>
 
         <h1 class="destaque">Destaques</h1>
-       
+
         <div class="house-list">
-            
+
             <?php 
             for($i=0;$i<count($visualizar);$i++){
                 if($visualizar[$i]['destaque']=='sim'){
@@ -127,10 +133,14 @@ $visualizar = $u->visualizar();
                 <div class="house-details">
                     <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo']?></h3>
                     <p class="texto-descricao"><?php echo $visualizar[$i]['cidade']?></p>
-                    <p class="descricao-casa"><i class="fas fa-ruler-combined favicon"></i><?php echo $visualizar[$i]['total_area']?></p>
-                    <p class="descricao-casa"><i class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios']?></p>
-                    <p class="descricao-casa"><i class="fas fa-restroom favicon"></i><?php echo $visualizar[$i]['banheiros']?></p>
-                    <p class="descricao-casa"><i class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas']?></p>
+                    <p class="descricao-casa"><i
+                            class="fas fa-ruler-combined favicon"></i><?php echo $visualizar[$i]['total_area']?></p>
+                    <p class="descricao-casa"><i
+                            class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios']?></p>
+                    <p class="descricao-casa"><i
+                            class="fas fa-restroom favicon"></i><?php echo $visualizar[$i]['banheiros']?></p>
+                    <p class="descricao-casa"><i
+                            class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas']?></p>
                     <p class="border-descrica-casa"></p>
                     <a href="imoveis/casa1.html"><button class="house-button">Saber Mais</button></a>
                 </div>
@@ -182,7 +192,8 @@ $visualizar = $u->visualizar();
                 <p>Terrenos</p>
             </div>
         </div>
-    </section><!--main-->
+    </section>
+    <!--main-->
 
     <footer>
         <p>&copy; 2023. Todos os direitos reservados.</p>
