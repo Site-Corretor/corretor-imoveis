@@ -60,6 +60,22 @@ class Principal
         }
     }
 
+    public function residencia($codigo){
+        global $pdo; 
+        $sql =$pdo->prepare("SELECT * FROM imoveis WHERE codigo = :codigo;");
+        $sql->bindValue(":codigo", $codigo);
+        $sql->execute(); 
+        $lista = $sql->fetchAll();
+        if($sql->rowCount() > 0)
+        {		
+            return $lista; 
+        }
+        else
+        {
+            return false;
+
+        }
+    }
 
 
 }

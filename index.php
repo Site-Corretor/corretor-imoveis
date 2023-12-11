@@ -5,8 +5,6 @@ $u->conectar();
    
 $visualizar = $u->visualizar();
 
-print_r($visualizar);
-
 ?>
 
 <!DOCTYPE html>
@@ -28,16 +26,16 @@ print_r($visualizar);
     <header>
         <div class="center">
             <div class="logo">
-                <a href="../index.html"><img src="imagens/logo-ricardo.png" width=145px height=70px> </a>
+                <a href="index.php"><img src="imagens/logo-ricardo.png" width=145px height=70px> </a>
             </div><!--logo-->
             <div class="menu">
                 <a href="#sobre">
                     Sobre Nós
                 </a>
-                <a href="/geral/geral.html">
+                <a href="geral.php">
                     Imóveis
-                </a>
-                <a href="/contatos.html">
+                </a>                    
+                <a href="contato.php">
                     Contato
                 </a>
             </div><!--menu-->
@@ -81,7 +79,7 @@ print_r($visualizar);
         <div class="atuacoes">
 
             <div class="atuacao"> 
-                <a href="/Filtro/residencias.html" class="botao-filtro">
+                <a href="filtroResidencias.php" class="botao-filtro">
                     <i class="icon-atuacao"><img src="imagens/Icones/residencia_icon.png" width=60px height=60px></i>
                     <h2>Residencias</h2>
                     <p>Diversas opções de casas e apartamentos</p>
@@ -89,21 +87,21 @@ print_r($visualizar);
             </div>
 
             <div class="atuacao">
-                <a href="/Filtro/comercios.html" class="botao-filtro">
+                <a href="filtroComercios.php" class="botao-filtro">
                     <i class="icon-atuacao"><img src="imagens/Icones/comercio_icon.png" width=60px height=60px></i>
                     <h2>Comércios</h2>
                     <p>Encontre o espaço ideal para sua loja ou escritório</p>
                 </a>
             </div>
             <div class="atuacao">
-                <a href="/Filtro/industrias.html" class="botao-filtro">
+                <a href="filtroIndustrias.php" class="botao-filtro">
                     <i class="icon-atuacao"><img src="imagens/Icones/industria_icon.png" width=60px height=60px></i>
                     <h2>Industrias</h2>
                     <p>Galpões que atendar a necessidade da sua empresa</p>
                 </a>
             </div>
             <div class="atuacao">
-                <a href="/Filtro/terrenos.html" class="botao-filtro">
+                <a href="filtroTerrenos.php" class="botao-filtro">
                     <i class="icon-atuacao"><img src="imagens/Icones/terreno_icon.png" width=60px height=60px></i>
                     <h2>Terrenos</h2>
                     <p>Diversas opções de lotes prontos para construção</p>
@@ -119,28 +117,29 @@ print_r($visualizar);
         <h1 class="destaque">Destaques</h1>
        
         <div class="house-list">
-            <div class="house">
+            
             <?php 
             for($i=0;$i<count($visualizar);$i++){
-        ?>
+                if($visualizar[$i]['destaque']=='sim'){
+            ?>
+            <div class="house">
                 <img src="imagens/Residencias/CA003/IMG_3803.JPG" alt="Casa 1">
                 <div class="house-details">
                     <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo']?></h3>
-                    <p class="texto-descricao">Centro, Aruja - SP.</p>
+                    <p class="texto-descricao"><?php echo $visualizar[$i]['cidade']?></p>
                     <p class="descricao-casa"><i class="fas fa-ruler-combined favicon"></i><?php echo $visualizar[$i]['total_area']?></p>
-                    <p class="descricao-casa"><i class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorio']?></p>
+                    <p class="descricao-casa"><i class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios']?></p>
                     <p class="descricao-casa"><i class="fas fa-restroom favicon"></i><?php echo $visualizar[$i]['banheiros']?></p>
                     <p class="descricao-casa"><i class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas']?></p>
                     <p class="border-descrica-casa"></p>
                     <a href="imoveis/casa1.html"><button class="house-button">Saber Mais</button></a>
                 </div>
-                <?php
-        }
-        ?>
             </div>
-
-       
-            <a href="../geral/geral.html"><button class="house-button">Veja Mais</button></a>
+            <?php
+            }
+            }
+        ?>
+            <a href="geral.php"><button class="house-button">Veja Mais</button></a>
         </div>
         <img class="sombrasepara" src="imagens/sombra.png" width="800" height="11">
 
@@ -162,7 +161,7 @@ print_r($visualizar);
         </div>
         <div class="roda-pe">
             <div class="logo">
-                <a href="../index.html"><img src="imagens/logo-ricardo.png" width=120px height=60px></a>
+                <a href="index.php"><img src="imagens/logo-ricardo.png" width=120px height=60px></a>
             </div>
             <div class="separa">
                 <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">

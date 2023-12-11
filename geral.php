@@ -1,3 +1,12 @@
+<?php
+require_once 'clsPrincipal.php';
+$u = new Principal;
+$u->conectar();
+   
+$visualizar = $u->visualizar();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -5,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
-    <link href="../style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <meta charset="UTF-8">
@@ -17,54 +26,72 @@
     <header>
         <div class="center">
             <div class="logo">
-                <a href="../index.html"><img src="../imagens/logo-ricardo.png" width=145px height=70px> </a>
+                <a href="index.php"><img src="imagens/logo-ricardo.png" width=145px height=70px> </a>
             </div><!--logo-->
             <div class="menu">
                 <a href="">
                     Sobre Nós
                 </a>
-                <a href="/geral/geral.html">
+                <a href="geral.php">
                     Imóveis
                 </a>
-                <a href="/contatos.html">
+                <a href="contato.php">
                     Contato
                 </a>
             </div><!--menu-->
         </div><!--center-->
     </header>
+
+    <h1 class="sonho">Encontre o imóvel dos seus sonhos</h1>
+
     <div class="tipos-imoveis">
-        <a href="/Filtro/residencias.html" class="botao-filtro">
+        <a href="filtroResidencias.php" class="botao-filtro">
             <div class="opcoes borda-ops fundo-ops">Residencias</div>
         </a>
-        <a href="/Filtro/comercios.html" class="botao-filtro">
+        <a href="filtroComercios.php" class="botao-filtro">
             <div class="opcoes borda-ops fundo-ops">Comércios</div>
         </a>
-        <a href="/Filtro/industrias.html" class="botao-filtro">
+        <a href="filtroIndustrias.php" class="botao-filtro">
             <div class="opcoes borda-ops fundo-ops">Industrias</div>
         </a>
-        <a href="/Filtro/terrenos.html" class="botao-filtro">
+        <a href="filtroTerrenos.php" class="botao-filtro">
             <div class="opcoes borda-ops fundo-ops">Terrenos</div>
         </a>
     </div>
 
     <section class="main">
-        <h2 class="nome-lista">Comércios disponíveis</h2>
-        <div class="error-image">
-            <img src="../imagens/Icones/error.png" height=200px>
-            <h2 class="nome-lista">Infelizmente não temos nenhum comércio disponivel no momento</h2>
-        </div>
         <div class="house-list">
-
+            <?php 
+                for($i=0;$i<count($visualizar);$i++){
+                ?>
+                <div class="house">
+                    <img src="imagens/Residencias/CA003/IMG_3803.JPG" alt="Casa 1">
+                    <div class="house-details">
+                        <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo']?></h3>
+                        <p class="texto-descricao"><?php echo $visualizar[$i]['cidade']?></p>
+                        <p class="descricao-casa"><i class="fas fa-ruler-combined favicon"></i><?php echo $visualizar[$i]['total_area']?></p>
+                        <p class="descricao-casa"><i class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios']?></p>
+                        <p class="descricao-casa"><i class="fas fa-restroom favicon"></i><?php echo $visualizar[$i]['banheiros']?></p>
+                        <p class="descricao-casa"><i class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas']?></p>
+                        <p class="border-descrica-casa"></p>
+                        <a href="imoveis/casa1.html"><button class="house-button">Saber Mais</button></a>
+                    </div>
+                </div>
+                <?php
+                }
+            ?>
+        </div>
+           
             <div class="roda-pe">
                 <div class="logo">
-                    <a href="../index.html"><img src="../imagens/logo-ricardo.png" width=120px height=60px></a>
+                    <a href="index.php"><img src="imagens/logo-ricardo.png" width=120px height=60px></a>
                 </div>
                 <div class="separa">
                     <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
                 </div>
                 <div class="itens">
                     <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank">
-                        <img src="../imagens/Icones/whatsapp.png" width=40px height=40px>
+                        <img src="imagens/Icones/whatsapp.png" width=40px height=40px>
                     </a>
                     <p>(11) 99999-9999</p>
                 </div>
@@ -72,7 +99,7 @@
                     <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
                 </div>
                 <div class="itens">
-                    <img src="../imagens/Icones/lupa.png" width=40px height=40px>
+                    <img src="imagens/Icones/lupa.png" width=40px height=40px>
                     <p>Venda</p>
                     <p>Locação</p>
                     <p>Terrenos</p>
