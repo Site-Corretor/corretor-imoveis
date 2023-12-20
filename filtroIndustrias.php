@@ -5,6 +5,14 @@ $u->conectar();
    
 $visualizar = $u->visualizar();
 
+$temIndustrias = false;
+foreach ($visualizar as $imovel) {
+    if ($imovel['tipo_imovel'] == 'industria') {
+        $temIndustrias = true;
+        break;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +71,9 @@ $visualizar = $u->visualizar();
     <section class="main">
         <h2 class="nome-lista">Industrias disponíveis</h2>
         <div class="house-list">
-            <?php 
+            <?php
+            if($temIndustrias){
+                
                 for($i=0;$i<count($visualizar);$i++){
                     if($visualizar[$i]['tipo_imovel']=='industria'){
                 ?>
@@ -88,7 +98,20 @@ $visualizar = $u->visualizar();
             <?php
                 }
                 }
+            }else{
             ?>
+
+            <div class="error-image">
+                <img src="imagens/Icones/error.png" height=200px>
+                <h2 class="nome-lista">Infelizmente não temos nenhuma industria disponível no momento</h2>
+            </div>
+
+            <?php
+            }
+            ?>
+        </div>
+
+
         </div>
 
         <div class="centralizar-conteudo">

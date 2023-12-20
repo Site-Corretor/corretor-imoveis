@@ -65,7 +65,7 @@ class Principal
         $sql =$pdo->prepare("SELECT * FROM imoveis WHERE codigo = :codigo;");
         $sql->bindValue(":codigo", $codigo);
         $sql->execute(); 
-        $lista = $sql->fetchAll();
+        $lista = $sql->fetch();
         if($sql->rowCount() > 0)
         {		
             return $lista; 

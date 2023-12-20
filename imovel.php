@@ -5,7 +5,7 @@ $u->conectar();
    
 $visualizar = $u->visualizar();
 
-$codigo = $_GET["codigo"];
+$codigo = $_GET['codigo'];
 $imovel = $u->imovel($codigo);
 
 ?>
@@ -26,6 +26,7 @@ $imovel = $u->imovel($codigo);
 
     </style>
 </head>
+
 
 <body>
     <header>
@@ -54,7 +55,9 @@ $imovel = $u->imovel($codigo);
         <section class="main-casa">
 
             <div class="casa">
-                <h1>Belissíma Casa de Alto Padrão na Praia em Riviera de São Lourenço (GOLF CLUB)</h1>
+                <h1>
+                    <?php echo $imovel['titulo']?>
+                </h1>
             </div>
             <div class="img-g-casa">
                 <img src="../../imagens/Residencias/CA001/25AA536A-5687-47F9-8B31-71FC6A96B16F.JPG" alt="" width=915px
@@ -131,14 +134,17 @@ $imovel = $u->imovel($codigo);
             <img id="modalImage" class="modal-content">
         </div>
 
+
         <div class="descricao-casa-separada">
             <h2>DESCRIÇÃO DA CASA</h2>
-            <p class="descricao-texto-casa-separada"><?php echo $visualizar['titulo']?></p>
-            <p class="descricao-texto-casa-separada"></p>
-            <p class="descricao-texto-casa-separada"></p>
-            <p class="descricao-texto-casa-separada"></p>
-            <p class="descricao-texto-casa-separada"><b>PREÇO: R$ 2.400.000,00</b></p>
+            <h3 class="descricao-texto-casa-separada"><?php echo $imovel['titulo']?>
+            </h3>
+            <p class="descricao-texto-casa-separada"><?php echo $imovel['total_area']?>m²</p>
+            <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao']?></p>
+            <p class="descricao-texto-casa-separada"><b>PREÇO: R$ <?php echo $imovel['preco']?></b></p>
         </div>
+
+
 
         <div class="descricao-casa-separada">
             <h2>CENTRAL DE NEGÓCIOS</h2>

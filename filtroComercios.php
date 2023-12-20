@@ -5,6 +5,14 @@ $u->conectar();
    
 $visualizar = $u->visualizar();
 
+$temComercios = false;
+foreach ($visualizar as $imovel) {
+    if ($imovel['tipo_imovel'] == 'comercio') {
+        $temComercios = true;
+        break;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -64,9 +72,11 @@ $visualizar = $u->visualizar();
         <h2 class="nome-lista">Comércios disponíveis</h2>
         <div class="house-list">
             <?php 
+            if($temComercios){
+            
                 for($i=0;$i<count($visualizar);$i++){
                     if($visualizar[$i]['tipo_imovel']=='comercio'){
-                ?>
+            ?>
             <div class="house">
                 <img src="../imagens/Residencias/CA001/25AA536A-5687-47F9-8B31-71FC6A96B16F.JPG" alt="CA001">
                 <div class="house-details">
@@ -88,6 +98,16 @@ $visualizar = $u->visualizar();
             <?php
                 }
                 }
+            }else{
+            ?>
+
+            <div class="error-image">
+                <img src="imagens/Icones/error.png" height=200px>
+                <h2 class="nome-lista">Infelizmente não temos nenhum comércio disponível no momento</h2>
+            </div>
+
+            <?php
+            }
             ?>
         </div>
 

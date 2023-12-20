@@ -45,12 +45,12 @@ $visualizar = $u->visualizar();
         <!--center-->
     </header>
     <div class="linha-horinzontal"></div>
-    <div class="slider-container">
-        <!-- div que pegar os elementos que vao dentro -->
+    <div class=" slider-container">
+        <!--div que pegar os elementos que vao dentro-->
         <div class="slider">
-            <!-- div para cada elemento. -->
+            <!--div para cada elemento.-->
             <div>
-                <img src="imagens/Residencias/CA002/IMG_1359.JPG" alt="casa 1">
+                <img src="imagens/fotocapa.jpg" alt="casa 1">
             </div>
             <div>
                 <img src="imagens/Residencias/CA004/IMG_4691.JPG" alt="casa 2">
@@ -136,13 +136,16 @@ $visualizar = $u->visualizar();
                     <p class="descricao-casa"><i
                             class="fas fa-ruler-combined favicon"></i><?php echo $visualizar[$i]['total_area']?></p>
                     <p class="descricao-casa"><i
-                            class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios']?></p>
+                            class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios']?>
+                    </p>
                     <p class="descricao-casa"><i
                             class="fas fa-restroom favicon"></i><?php echo $visualizar[$i]['banheiros']?></p>
                     <p class="descricao-casa"><i
-                            class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas']?></p>
+                            class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas']?>
+                    </p>
                     <p class="border-descrica-casa"></p>
-                    <a href="imovel.php"><button class="house-button">Saber Mais</button></a>
+                    <a href=<?php echo "'imovel.php?codigo=".$visualizar[$i]['codigo']."'"?>><button
+                            class="house-button">Saber Mais</button></a>
                 </div>
             </div>
             <?php
@@ -164,7 +167,8 @@ $visualizar = $u->visualizar();
                     do evento com uma nova visão do que é posivel ser feito para o seu negócio decolar.
                 </p>
                 <p>
-                    Formado em Marketing pela Universidade de XYZ e fundador da MarkUp, a empresa vencedora dos úiltimos
+                    Formado em Marketing pela Universidade de XYZ e fundador da MarkUp, a empresa vencedora dos
+                    úiltimos
                     5 prêmios MarketingBr.
                 </p>
             </div>

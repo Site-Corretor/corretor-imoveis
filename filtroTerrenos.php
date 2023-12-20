@@ -5,6 +5,15 @@ $u->conectar();
    
 $visualizar = $u->visualizar();
 
+$temTerrenos = false;
+foreach ($visualizar as $imovel) {
+    if ($imovel['tipo_imovel'] == 'terreno') {
+        $temTerrenos = true;
+        break;
+    }
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -64,6 +73,8 @@ $visualizar = $u->visualizar();
         <h2 class="nome-lista">Terrenos disponíveis</h2>
         <div class="house-list">
             <?php 
+            if($temTerrenos){
+            
                 for($i=0;$i<count($visualizar);$i++){
                     if($visualizar[$i]['tipo_imovel']=='terreno'){
                 ?>
@@ -88,6 +99,16 @@ $visualizar = $u->visualizar();
             <?php
                 }
                 }
+            }else{
+            ?>
+
+            <div class="error-image">
+                <img src="imagens/Icones/error.png" height=200px>
+                <h2 class="nome-lista">Infelizmente não temos nenhum terreno disponível no momento</h2>
+            </div>
+
+            <?php
+            }
             ?>
         </div>
 

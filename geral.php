@@ -81,7 +81,8 @@ $visualizar = $u->visualizar();
                     <p class="descricao-casa"><i
                             class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas']?></p>
                     <p class="border-descrica-casa"></p>
-                    <a href="imovel.php"><button class="house-button">Saber Mais</button></a>
+                    <a href=<?php echo "'imovel.php?codigo=".$visualizar[$i]['codigo']."'"?>><button
+                            class="house-button">Saber Mais</button></a>
                 </div>
             </div>
             <?php
