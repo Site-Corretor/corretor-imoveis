@@ -1,5 +1,5 @@
 <?php
-class Principal
+class User
 {
     private $pdo; 
 	public $msgErro = "";
@@ -28,57 +28,29 @@ class Principal
         return true;
     }
 
+    public function cadastrarImovel()
+    {
+
+    }
+
     public function logar($user,$senha){
         global $pdo; 
         $sql =$pdo->prepare("SELECT * FROM cadastro WHERE usuario = '".$user."' AND senha = '".$senha."';");
         $sql->execute(); 
-        $lista = $sql->fetch();
         if($sql->rowCount() > 0)
         {		
-
-            return $lista; 
+            session_start();
+            $dado = $sql->fetch();
+            $_SESSION = $dado;
+            $_SESSION['usuario'] = $dado['usuario'];
+            $_SESSION['acesso'] = $dado['acesso'];
+            return true; 
         }
         else
         {
             return false;
-
         }
     }
-
-    public function visualizar(){
-        global $pdo; 
-        $sql =$pdo->prepare("SELECT * FROM imoveis;");
-        $sql->execute(); 
-        $lista = $sql->fetchAll();
-        if($sql->rowCount() > 0)
-        {		
-            return $lista; 
-        }
-        else
-        {
-            return false;
-
-        }
-    }
-
-    public function imovel($codigo){
-        global $pdo; 
-        $sql =$pdo->prepare("SELECT * FROM imoveis WHERE codigo = :codigo;");
-        $sql->bindValue(":codigo", $codigo);
-        $sql->execute(); 
-        $lista = $sql->fetch();
-        if($sql->rowCount() > 0)
-        {		
-            return $lista; 
-        }   
-        else
-        {
-            return false;
-
-        }
-    }
-
-
 }
 
 ?>
