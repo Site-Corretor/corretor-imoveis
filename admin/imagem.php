@@ -38,30 +38,40 @@ $p->conectar();
 //         }
 //     }
 // }
-if (isset($_FILES['imagem']) && !empty($_FILES['imagem']['name'][0])) {
+
+if (isset($_FILES['imagem']) && is_array($_FILES['imagem']['name'])) {
 
 
     $ftp_connection = ftp_connect($ftp_host) or die("Couldn't connect to $ftp_host");
     ftp_login($ftp_connection, $ftp_user, $ftp_pass) or die("Couldn't login to ftp server");
     ftp_pasv($ftp_connection, true);
-    $ftp_directory = '/admin/upload/';
 
+    $uploadDirectory = '/public_html/admin/upload/';
 
-    for ($i = 0; $i < count($_FILES['imagem']['name']); $i++) {
+    $filesToUpload = array_filter($_FILES['imagem']['name']);
+    $filesToUpload = array_values($filesToUpload);
+
+    foreach ($filesToUpload as $i => $fileName) {
         $fileName = $_FILES['imagem']['name'][$i];
         $fileTmpName = $_FILES['imagem']['tmp_name'][$i];
 
         $pathInfo = pathinfo($fileName);
         $fileExtension = $pathInfo['extension'];
 
-        $remoteFilePath = $ftp_directory .$codigo. $i . "." . $fileExtension;
+        // $remoteFilePath = $uploadDirectory . $fileName;
+        $remoteFilePath = $uploadDirectory .  $codigo . "-" . $i . "." . $fileExtension;
 
-        // Faz o upload do arquivo para o servidor FTP
-        if (upload_files($ftp_connection, $remoteFilePath, $fileTmpName, $fileName)) {
+        if (!file_exists($fileTmpName)) {
+            echo "Erro: O arquivo temporário $fileTmpName não existe\n";
+            continue;
+        }
+
+        // Faz o upload do arquivo diretamente para o servidor FTP
+        if (ftp_put($ftp_connection, $remoteFilePath, $fileTmpName, FTP_BINARY)) {
             echo "Upload do arquivo $fileName para o FTP bem-sucedido\n";
 
             // Agora você pode atualizar o banco de dados local
-            // $img = $fileDestination;
+            // $img = $remoteFilePath; // Use o caminho remoto no banco de dados
             // $p->updateImagem($codigo, $img);
 
             echo "Atualização do banco de dados local bem-sucedida\n";
@@ -69,9 +79,10 @@ if (isset($_FILES['imagem']) && !empty($_FILES['imagem']['name'][0])) {
             echo "Erro ao fazer upload do arquivo $fileName para o FTP\n";
         }
     }
-    ftp_close($ftp_connection);
 
+    ftp_close($ftp_connection);
 }
+
 
 
 
