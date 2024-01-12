@@ -11,7 +11,6 @@ $codigo = $_GET['codigo'];
 require_once 'clsControle.php';
 require_once 'conexao_ftp.php';
 require_once 'ftp.php';
-
 $p = new User;
 $p->conectar();
 
@@ -164,7 +163,9 @@ $imagens = $p->getImagens($codigo);
                 echo '<div class="col-md-4 image-container">';
                 // echo '<img src="' . $imagem['img'] . '" alt="Pré-visualização da imagem">';
                 echo '<img src="https://ricardosouzacorretor.com.br/admin/upload/' . $imagem['img'] . '" alt="Pré-visualização da imagem">';
-                echo '<form method="post" action="excluir_imagem.php?codigo=' . $codigo . '" class="delete-form">';
+                echo '<form method="post" action="excluir_imagem.php?codigo=' . $codigo . '&img=' . $imagem['img'] . '" class="delete-form">';
+                echo '<input type="hidden" name="codigo" value="' . $codigo . '">';
+                echo '<input type="hidden" name="img" value="' . $imagem['img']  . '">';
                 echo '<input type="hidden" name="deleteImage" value="' . $imagem['img'] . '">';
                 echo '<button type="submit" class="btn btn-danger">Excluir</button>';
                 echo '</form>';
