@@ -36,9 +36,6 @@ $imovel = $u->imovel($codigo);
             </div>
             <!--logo-->
             <div class="menu">
-                <a href="">
-                    Sobre Nós
-                </a>
                 <a href="geral.php">
                     Imóveis
                 </a>

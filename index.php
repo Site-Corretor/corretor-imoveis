@@ -30,9 +30,6 @@ $visualizar = $u->visualizar();
             </div>
             <!--logo-->
             <div class="menu">
-                <a href="#sobre">
-                    Sobre Nós
-                </a>
                 <a href="geral.php">
                     Imóveis
                 </a>
@@ -73,7 +70,7 @@ $visualizar = $u->visualizar();
     <section class="main">
         <div class="center">
             <div class="main-chamada">
-                <h2>Referência em imóveis residenciais, <br /> comerciais e industriais</h2>
+                <h2>Referência em imóveis de alto padrão, <br /> galpões e áreas industriais</h2>
                 <p>Atuamos com vendas e locações de imóveis em toda região da Grande São Paulo e Litoral</p>
 
             </div>
@@ -86,7 +83,7 @@ $visualizar = $u->visualizar();
             <div class="atuacao">
                 <a href="filtroResidencias.php" class="botao-filtro">
                     <i class="icon-atuacao"><img src="imagens/Icones/residencia_icon.png" width=60px height=60px></i>
-                    <h2>Residencias</h2>
+                    <h2>Residencial</h2>
                     <p>Diversas opções de casas e apartamentos</p>
                 </a>
             </div>
@@ -94,15 +91,15 @@ $visualizar = $u->visualizar();
             <div class="atuacao">
                 <a href="filtroComercios.php" class="botao-filtro">
                     <i class="icon-atuacao"><img src="imagens/Icones/comercio_icon.png" width=60px height=60px></i>
-                    <h2>Comércios</h2>
-                    <p>Encontre o espaço ideal para sua loja ou escritório</p>
+                    <h2>Comercial</h2>
+                    <p>Encontre o espaço ideal para o seu negócio</p>
                 </a>
             </div>
             <div class="atuacao">
                 <a href="filtroIndustrias.php" class="botao-filtro">
                     <i class="icon-atuacao"><img src="imagens/Icones/industria_icon.png" width=60px height=60px></i>
-                    <h2>Industrias</h2>
-                    <p>Galpões que atendar a necessidade da sua empresa</p>
+                    <h2>Industrial</h2>
+                    <p>Galpões que atendem a necessidade da sua empresa</p>
                 </a>
             </div>
             <div class="atuacao">
@@ -156,7 +153,7 @@ $visualizar = $u->visualizar();
         </div>
         <img class="sombrasepara" src="imagens/sombra.png" width="800" height="11">
 
-        <div class="sobre">
+        <!-- <div class="sobre">
             <img class="foto"
                 src="https://patriciaamaralcorretora.com.br/wp-content/uploads/2023/08/Patricia-Amaral.jpg"
                 alt="Pessoa">
@@ -172,7 +169,7 @@ $visualizar = $u->visualizar();
                     5 prêmios MarketingBr.
                 </p>
             </div>
-        </div>
+        </div> -->
         <div class="roda-pe">
             <div class="logo">
                 <a href="index.php"><img src="imagens/logo-ricardo.png" width=120px height=60px></a>
