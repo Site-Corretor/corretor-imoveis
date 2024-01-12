@@ -178,10 +178,10 @@ $visualizar = $u->visualizar();
                 <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
             </div>
             <div class="itens">
-                <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank">
+                <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
                     <img src="imagens/Icones/whatsapp.png" width=40px height=40px>
                 </a>
-                <p>(11) 99999-9999</p>
+                <p>(11) 97035-5935</p>
             </div>
             <div class="separa">
                 <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">

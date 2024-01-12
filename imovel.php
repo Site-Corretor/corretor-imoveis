@@ -69,10 +69,10 @@ $imovel = $u->imovel($codigo);
                     <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
                 </div>
                 <div class="itens">
-                    <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank">
+                    <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
                         <img src="imagens/Icones/whatsapp.png" width=40px height=40px>
                     </a>
-                    <p>(11) 99999-9999</p>
+                    <p>(11) 97035-5935</p>
                 </div>
                 <div class="separa">
                     <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
@@ -149,16 +149,16 @@ $imovel = $u->imovel($codigo);
                 Para ter mais informações sobre este imóvel ligue:
             </p>
             <p class="descricao-texto-casa-separada">
-                Ricardo Souza: (11) 97035-5935.
+                Ricardo Souza: (11) 97035-5935
             </p>
             <p class="descricao-texto-casa-separada">
-                Victor Martins: (11) 95423-3209.
+                Victor Martins: (11) 95423-3209
             </p>
             <p class="descricao-texto-casa-separada">
                 Email: ricardosouzanegocios@gmail.com
             </p>
             <p class="descricao-texto-casa-separada">
-                Arujá - São Paulo.
+                Arujá - São Paulo
             </p>
 
         </div>

@@ -39,37 +39,38 @@
     <div class="descricao-casa-separada">
         <h2>CENTRAL DE NEGÓCIOS</h2>
         <p class="descricao-texto-casa-separada">
-            Para ter mais informações sobre este imóvel ligue:
+            Para ter mais informações sobre algum dos nossos imóveis entre em contato:
         </p>
         <p class="descricao-texto-casa-separada">
-            (11) 9999-9999 IMOBILIÁRIA PADRÃO
+            Ricardo Souza: (11) 97035-5935
         </p>
         <p class="descricao-texto-casa-separada">
-            Rua Manoel Goulart, 1234
-            Centro - Presidente Prudente
-            (18) 1234-1234 (18) 1234-1234
-            contato@imobiliariapadrao.com.br
+            Victor Martins: (11) 95423-3209
         </p>
         <p class="descricao-texto-casa-separada">
-            Rua Manoel Goulart, 1234
+            Email: ricardosouzanegocios@gmail.com
         </p>
         <p class="descricao-texto-casa-separada">
-            contato@imobiliariapadrao.com.br
+            Arujá - São Paulo
         </p>
+
     </div>
+
     <div class="centralizar-conteudo">
         <a href="index.php"><button class="voltar-button">Voltar</button></a>
     </div>
     <div class="roda-pe">
         <div class="logo">
-            <a href="index.php"><img src="../imagens/logo-ricardo.png" width=120px height=60px></a>
+            <a href="index.php"><img src="imagens/logo-ricardo.png" width=120px height=60px></a>
         </div>
         <div class="separa">
             <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
         </div>
         <div class="itens">
-            <img src="imagens/Icones/whatsapp.png" width=40px height=40px>
-            <p>(11) 99999-9999</p>
+            <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
+                <img src="imagens/Icones/whatsapp.png" width=40px height=40px>
+            </a>
+            <p>(11) 97035-5935</p>
         </div>
         <div class="separa">
             <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
