@@ -9,14 +9,44 @@ $codigo = $_GET['codigo'];
 
 
 require_once 'clsControle.php';
+require_once 'conexao_ftp.php';
+require_once 'ftp.php';
+
 $p = new User;
 $p->conectar();
 
-// Lógica para processar o envio de novas imagens
-if (isset($_FILES['imagem']) && !empty($_FILES['imagem']['name'][0])) {
-    $uploadDirectory = 'upload/';
+// // Lógica para processar o envio de novas imagens
+// if (isset($_FILES['imagem']) && !empty($_FILES['imagem']['name'][0])) {
+//     $uploadDirectory = 'upload/';
 
-    // Loop através do array de arquivos
+//     // Loop através do array de arquivos
+//     for ($i = 0; $i < count($_FILES['imagem']['name']); $i++) {
+//         $fileName = $_FILES['imagem']['name'][$i];
+//         $fileTmpName = $_FILES['imagem']['tmp_name'][$i];
+
+//         $pathInfo = pathinfo($fileName);
+//         $fileExtension = $pathInfo['extension'];
+
+//         $fileDestination = $uploadDirectory . $codigo . "-" . $i . "." . $fileExtension;
+
+//         // Move o arquivo para o diretório de upload
+//         if (move_uploaded_file($fileTmpName, $fileDestination)) {
+//             $img = $fileDestination;
+//             $p->updateImagem($codigo, $img);
+//         } else {
+//             echo "Erro ao fazer upload do arquivo $fileName<br>";
+//         }
+//     }
+// }
+if (isset($_FILES['imagem']) && !empty($_FILES['imagem']['name'][0])) {
+
+
+    $ftp_connection = ftp_connect($ftp_host) or die("Couldn't connect to $ftp_host");
+    ftp_login($ftp_connection, $ftp_user, $ftp_pass) or die("Couldn't login to ftp server");
+    ftp_pasv($ftp_connection, true);
+    $ftp_directory = '/admin/upload/';
+
+
     for ($i = 0; $i < count($_FILES['imagem']['name']); $i++) {
         $fileName = $_FILES['imagem']['name'][$i];
         $fileTmpName = $_FILES['imagem']['tmp_name'][$i];
@@ -24,17 +54,27 @@ if (isset($_FILES['imagem']) && !empty($_FILES['imagem']['name'][0])) {
         $pathInfo = pathinfo($fileName);
         $fileExtension = $pathInfo['extension'];
 
-        $fileDestination = $uploadDirectory . $codigo . "-" . $i . "." . $fileExtension;
+        $remoteFilePath = $ftp_directory .$codigo. $i . "." . $fileExtension;
 
-        // Move o arquivo para o diretório de upload
-        if (move_uploaded_file($fileTmpName, $fileDestination)) {
-            $img = $fileDestination;
-            $p->updateImagem($codigo, $img);
+        // Faz o upload do arquivo para o servidor FTP
+        if (upload_files($ftp_connection, $remoteFilePath, $fileTmpName, $fileName)) {
+            echo "Upload do arquivo $fileName para o FTP bem-sucedido\n";
+
+            // Agora você pode atualizar o banco de dados local
+            // $img = $fileDestination;
+            // $p->updateImagem($codigo, $img);
+
+            echo "Atualização do banco de dados local bem-sucedida\n";
         } else {
-            echo "Erro ao fazer upload do arquivo $fileName<br>";
+            echo "Erro ao fazer upload do arquivo $fileName para o FTP\n";
         }
     }
+    ftp_close($ftp_connection);
+
 }
+
+
+
 $imagens = $p->getImagens($codigo);
 
 
