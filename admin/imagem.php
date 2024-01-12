@@ -40,8 +40,6 @@ $p->conectar();
 // }
 
 if (isset($_FILES['imagem']) && is_array($_FILES['imagem']['name'])) {
-
-
     $ftp_connection = ftp_connect($ftp_host) or die("Couldn't connect to $ftp_host");
     ftp_login($ftp_connection, $ftp_user, $ftp_pass) or die("Couldn't login to ftp server");
     ftp_pasv($ftp_connection, true);
@@ -61,6 +59,7 @@ if (isset($_FILES['imagem']) && is_array($_FILES['imagem']['name'])) {
         // $remoteFilePath = $uploadDirectory . $fileName;
         $remoteFilePath = $uploadDirectory .  $codigo . "-" . $i . "." . $fileExtension;
 
+
         if (!file_exists($fileTmpName)) {
             echo "Erro: O arquivo temporário $fileTmpName não existe\n";
             continue;
@@ -70,8 +69,9 @@ if (isset($_FILES['imagem']) && is_array($_FILES['imagem']['name'])) {
         if (ftp_put($ftp_connection, $remoteFilePath, $fileTmpName, FTP_BINARY)) {
             echo "Upload do arquivo $fileName para o FTP bem-sucedido\n";
             // Agora você pode atualizar o banco de dados local
-            $img = $remoteFilePath; // Use o caminho remoto no banco de dados
-            $p->updateImagem($codigo, $img);
+            $img = $codigo . "-" . $i . "." . $fileExtension; // Use o caminho remoto no banco de dados
+            $caminho = $uploadDirectory;
+            $p->updateImagem($codigo, $caminho, $img);
 
             echo "Atualização do banco de dados local bem-sucedida\n";
         } else {
@@ -156,14 +156,14 @@ $imagens = $p->getImagens($codigo);
             </div>
             <button type="submit" class="btn btn-primary mt-3">Anexar Imagem</button>
         </form>
-
         <?php
         // Mostra as imagens existentes
         if (!empty($imagens)) {
             echo '<div class="row">';
             foreach ($imagens as $imagem) {
                 echo '<div class="col-md-4 image-container">';
-                echo '<img src="' . $imagem['img'] . '" alt="Pré-visualização da imagem">';
+                // echo '<img src="' . $imagem['img'] . '" alt="Pré-visualização da imagem">';
+                echo '<img src="https://ricardosouzacorretor.com.br/admin/upload/' . $imagem['img'] . '" alt="Pré-visualização da imagem">';
                 echo '<form method="post" action="excluir_imagem.php?codigo=' . $codigo . '" class="delete-form">';
                 echo '<input type="hidden" name="deleteImage" value="' . $imagem['img'] . '">';
                 echo '<button type="submit" class="btn btn-danger">Excluir</button>';

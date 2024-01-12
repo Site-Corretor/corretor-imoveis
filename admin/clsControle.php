@@ -153,12 +153,13 @@ class User
         }
     }
 
-    public function updateImagem($codigo,  $img)
+    public function updateImagem($codigo, $caminho, $img)
     {
         global $pdo;
-        $sql = $pdo->prepare("INSERT INTO regstro_anexos (codigo,img)
-        VALUES (:codigo,:img);");
+        $sql = $pdo->prepare("INSERT INTO regstro_anexos (codigo,caminho,img)
+        VALUES (:codigo,:caminho,:img);");
         $sql->bindValue(":codigo", $codigo);
+        $sql->bindValue(":caminho", $caminho);
         $sql->bindValue(":img", $img);
         $sql->execute();
         return true;
