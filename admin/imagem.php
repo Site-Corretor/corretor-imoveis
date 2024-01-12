@@ -69,10 +69,9 @@ if (isset($_FILES['imagem']) && is_array($_FILES['imagem']['name'])) {
         // Faz o upload do arquivo diretamente para o servidor FTP
         if (ftp_put($ftp_connection, $remoteFilePath, $fileTmpName, FTP_BINARY)) {
             echo "Upload do arquivo $fileName para o FTP bem-sucedido\n";
-
             // Agora você pode atualizar o banco de dados local
-            // $img = $remoteFilePath; // Use o caminho remoto no banco de dados
-            // $p->updateImagem($codigo, $img);
+            $img = $remoteFilePath; // Use o caminho remoto no banco de dados
+            $p->updateImagem($codigo, $img);
 
             echo "Atualização do banco de dados local bem-sucedida\n";
         } else {
