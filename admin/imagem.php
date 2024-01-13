@@ -38,6 +38,7 @@ $p->conectar();
 //     }
 // }
 
+
 if (isset($_FILES['imagem']) && is_array($_FILES['imagem']['name'])) {
     $ftp_connection = ftp_connect($ftp_host) or die("Couldn't connect to $ftp_host");
     ftp_login($ftp_connection, $ftp_user, $ftp_pass) or die("Couldn't login to ftp server");
@@ -66,13 +67,10 @@ if (isset($_FILES['imagem']) && is_array($_FILES['imagem']['name'])) {
 
         // Faz o upload do arquivo diretamente para o servidor FTP
         if (ftp_put($ftp_connection, $remoteFilePath, $fileTmpName, FTP_BINARY)) {
-            echo "Upload do arquivo $fileName para o FTP bem-sucedido\n";
             // Agora você pode atualizar o banco de dados local
             $img = $codigo . "-" . $i . "." . $fileExtension; // Use o caminho remoto no banco de dados
             $caminho = $uploadDirectory;
             $p->updateImagem($codigo, $caminho, $img);
-
-            echo "Atualização do banco de dados local bem-sucedida\n";
         } else {
             echo "Erro ao fazer upload do arquivo $fileName para o FTP\n";
         }
@@ -85,6 +83,31 @@ if (isset($_FILES['imagem']) && is_array($_FILES['imagem']['name'])) {
 
 
 $imagens = $p->getImagens($codigo);
+
+if (isset($_POST['capa'])) {
+    $capaEncontrada = false; // Variável para rastrear se uma capa já foi encontrada
+    for ($i = 0; $i < count($imagens); $i++) {
+        if ($imagens[$i]['capa'] == 1) {
+            $capaEncontrada = true;
+            echo "<script language='javascript'>alert('Ja existe uma imagem como capa');</script>";
+            break;
+        }
+    }
+    if (empty($capaEncontrada)) {
+        $img_capa = $_POST['img_capa'];
+        $p->updateCapa($codigo, $img_capa);
+        echo "<script language='javascript'>alert('Imagem selecionada para capa com sucesso!');</script>";
+    }
+}
+
+if (isset($_POST['exluir-capa'])) {
+    for($i =0; $i < count($imagens); $i++){
+        if($imagens[$i]['capa'] == 1){
+            $p->ExcluirCapa($codigo);
+            echo "<script language='javascript'>alert('Capa excluida com sucesso');</script>";
+        }
+    }
+}
 
 
 ?>
@@ -154,7 +177,12 @@ $imagens = $p->getImagens($codigo);
                 <label class="custom-file-label" for="customFile">Escolher arquivo</label>
             </div>
             <button type="submit" class="btn btn-primary mt-3">Anexar Imagem</button>
+            <?php
+            if (!empty($imagens[0]['capa'] == 1)) { ?>
+                <button type="submit" class="btn btn-warning mt-3" name="exluir-capa">Excluir Capa</button>
+            <?php }  ?>
         </form>
+    
         <?php
         // Mostra as imagens existentes
         if (!empty($imagens)) {
@@ -169,6 +197,12 @@ $imagens = $p->getImagens($codigo);
                 echo '<input type="hidden" name="deleteImage" value="' . $imagem['img'] . '">';
                 echo '<button type="submit" class="btn btn-danger">Excluir</button>';
                 echo '</form>';
+                echo '<form method="post">';
+                echo '<div class="form-check mt-2">';
+                echo '<input type="hidden" name="img_capa" value="' . $imagem['img']  . '">';
+                echo '<button type="submit" class="btn btn-primary" name="capa">Capa</button>';
+                echo '</div>';
+                echo '</form>';
                 echo '</div>';
             }
             echo '</div>';
@@ -180,5 +214,6 @@ $imagens = $p->getImagens($codigo);
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
 </body>
+
 
 </html>
