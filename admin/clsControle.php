@@ -183,11 +183,7 @@ class User
     {
         global $pdo;
 
-        // Primeiro, exclua o arquivo físico no servidor
-        $caminhoCompleto = 'upload/' . $codigo . "-" . $img;
-        if (file_exists($caminhoCompleto)) {
-            unlink($caminhoCompleto);
-        }
+      
 
         // Agora, exclua o registro do banco de dados
         $sql = $pdo->prepare("DELETE FROM regstro_anexos WHERE codigo = :codigo AND img = :img;");
