@@ -3,25 +3,31 @@
 require_once 'clsLogin-Cadastro.php';
 
 $u = new User;
-$u ->conectar();
+$u->conectar();
+$codigoSeg = $u->seguranca();
 
 if (isset($_POST['nome'])) {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
+    $codigo = $_POST['codigo'];
 
-    if (!empty($nome) && !empty($email) && !empty($senha)) {
-        if ($u->msgErro == "") {
-            if ($u->cadastrar($nome, $senha,$email )) {
-                echo "<script language='javascript'>alert('Cadastrado Com sucesso');</script>";
-                echo "<script language='javascript'>window.location='login.php';</script>";
+    if ($codigo == $codigoSeg[0]['seguranca']) {
+        if (!empty($nome) && !empty($email) && !empty($senha)) {
+            if ($u->msgErro == "") {
+                if ($u->cadastrar($nome, $senha, $email)) {
+                    echo "<script language='javascript'>alert('Cadastrado Com sucesso');</script>";
+                    echo "<script language='javascript'>window.location='index.php';</script>";
+                } else {
+                    echo "Erro ao cadastrar";
+                }
             } else {
-                echo "Erro ao cadastrar";
+                echo "Erro: " . $u->msgErro;
             }
-        } else {
-            echo "Erro: " . $u->msgErro;
         }
-    }
+    } else {
+        echo "<script language='javascript'>alert('Codigo Invalido');</script>";
+        echo "<script language='javascript'>window.location='cadastro.php';</script>";}
 }
 ?>
 <!DOCTYPE html>
@@ -52,6 +58,10 @@ if (isset($_POST['nome'])) {
                 <div class="input-group w50">
                     <label for="senha">Senha</label>
                     <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                </div>
+                <div class="input-group w50">
+                    <label for="codigo">codigo</label>
+                    <input type="text" id="codigo" name="codigo" placeholder="codigo" required>
                 </div>
                 <div class="input-group w50">
                     <label for="email">E-mail</label>

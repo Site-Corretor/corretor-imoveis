@@ -101,10 +101,13 @@ $cadaDestaque = $u->casaDestaque();
             </div>
 
             <ul class="list-unstyled components">
-                
+                <li>
+                    <a href="https://ricardosouzacorretor.com.br/" target="_blank">Site</a>
+                </li>
                 <li>
                     <a href="cadastrarCasa.php" target="_blank">Cadastrar Casa</a>
                 </li>
+
                 <li>
                     <a href="logoff.php">Sair</a>
                 </li>
@@ -113,7 +116,7 @@ $cadaDestaque = $u->casaDestaque();
 
         <!-- Page Content  -->
         <div id="content">
-          
+
             <div class="row">
                 <div class="col-lg-6 mb-3">
                     <div class="card">
@@ -128,7 +131,7 @@ $cadaDestaque = $u->casaDestaque();
                         </div>
                     </div>
                 </div>
-             
+
             </div>
         </div>
     </div>
