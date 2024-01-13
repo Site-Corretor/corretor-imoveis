@@ -36,6 +36,7 @@ $visualizar = $u->visualizar();
                 </a>
                 <a href="contato.php">
                     Contato
+                </a>
             </div>
             <!--menu-->
         </div>
