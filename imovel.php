@@ -92,10 +92,8 @@ $imagem = $u->imagem($codigo);
 
                 <?php 
                 $images = [];
-
-                for ($i = 0; $i < count($visualizar); $i++) {
-                    $imagensGerais = $u->tdsImagem($visualizar[$i]['codigo']);
-                
+                $imagensGerais = $u->tdsImagem($codigo);
+                    
                     if ($imagensGerais) {
                         foreach ($imagensGerais as $imagemGeral) {
                             $images[] = 'https://ricardosouzacorretor.com.br/admin/upload/' . $imagemGeral['img'];
@@ -110,7 +108,6 @@ $imagem = $u->imagem($codigo);
                 <?php
                         }
                     }
-                }
             ?>
             </div>
         </div>
