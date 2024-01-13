@@ -34,8 +34,7 @@ $visualizar = $u->visualizar();
                     Imóveis
                 </a>
                 <a href="contato.php">
-                    Contato(teste git)
-                </a>
+                    Contato
             </div>
             <!--menu-->
         </div>
