@@ -8,7 +8,7 @@ class User
         global $pdo;
         try {
             // $pdo = new PDO('mysql:host=localhost;dbname=corretora', 'root');
-            $pdo = new PDO("mysql:dbname="."u830382291_corretor".";host="."br-asc-web1181.main-hosting.eu", "u830382291_corretor", "Ricardosouza1");
+            $pdo = new PDO("mysql:dbname=" . "u830382291_corretor" . ";host=" . "br-asc-web1181.main-hosting.eu", "u830382291_corretor", "Ricardosouza1");
         } catch (PDOException $e) {
             $msgErro = $e->getMessage();
         }
@@ -183,12 +183,32 @@ class User
     {
         global $pdo;
 
-      
+
 
         // Agora, exclua o registro do banco de dados
         $sql = $pdo->prepare("DELETE FROM regstro_anexos WHERE codigo = :codigo AND img = :img;");
         $sql->bindValue(":codigo", $codigo);
         $sql->bindValue(":img", $img);
         $sql->execute();
+    }
+
+    public function  updateCapa($codigo, $img_capa)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("UPDATE regstro_anexos SET `capa` = '1' WHERE codigo = :codigo AND img = :img_capa; ");
+        $sql->bindValue(":codigo", $codigo);
+        $sql->bindValue(":img_capa", $img_capa);
+        $sql->execute();
+        return true;
+    }
+    public function  ExcluirCapa($codigo)
+    {
+        global $pdo;
+
+        $sql = $pdo->prepare("UPDATE regstro_anexos SET `capa` = '0' WHERE codigo = :codigo; ");
+        $sql->bindValue(":codigo", $codigo);
+        $sql->execute();
+        return true;
     }
 }
