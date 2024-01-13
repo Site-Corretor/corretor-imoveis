@@ -47,7 +47,7 @@ class Principal
 
     public function visualizar(){
         global $pdo; 
-        $sql =$pdo->prepare("SELECT * FROM imoveis;");
+        $sql = $pdo->prepare("SELECT * FROM imoveis;");
         $sql->execute(); 
         $lista = $sql->fetchAll();
         if($sql->rowCount() > 0)
@@ -78,6 +78,35 @@ class Principal
         }
     }
 
+    public function imagem($codigo) {
+        global $pdo;
+        $sql = $pdo->prepare("SELECT * FROM regstro_anexos WHERE codigo = :codigo AND capa = 1;");
+        $sql->bindValue(":codigo", $codigo);
+        $sql->execute();
+        
+        $imagemCapa = $sql->fetch();
+        
+        if ($sql->rowCount() > 0) {
+            return $imagemCapa; 
+        } else {
+            return false;
+        }
+    }
+    
+    public function tdsImagem($codigo) {
+        global $pdo;
+        $sql = $pdo->prepare("SELECT * FROM regstro_anexos WHERE codigo = :codigo;");
+        $sql->bindValue(":codigo", $codigo);
+        $sql->execute();
+        
+        $imagemGeral = $sql->fetchAll();
+        
+        if ($sql->rowCount() > 0) {
+            return $imagemGeral; 
+        } else {
+            return false;
+        }
+    }
 
 }
 

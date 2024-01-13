@@ -7,6 +7,7 @@ $visualizar = $u->visualizar();
 
 $codigo = $_GET['codigo'];
 $imovel = $u->imovel($codigo);
+$imagem = $u->imagem($codigo);
 
 ?>
 
@@ -57,8 +58,8 @@ $imovel = $u->imovel($codigo);
                 </h1>
             </div>
             <div class="img-g-casa">
-                <img src="../../imagens/Residencias/CA001/25AA536A-5687-47F9-8B31-71FC6A96B16F.JPG" alt="" width=915px
-                    height=450px>
+                <?php echo '<img src="https://ricardosouzacorretor.com.br/admin/upload/' .$imagem['img'] . '"
+                    alt="Pré-visualização da imagem" width=915px height=450px>';?>
             </div>
 
             <div class="roda-pe">
@@ -86,103 +87,79 @@ $imovel = $u->imovel($codigo);
             </div>
         </section>
         <div class="galeria-container">
+            <?php 
+                for ($i = 0; $i < count($visualizar); $i++) {
+                    $imagensGerais = $u->tdsImagem($visualizar[$i]['codigo']);
+                        
+                    if ($imagensGerais) {
+                        foreach ($imagensGerais as $imagemGeral) {
+            ?>
             <div class="galeria">
-                <a href="../../imagens/Residencias/CA001/25AA536A-5687-47F9-8B31-71FC6A96B16F.JPG"
-                    onclick="openModal('../../imagens/Residencias/CA001/25AA536A-5687-47F9-8B31-71FC6A96B16F.JPG'); return false;">
-                    <img src="../../imagens/Residencias/CA001/25AA536A-5687-47F9-8B31-71FC6A96B16F.JPG" alt="Imagem 1"
-                        class="thumbnail">
-                </a>
-                <a href="../../imagens/Residencias/CA001/BDADD859-E1BB-4415-A19B-0F1760BB0FFB.JPG"
-                    onclick="openModal('../../imagens/Residencias/CA001/BDADD859-E1BB-4415-A19B-0F1760BB0FFB.JPG'); return false;">
-                    <img src="../../imagens/Residencias/CA001/BDADD859-E1BB-4415-A19B-0F1760BB0FFB.JPG" alt="Imagem 1"
-                        class="thumbnail">
-                </a>
-                <a href="../../imagens/Residencias/CA001/851600BC-904C-4DB6-83A6-E71518CB9D4E.JPG"
-                    onclick="openModal('../../imagens/Residencias/CA001/851600BC-904C-4DB6-83A6-E71518CB9D4E.JPG'); return false;">
-                    <img src="../../imagens/Residencias/CA001/851600BC-904C-4DB6-83A6-E71518CB9D4E.JPG" alt="Imagem 1"
-                        class="thumbnail">
-                </a>
-                <a href="../../imagens/Residencias/CA001/29F8ACFF-A169-47F0-9A76-2435E06B2109.JPG"
-                    onclick="openModal('../../imagens/Residencias/CA001/29F8ACFF-A169-47F0-9A76-2435E06B2109.JPG'); return false;">
-                    <img src="../../imagens/Residencias/CA001/29F8ACFF-A169-47F0-9A76-2435E06B2109.JPG" alt="Imagem 1"
-                        class="thumbnail">
-                </a>
-                <a href="../../imagens/Residencias/CA001/353038A2-EC8F-4D85-8B8F-2724C547C097.JPG"
-                    onclick="openModal('../../imagens/Residencias/CA001/353038A2-EC8F-4D85-8B8F-2724C547C097.JPG'); return false;">
-                    <img src="../../imagens/Residencias/CA001/353038A2-EC8F-4D85-8B8F-2724C547C097.JPG" alt="Imagem 1"
-                        class="thumbnail">
-                </a>
-                <a href="../../imagens/Residencias/CA001/99604075-DA29-4B09-8CEE-97C301E94D17.JPG"
-                    onclick="openModal('../../imagens/Residencias/CA001/99604075-DA29-4B09-8CEE-97C301E94D17.JPG'); return false;">
-                    <img src="../../imagens/Residencias/CA001/99604075-DA29-4B09-8CEE-97C301E94D17.JPG" alt="Imagem 1"
-                        class="thumbnail">
-                </a>
-                <a href="../../imagens/Residencias/CA001/4212B51F-06C3-4B67-BCC1-918DF02F20B1.JPG"
-                    onclick="openModal('../../imagens/Residencias/CA001/4212B51F-06C3-4B67-BCC1-918DF02F20B1.JPG'); return false;">
-                    <img src="../../imagens/Residencias/CA001/4212B51F-06C3-4B67-BCC1-918DF02F20B1.JPG" alt="Imagem 1"
-                        class="thumbnail">
+                <a href="https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>"
+                    onclick="openModal('https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
+                    <img src="https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>"
+                        alt="Pré-visualização da imagem" class="thumbnail">
                 </a>
             </div>
+            <?php
+                        }
+                    }
+                }
+            ?>
+
+
+            <div id="myModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+                <span class="next" onclick="changeImage(1)">&#10095;</span>
+                <img id="modalImage" class="modal-content">
+            </div>
+
+
+            <div class="descricao-casa-separada">
+                <h2>DESCRIÇÃO DA CASA</h2>
+                <h3 class="descricao-texto-casa-separada"><?php echo $imovel['titulo']?>
+                </h3>
+                <p class="descricao-texto-casa-separada"><?php echo $imovel['total_area']?>m²</p>
+                <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao']?></p>
+                <p class="descricao-texto-casa-separada"><b>PREÇO: R$ <?php echo $imovel['preco']?></b></p>
+            </div>
+
+
+
+            <div class="descricao-casa-separada">
+                <h2>CENTRAL DE NEGÓCIOS</h2>
+                <p class="descricao-texto-casa-separada">
+                    Para ter mais informações sobre este imóvel ligue:
+                </p>
+                <p class="descricao-texto-casa-separada">
+                    Ricardo Souza: (11) 97035-5935
+                </p>
+                <p class="descricao-texto-casa-separada">
+                    Victor Martins: (11) 95423-3209
+                </p>
+                <p class="descricao-texto-casa-separada">
+                    Email: ricardosouzanegocios@gmail.com
+                </p>
+                <p class="descricao-texto-casa-separada">
+                    Arujá - São Paulo
+                </p>
+
+            </div>
+            <div class="centralizar-conteudo">
+                <a href="index.php"><button class="voltar-button">Início</button></a>
+                <a href="geral.php"><button class="voltar-button">Voltar</button></a>
+            </div>
+
         </div>
-        <div id="myModal" class="modal">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-            <span class="next" onclick="changeImage(1)">&#10095;</span>
-            <img id="modalImage" class="modal-content">
-        </div>
-
-
-        <div class="descricao-casa-separada">
-            <h2>DESCRIÇÃO DA CASA</h2>
-            <h3 class="descricao-texto-casa-separada"><?php echo $imovel['titulo']?>
-            </h3>
-            <p class="descricao-texto-casa-separada"><?php echo $imovel['total_area']?>m²</p>
-            <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao']?></p>
-            <p class="descricao-texto-casa-separada"><b>PREÇO: R$ <?php echo $imovel['preco']?></b></p>
-        </div>
-
-
-
-        <div class="descricao-casa-separada">
-            <h2>CENTRAL DE NEGÓCIOS</h2>
-            <p class="descricao-texto-casa-separada">
-                Para ter mais informações sobre este imóvel ligue:
-            </p>
-            <p class="descricao-texto-casa-separada">
-                Ricardo Souza: (11) 97035-5935
-            </p>
-            <p class="descricao-texto-casa-separada">
-                Victor Martins: (11) 95423-3209
-            </p>
-            <p class="descricao-texto-casa-separada">
-                Email: ricardosouzanegocios@gmail.com
-            </p>
-            <p class="descricao-texto-casa-separada">
-                Arujá - São Paulo
-            </p>
-
-        </div>
-        <div class="centralizar-conteudo">
-            <a href="index.php"><button class="voltar-button">Início</button></a>
-            <a href="geral.php"><button class="voltar-button">Voltar</button></a>
-        </div>
-
-    </div>
-    <footer>
-        <p>&copy; 2023. Todos os direitos reservados.</p>
-    </footer>
+        <footer>
+            <p>&copy; 2023. Todos os direitos reservados.</p>
+        </footer>
 </body>
-<script>
+<!-- <script>
 var currentImageIndex = 0;
-var images = ["../../imagens/Residencias/CA001/25AA536A-5687-47F9-8B31-71FC6A96B16F.JPG",
-    "../../imagens/Residencias/CA001/BDADD859-E1BB-4415-A19B-0F1760BB0FFB.JPG",
-    "../../imagens/Residencias/CA001/851600BC-904C-4DB6-83A6-E71518CB9D4E.JPG",
-    "../../imagens/Residencias/CA001/29F8ACFF-A169-47F0-9A76-2435E06B2109.JPG",
-    "../../imagens/Residencias/CA001/353038A2-EC8F-4D85-8B8F-2724C547C097.JPG",
-    "../../imagens/Residencias/CA001/99604075-DA29-4B09-8CEE-97C301E94D17.JPG",
-    "../../imagens/Residencias/CA001/4212B51F-06C3-4B67-BCC1-918DF02F20B1.JPG"
-
-
+var images = [
+    "https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>"
 ]; // Preencha este array com os URLs das suas imagens
 
 function openModal(imageUrl) {
@@ -208,6 +185,41 @@ function changeImage(n) {
     var modalImage = document.getElementById("modalImage");
     modalImage.src = images[currentImageIndex];
 }
+</script> -->
+
+<script>
+var images = <?php echo json_encode($images); ?>; // Certifique-se de que $images é um array de URLs de imagens
+var currentImageIndex = 0;
+
+function openModal(imageUrl) {
+    var modal = document.getElementById("myModal");
+    var modalImage = document.getElementById("modalImage");
+    currentImageIndex = images.indexOf(imageUrl);
+    modal.style.display = "block";
+    modalImage.src = imageUrl;
+}
+
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
+function changeImage(n) {
+    currentImageIndex += n;
+
+    // Verifica se atingiu o limite inferior
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+    }
+    // Verifica se atingiu o limite superior
+    else if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+    }
+
+    var modalImage = document.getElementById("modalImage");
+    modalImage.src = images[currentImageIndex];
+}
 </script>
+
 
 </html>
