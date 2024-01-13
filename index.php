@@ -50,22 +50,6 @@ $visualizar = $u->visualizar();
             <div>
                 <img src="imagens/fotocapa.jpg" alt="casa 1">
             </div>
-            <div>
-                <img src="imagens/Residencias/CA004/IMG_4691.JPG" alt="casa 2">
-            </div>
-            <div>
-                <img src="imagens/Residencias/CA004/IMG_4692.JPG" alt="casa 3">
-            </div>
-            <div>
-                <img src="imagens/Residencias/CA008/IMG_4110.PNG" alt="casa 4">
-            </div>
-        </div>
-
-        <div class="slider-buttons">
-            <div class="slider-button" data-index="0"></div>
-            <div class="slider-button" data-index="1"></div>
-            <div class="slider-button" data-index="2"></div>
-            <div class="slider-button" data-index="3"></div>
         </div>
     </div>
     <section class="main">
@@ -107,7 +91,7 @@ $visualizar = $u->visualizar();
                 <a href="filtroTerrenos.php" class="botao-filtro">
                     <i class="icon-atuacao"><img src="imagens/Icones/terreno_icon.png" width=60px height=60px></i>
                     <h2>Terrenos</h2>
-                    <p>Diversas opções de lotes prontos para construção</p>
+                    <p>Diversas opções lotes residenciais e áreas industriais</p>
                 </a>
             </div>
         </div>

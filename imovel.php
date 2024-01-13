@@ -87,108 +87,86 @@ $imagem = $u->imagem($codigo);
             </div>
         </section>
         <div class="galeria-container">
-            <?php 
+
+            <div class="galeria">
+
+                <?php 
+                $images = [];
+
                 for ($i = 0; $i < count($visualizar); $i++) {
                     $imagensGerais = $u->tdsImagem($visualizar[$i]['codigo']);
-                        
+                
                     if ($imagensGerais) {
                         foreach ($imagensGerais as $imagemGeral) {
+                            $images[] = 'https://ricardosouzacorretor.com.br/admin/upload/' . $imagemGeral['img'];
+                
             ?>
-            <div class="galeria">
                 <a href="https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>"
                     onclick="openModal('https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
                     <img src="https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>"
                         alt="Pré-visualização da imagem" class="thumbnail">
                 </a>
-            </div>
-            <?php
+
+                <?php
                         }
                     }
                 }
             ?>
-
-
-            <div id="myModal" class="modal">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-                <span class="next" onclick="changeImage(1)">&#10095;</span>
-                <img id="modalImage" class="modal-content">
             </div>
+        </div>
 
 
-            <div class="descricao-casa-separada">
-                <h2>DESCRIÇÃO DA CASA</h2>
-                <h3 class="descricao-texto-casa-separada"><?php echo $imovel['titulo']?>
-                </h3>
-                <p class="descricao-texto-casa-separada"><?php echo $imovel['total_area']?>m²</p>
-                <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao']?></p>
-                <p class="descricao-texto-casa-separada"><b>PREÇO: R$ <?php echo $imovel['preco']?></b></p>
-            </div>
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+            <span class="next" onclick="changeImage(1)">&#10095;</span>
+            <img id="modalImage" class="modal-content">
+        </div>
+
+
+        <div class="descricao-casa-separada">
+            <h2>DESCRIÇÃO DA CASA</h2>
+            <h3 class="descricao-texto-casa-separada"><?php echo $imovel['titulo']?>
+            </h3>
+            <p class="descricao-texto-casa-separada"><?php echo $imovel['total_area']?>m²</p>
+            <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao']?></p>
+            <p class="descricao-texto-casa-separada"><b>PREÇO: R$ <?php echo $imovel['preco']?></b></p>
+        </div>
 
 
 
-            <div class="descricao-casa-separada">
-                <h2>CENTRAL DE NEGÓCIOS</h2>
-                <p class="descricao-texto-casa-separada">
-                    Para ter mais informações sobre este imóvel ligue:
-                </p>
-                <p class="descricao-texto-casa-separada">
-                    Ricardo Souza: (11) 97035-5935
-                </p>
-                <p class="descricao-texto-casa-separada">
-                    Victor Martins: (11) 95423-3209
-                </p>
-                <p class="descricao-texto-casa-separada">
-                    Email: ricardosouzanegocios@gmail.com
-                </p>
-                <p class="descricao-texto-casa-separada">
-                    Arujá - São Paulo
-                </p>
-
-            </div>
-            <div class="centralizar-conteudo">
-                <a href="index.php"><button class="voltar-button">Início</button></a>
-                <a href="geral.php"><button class="voltar-button">Voltar</button></a>
-            </div>
+        <div class="descricao-casa-separada">
+            <h2>CENTRAL DE NEGÓCIOS</h2>
+            <p class="descricao-texto-casa-separada">
+                Para ter mais informações sobre este imóvel ligue:
+            </p>
+            <p class="descricao-texto-casa-separada">
+                Ricardo Souza: (11) 97035-5935
+            </p>
+            <p class="descricao-texto-casa-separada">
+                Victor Martins: (11) 95423-3209
+            </p>
+            <p class="descricao-texto-casa-separada">
+                Email: ricardosouzanegocios@gmail.com
+            </p>
+            <p class="descricao-texto-casa-separada">
+                Arujá - São Paulo
+            </p>
 
         </div>
-        <footer>
-            <p>&copy; 2023. Todos os direitos reservados.</p>
-        </footer>
+        <div class="centralizar-conteudo">
+            <a href="index.php"><button class="voltar-button">Início</button></a>
+            <a href="geral.php"><button class="voltar-button">Voltar</button></a>
+        </div>
+
+    </div>
+    <footer>
+        <p>&copy; 2023. Todos os direitos reservados.</p>
+    </footer>
 </body>
-<!-- <script>
-var currentImageIndex = 0;
-var images = [
-    "https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>"
-]; // Preencha este array com os URLs das suas imagens
-
-function openModal(imageUrl) {
-    var modal = document.getElementById("myModal");
-    var modalImage = document.getElementById("modalImage");
-    currentImageIndex = images.indexOf(imageUrl);
-    modal.style.display = "block";
-    modalImage.src = imageUrl;
-}
-
-function closeModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-}
-
-function changeImage(n) {
-    currentImageIndex += n;
-    if (currentImageIndex < 0) {
-        currentImageIndex = images.length - 1;
-    } else if (currentImageIndex >= images.length) {
-        currentImageIndex = 0;
-    }
-    var modalImage = document.getElementById("modalImage");
-    modalImage.src = images[currentImageIndex];
-}
-</script> -->
 
 <script>
-var images = <?php echo json_encode($images); ?>; // Certifique-se de que $images é um array de URLs de imagens
+var images = <?php echo json_encode($images); ?>;
 var currentImageIndex = 0;
 
 function openModal(imageUrl) {
