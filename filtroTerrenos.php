@@ -74,9 +74,12 @@ foreach ($visualizar as $imovel) {
             
                 for($i=0;$i<count($visualizar);$i++){
                     if($visualizar[$i]['tipo_imovel']=='terreno'){
-                ?>
+                        $imagem = $u->imagem($visualizar[$i]['codigo']);
+                        ?>
+
             <div class="house">
-                <img src="../imagens/Residencias/CA001/25AA536A-5687-47F9-8B31-71FC6A96B16F.JPG" alt="CA001">
+                <?php echo '<img src="https://ricardosouzacorretor.com.br/admin/upload/' .$imagem['img'] . '"
+                                alt="Pré-visualização da imagem">';?>
                 <div class="house-details">
                     <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo']?></h3>
                     <p class="texto-descricao"><?php echo $visualizar[$i]['cidade']?></p>

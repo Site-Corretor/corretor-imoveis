@@ -105,12 +105,10 @@ $visualizar = $u->visualizar();
         <h1 class="destaque">Destaques</h1>
 
         <div class="house-list">
-
             <?php 
             for($i=0;$i<count($visualizar);$i++){
                 if($visualizar[$i]['destaque']=='sim'){
                 $imagem = $u->imagem($visualizar[$i]['codigo']);
-                
             ?>
             <div class="house">
                 <?php echo '<img src="https://ricardosouzacorretor.com.br/admin/upload/' .$imagem['img'] . '"

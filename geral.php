@@ -62,10 +62,12 @@ $visualizar = $u->visualizar();
     <section class="main">
         <div class="house-list">
             <?php 
-                for($i=0;$i<count($visualizar);$i++){
-                ?>
+            for($i=0;$i<count($visualizar);$i++){
+                $imagem = $u->imagem($visualizar[$i]['codigo']);
+            ?>
             <div class="house">
-                <img src="imagens/Residencias/CA003/IMG_3803.JPG" alt="Casa 1">
+                <?php echo '<img src="https://ricardosouzacorretor.com.br/admin/upload/' .$imagem['img'] . '"
+                    alt="Pré-visualização da imagem">';?>
                 <div class="house-details">
                     <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo']?></h3>
                     <p class="texto-descricao"><?php echo $visualizar[$i]['cidade']?></p>
@@ -84,6 +86,7 @@ $visualizar = $u->visualizar();
             </div>
             <?php
                 }
+            
             ?>
         </div>
 
