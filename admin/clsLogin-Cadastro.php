@@ -51,6 +51,20 @@ class User
             return false;
         }
     }
+    public function seguranca(){
+        global $pdo;
+        $sql = $pdo->prepare("SELECT * FROM seguranca;");   
+  
+        $sql->execute();
+        $lista = $sql->fetchAll();
+        if ($sql->rowCount() > 0) {
+            return $lista;
+        } else {
+            return false;
+        }
+    }
+
+   
 }
 
 ?>

@@ -101,8 +101,8 @@ if (isset($_POST['capa'])) {
 }
 
 if (isset($_POST['exluir-capa'])) {
-    for($i =0; $i < count($imagens); $i++){
-        if($imagens[$i]['capa'] == 1){
+    for ($i = 0; $i < count($imagens); $i++) {
+        if ($imagens[$i]['capa'] == 1) {
             $p->ExcluirCapa($codigo);
             echo "<script language='javascript'>alert('Capa excluida com sucesso');</script>";
         }
@@ -178,11 +178,14 @@ if (isset($_POST['exluir-capa'])) {
             </div>
             <button type="submit" class="btn btn-primary mt-3">Anexar Imagem</button>
             <?php
-            if (!empty($imagens[0]['capa'] == 1)) { ?>
-                <button type="submit" class="btn btn-warning mt-3" name="exluir-capa">Excluir Capa</button>
-            <?php }  ?>
+            // Verifica se existe uma imagem como capa
+            if (!empty($imagens)) {
+                if (!empty($imagens[0]['capa'] == 1)) { ?>
+                    <button type="submit" class="btn btn-warning mt-3" name="exluir-capa">Excluir Capa</button>
+            <?php }
+            } ?>
         </form>
-    
+
         <?php
         // Mostra as imagens existentes
         if (!empty($imagens)) {
