@@ -127,6 +127,14 @@ $imagem = $u->imagem($codigo);
             </h3>
             <p class="descricao-texto-casa-separada"><?php echo $imovel['total_area']?>m²</p>
             <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao']?></p>
+            <p class="descricao-texto-casa-separada">
+                <?php echo $imovel['dormitorios']?>
+                dormitórios |
+                <?php echo $imovel['banheiros']?>
+                banheiros |
+                <?php echo $imovel['vagas']?>
+                vagas de garagem
+            </p>
             <p class="descricao-texto-casa-separada"><b>PREÇO: R$ <?php echo $imovel['preco']?></b></p>
         </div>
 

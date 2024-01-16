@@ -117,14 +117,14 @@ $visualizar = $u->visualizar();
                     <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo']?></h3>
                     <p class="texto-descricao"><?php echo $visualizar[$i]['cidade']?></p>
                     <p class="descricao-casa"><i
-                            class="fas fa-ruler-combined favicon"></i><?php echo $visualizar[$i]['total_area']?></p>
+                            class="fas fa-ruler-combined favicon"></i><?php echo $visualizar[$i]['total_area']?>m²</p>
                     <p class="descricao-casa"><i
-                            class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios']?>
+                            class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios']?> dormitórios
                     </p>
                     <p class="descricao-casa"><i
-                            class="fas fa-restroom favicon"></i><?php echo $visualizar[$i]['banheiros']?></p>
+                            class="fas fa-restroom favicon"></i><?php echo $visualizar[$i]['banheiros']?> banheiros</p>
                     <p class="descricao-casa"><i
-                            class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas']?>
+                            class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas']?> vagas de garagem
                     </p>
                     <p class="border-descrica-casa"></p>
                     <a href=<?php echo "'imovel.php?codigo=".$visualizar[$i]['codigo']."'"?>><button
