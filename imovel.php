@@ -26,23 +26,28 @@ $imagem = $u->imagem($codigo);
     <style>
         /* Responsivo para telas médias e pequenas */
         @media only screen and (max-width: 768px) {
-            .casa {
+            .main-casa {
                 text-align: center;
+            }
+
+            .casa,
+            .img-g-casa {
+                margin: 0 auto;
+                max-width: 80%;
+                /* ou ajuste conforme necessário */
             }
 
             .casa h1 {
                 font-size: 28px;
                 margin-bottom: 10px;
-                /* Adicionando margem inferior para separar do restante do conteúdo */
             }
 
             .img-g-casa img {
                 width: 100%;
                 height: auto;
-                display: block;
-                margin: 0 auto;
-                /* Centralizando a imagem */
+                max-width: 100%;
             }
+
 
             .galeria img {
                 width: 100%;
