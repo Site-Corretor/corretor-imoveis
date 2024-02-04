@@ -2,7 +2,7 @@
 require_once 'clsPrincipal.php';
 $u = new Principal;
 $u->conectar();
-   
+
 $visualizar = $u->visualizar();
 
 $codigo = $_GET['codigo'];
@@ -24,7 +24,51 @@ $imagem = $u->imagem($codigo);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descrição da casa</title>
     <style>
+        /* Responsivo para telas médias e pequenas */
+        @media only screen and (max-width: 768px) {
+            .casa h1 {
+                font-size: 28px;
+            }
 
+            .img-g-casa img {
+                width: 100%;
+                height: auto;
+            }
+
+            .roda-pe .itens p {
+                font-size: 14px;
+            }
+
+            .galeria img {
+                width: 100%;
+                height: auto;
+            }
+
+            .descricao-casa-separada h2 {
+                font-size: 24px;
+            }
+
+            .descricao-casa-separada h3,
+            .descricao-casa-separada p {
+                font-size: 16px;
+            }
+
+            .descricao-texto-casa-separada {
+                font-size: 14px;
+            }
+
+            .voltar-button {
+                padding: 8px 40px;
+            }
+
+        }
+
+        @media only screen and (max-width: 576px) {
+            .galeria a {
+                width: 100%;
+                /* Exibe uma imagem por linha */
+            }
+        }
     </style>
 </head>
 
@@ -54,12 +98,12 @@ $imagem = $u->imagem($codigo);
 
             <div class="casa">
                 <h1>
-                    <?php echo $imovel['titulo']?>
+                    <?php echo $imovel['titulo'] ?>
                 </h1>
             </div>
             <div class="img-g-casa">
-                <?php echo '<img src="https://ricardosouzacorretor.com.br/admin/upload/' .$imagem['img'] . '"
-                    alt="Pré-visualização da imagem" width=915px height=450px>';?>
+                <?php echo '<img src="https://ricardosouzacorretor.com.br/admin/upload/' . $imagem['img'] . '"
+                    alt="Pré-visualização da imagem" width=915px height=450px>'; ?>
             </div>
 
             <div class="roda-pe">
@@ -87,28 +131,24 @@ $imagem = $u->imagem($codigo);
             </div>
         </section>
         <div class="galeria-container">
-
             <div class="galeria">
 
-                <?php 
+                <?php
                 $images = [];
                 $imagensGerais = $u->tdsImagem($codigo);
-                    
-                    if ($imagensGerais) {
-                        foreach ($imagensGerais as $imagemGeral) {
-                            $images[] = 'https://ricardosouzacorretor.com.br/admin/upload/' . $imagemGeral['img'];
-                
-            ?>
-                <a href="https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>"
-                    onclick="openModal('https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
-                    <img src="https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>"
-                        alt="Pré-visualização da imagem" class="thumbnail">
-                </a>
 
+                if ($imagensGerais) {
+                    foreach ($imagensGerais as $imagemGeral) {
+                        $images[] = 'https://ricardosouzacorretor.com.br/admin/upload/' . $imagemGeral['img'];
+
+                ?>
+                        <a href="https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>" onclick="openModal('https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
+                            <img src="https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>" alt="Pré-visualização da imagem" class="thumbnail">
+                        </a>
                 <?php
-                        }
                     }
-            ?>
+                }
+                ?>
             </div>
         </div>
 
@@ -123,19 +163,19 @@ $imagem = $u->imagem($codigo);
 
         <div class="descricao-casa-separada">
             <h2>DESCRIÇÃO DA CASA</h2>
-            <h3 class="descricao-texto-casa-separada"><?php echo $imovel['titulo']?>
+            <h3 class="descricao-texto-casa-separada"><?php echo $imovel['titulo'] ?>
             </h3>
-            <p class="descricao-texto-casa-separada"><?php echo $imovel['total_area']?>m²</p>
-            <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao']?></p>
+            <p class="descricao-texto-casa-separada"><?php echo $imovel['total_area'] ?>m²</p>
+            <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao'] ?></p>
             <p class="descricao-texto-casa-separada">
-                <?php echo $imovel['dormitorios']?>
+                <?php echo $imovel['dormitorios'] ?>
                 dormitórios |
-                <?php echo $imovel['banheiros']?>
+                <?php echo $imovel['banheiros'] ?>
                 banheiros |
-                <?php echo $imovel['vagas']?>
+                <?php echo $imovel['vagas'] ?>
                 vagas de garagem
             </p>
-            <p class="descricao-texto-casa-separada"><b>PREÇO: R$ <?php echo $imovel['preco']?></b></p>
+            <p class="descricao-texto-casa-separada"><b>PREÇO: R$ <?php echo $imovel['preco'] ?></b></p>
         </div>
 
 
@@ -171,37 +211,37 @@ $imagem = $u->imagem($codigo);
 </body>
 
 <script>
-var images = <?php echo json_encode($images); ?>;
-var currentImageIndex = 0;
+    var images = <?php echo json_encode($images); ?>;
+    var currentImageIndex = 0;
 
-function openModal(imageUrl) {
-    var modal = document.getElementById("myModal");
-    var modalImage = document.getElementById("modalImage");
-    currentImageIndex = images.indexOf(imageUrl);
-    modal.style.display = "block";
-    modalImage.src = imageUrl;
-}
-
-function closeModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-}
-
-function changeImage(n) {
-    currentImageIndex += n;
-
-    // Verifica se atingiu o limite inferior
-    if (currentImageIndex < 0) {
-        currentImageIndex = images.length - 1;
-    }
-    // Verifica se atingiu o limite superior
-    else if (currentImageIndex >= images.length) {
-        currentImageIndex = 0;
+    function openModal(imageUrl) {
+        var modal = document.getElementById("myModal");
+        var modalImage = document.getElementById("modalImage");
+        currentImageIndex = images.indexOf(imageUrl);
+        modal.style.display = "block";
+        modalImage.src = imageUrl;
     }
 
-    var modalImage = document.getElementById("modalImage");
-    modalImage.src = images[currentImageIndex];
-}
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    function changeImage(n) {
+        currentImageIndex += n;
+
+        // Verifica se atingiu o limite inferior
+        if (currentImageIndex < 0) {
+            currentImageIndex = images.length - 1;
+        }
+        // Verifica se atingiu o limite superior
+        else if (currentImageIndex >= images.length) {
+            currentImageIndex = 0;
+        }
+
+        var modalImage = document.getElementById("modalImage");
+        modalImage.src = images[currentImageIndex];
+    }
 </script>
 
 
