@@ -26,17 +26,22 @@ $imagem = $u->imagem($codigo);
     <style>
         /* Responsivo para telas médias e pequenas */
         @media only screen and (max-width: 768px) {
+            .casa {
+                text-align: center;
+            }
+
             .casa h1 {
                 font-size: 28px;
+                margin-bottom: 10px;
+                /* Adicionando margem inferior para separar do restante do conteúdo */
             }
 
             .img-g-casa img {
                 width: 100%;
                 height: auto;
-            }
-
-            .roda-pe .itens p {
-                font-size: 14px;
+                display: block;
+                margin: 0 auto;
+                /* Centralizando a imagem */
             }
 
             .galeria img {
@@ -61,13 +66,38 @@ $imagem = $u->imagem($codigo);
                 padding: 8px 40px;
             }
 
-        }
-
-        @media only screen and (max-width: 576px) {
-            .galeria a {
-                width: 100%;
-                /* Exibe uma imagem por linha */
+            .conteudo-centralizado {
+                text-align: center;
             }
+
+            .main-casa .casa h1 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .img-g-casa img {
+                width: 100%;
+                max-width: 600px;
+                height: auto;
+                margin: 0 auto;
+            }
+
+            .galeria a {
+                width: 50%;
+                box-sizing: border-box;
+            }
+
+            .galeria.descricao-casa-separada {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .galeria img {
+                width: 100%;
+                height: auto;
+            }
+
         }
     </style>
 </head>
@@ -93,9 +123,8 @@ $imagem = $u->imagem($codigo);
         <!--center-->
     </header>
     <div class="linha-horinzontal"></div>
-    <div class="container">
+    <div class="container conteudo-centralizado">
         <section class="main-casa">
-
             <div class="casa">
                 <h1>
                     <?php echo $imovel['titulo'] ?>
@@ -131,7 +160,7 @@ $imagem = $u->imagem($codigo);
             </div>
         </section>
         <div class="galeria-container">
-            <div class="galeria">
+            <div class="galeria descricao-casa-separada">
 
                 <?php
                 $images = [];
