@@ -24,28 +24,29 @@ $imagem = $u->imagem($codigo);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descrição da casa</title>
     <style>
+        .img-g-casa img {
+
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            margin: 0 auto;
+
+        }
+
         /* Responsivo para telas médias e pequenas */
         @media only screen and (max-width: 768px) {
             .main-casa {
                 text-align: center;
             }
 
-            .casa,
-            .img-g-casa {
-                margin: 0 auto;
-                max-width: 80%;
-                /* ou ajuste conforme necessário */
-            }
-
-            .casa h1 {
-                font-size: 28px;
-                margin-bottom: 10px;
+            .casa {
+                /* Centralize o texto */
+                text-align: center;
+                padding-left: calc((100% - 600px) / 2);
             }
 
             .img-g-casa img {
-                width: 100%;
-                height: auto;
-                max-width: 100%;
+               display: none;
             }
 
 
@@ -80,12 +81,13 @@ $imagem = $u->imagem($codigo);
                 margin-bottom: 20px;
             }
 
+            /* 
             .img-g-casa img {
                 width: 100%;
                 max-width: 600px;
                 height: auto;
                 margin: 0 auto;
-            }
+            } */
 
             .galeria a {
                 width: 50%;
@@ -137,7 +139,7 @@ $imagem = $u->imagem($codigo);
             </div>
             <div class="img-g-casa">
                 <?php echo '<img src="https://ricardosouzacorretor.com.br/admin/upload/' . $imagem['img'] . '"
-                    alt="Pré-visualização da imagem" width=915px height=450px>'; ?>
+        alt="Pré-visualização da imagem" >'; ?>
             </div>
 
             <div class="roda-pe">
