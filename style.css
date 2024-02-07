@@ -617,6 +617,20 @@ footer p {
         flex-direction: column;
         align-items: center;
     }
+    .tipos-imoveis {
+        display: flex;
+        flex-wrap: nowrap; /* Mantém os itens em uma linha, sem quebra */
+        overflow-x: auto; /* Adiciona uma barra de rolagem horizontal se os itens não couberem na tela */
+    
+    }
+    .fundo-ops{
+        width: 80px;
+    }
+
+    .botao-filtro {
+        flex: 0 0 auto; /* Permitir que os botões tenham tamanho automático */
+        margin: 10px; /* Adicionar margem entre os botões */
+    }
 
     .atuacao {
         width: 90%;
