@@ -42,7 +42,7 @@ $visualizar = $u->visualizar();
         <!--center-->
     </header>
 
-    <h1 class="sonho">Encontre o imóvel dos seus sonhos</h1>
+    <h1 class="sonho">Encontre o imóvel dos seus sonhossss</h1>
 
     <div class="tipos-imoveis">
         <a href="filtroResidencias.php" class="botao-filtro">
