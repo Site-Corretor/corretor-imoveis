@@ -137,7 +137,7 @@ $visualizar = $u->visualizar();
         ?>
             <a href="geral.php"><button class="house-button">Veja Mais</button></a>
         </div>
-        <img class="sombrasepara" src="imagens/sombra.png" width="800" height="11">
+        <img class="sombrasepara" src="imagens/sombra.png">
 
         <!-- <div class="sobre">
             <img class="foto"

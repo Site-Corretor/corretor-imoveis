@@ -356,6 +356,10 @@ footer {
     text-align: center;
     padding: 20px;
 }
+.sombrasepara {
+    max-width: 100%; /* Define a largura máxima como 100% do contêiner pai */
+    height: auto; /* Garante que a altura seja ajustada automaticamente para manter a proporção da imagem */
+}
 
 footer p {
     margin-bottom: 100px;
@@ -658,6 +662,10 @@ footer p {
         margin-left: 0;
         margin-top: 20px;
     }
+    .sombrasepara {
+        max-width: 100%; /* Define a largura máxima como 100% do contêiner pai */
+        height: auto; /* Garante que a altura seja ajustada automaticamente para manter a proporção da imagem */
+    }
 
     .roda-pe {
         display: flex;
@@ -773,6 +781,10 @@ footer p {
 
     footer p {
         margin-bottom: 0; /* Remova a margem inferior do parágrafo no rodapé */
+    }
+    .sombrasepara {
+        max-width: 100%; /* Define a largura máxima como 100% do contêiner pai */
+        height: auto; /* Garante que a altura seja ajustada automaticamente para manter a proporção da imagem */
     }
 
     .roda-pe {
