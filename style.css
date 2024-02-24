@@ -172,6 +172,19 @@ section.main {
     background-color: #703D13;
 }
 
+.house-button-2 {
+    background-color: #A49585;
+    border: none;
+    font-size: 17px;
+    border-radius: 50px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.house-button-2:hover {
+    background-color: #703D13;
+}
+
 .house:hover {
     border: 2px solid #703D13;
     /* Adicione a borda amarela no hover */
@@ -268,6 +281,9 @@ section.main {
     margin: 20px;
 }
 
+.house-button-2 {
+    margin: 20px;
+}
 
 .sobre {
     background-color: #A49585;
@@ -696,6 +712,10 @@ footer p {
         margin: 0; /* Remova as margens dos parágrafos para evitar espaçamento extra */
         font-size: 14px; /* Ajuste o tamanho da fonte para que caiba lado a lado */
     }
+
+    .house-button-2{
+        margin-bottom: 50px;
+    }
 }
 /* Responsivo */
 
@@ -783,8 +803,7 @@ footer p {
         margin-bottom: 0; /* Remova a margem inferior do parágrafo no rodapé */
     }
     .sombrasepara {
-        max-width: 100%; /* Define a largura máxima como 100% do contêiner pai */
-        height: auto; /* Garante que a altura seja ajustada automaticamente para manter a proporção da imagem */
+        display: none; /*oculta a linha de sombra*/
     }
 
     .roda-pe {
@@ -815,6 +834,10 @@ footer p {
     .roda-pe .itens p {
         margin: 0; /* Remova as margens dos parágrafos para evitar espaçamento extra */
         font-size: 14px; /* Ajuste o tamanho da fonte para que caiba lado a lado */
+    }
+
+    .house-button-2{
+        margin-bottom: 50px;
     }
 
 }

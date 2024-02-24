@@ -135,7 +135,7 @@ $visualizar = $u->visualizar();
             }
             }
         ?>
-            <a href="geral.php"><button class="house-button">Veja Mais</button></a>
+            <a href="geral.php"><button class="house-button-2">Veja Mais</button></a>
         </div>
         <img class="sombrasepara" src="imagens/sombra.png">
 
