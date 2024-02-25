@@ -60,7 +60,7 @@ if (isset($_POST['nome'])) {
                     <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
                 </div>
                 <div class="input-group w50">
-                    <label for="codigo">codigo</label>
+                    <label for="codigo">Código</label>
                     <input type="text" id="codigo" name="codigo" placeholder="codigo" required>
                 </div>
                 <div class="input-group w50">

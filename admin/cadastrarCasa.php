@@ -99,9 +99,9 @@ if (isset($_POST['cadastrar'])) {
                     <label for="tipo-imovel" class="form-label">Tipo de Imóvel</label>
                     <select class="form-control" name="tipoImovel">
                         <option value="escolha">Escolha um Imóvel</option>
-                        <option value="residencia">Residencia</option>
-                        <option value="comercio">Comercio</option>
-                        <option value="industria">Industria</option>
+                        <option value="residencia">Residência</option>
+                        <option value="comercio">Comércio</option>
+                        <option value="industria">Indústria</option>
                         <option value="terreno">Terreno</option>
                     </select>
 
