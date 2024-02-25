@@ -129,8 +129,8 @@ if (isset($_POST['pesquisar'])) {
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Codigo</th>
-                    <th scope="col">Titulo</th>
+                    <th scope="col">Código</th>
+                    <th scope="col">Título</th>
                     <th scope="col">Destaque</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Excluir</th>
