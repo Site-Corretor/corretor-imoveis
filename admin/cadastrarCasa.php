@@ -63,8 +63,9 @@ if (isset($_POST['cadastrar'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Imoveis.</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Cadastrar Imóveis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 </head>
 
@@ -97,7 +98,7 @@ if (isset($_POST['cadastrar'])) {
                 <div class="col-md-4">
                     <label for="tipo-imovel" class="form-label">Tipo de Imóvel</label>
                     <select class="form-control" name="tipoImovel">
-                        <option value="escolha">Escolha um Imovel</option>
+                        <option value="escolha">Escolha um Imóvel</option>
                         <option value="residencia">Residencia</option>
                         <option value="comercio">Comercio</option>
                         <option value="industria">Industria</option>
@@ -124,7 +125,7 @@ if (isset($_POST['cadastrar'])) {
                     <input type="text" class="form-control" name="cidade" placeholder="Cidade">
                 </div>
                 <div class="col-md-4">
-                    <label for="cidade" class="form-label">Casa Destaque</label>
+                    <label for="cidade" class="form-label">Imóvel Destaque</label>
                     <select class="form-control" name="destaque">
                         <option value="sim">Sim</option>
                         <option value="nao">Não</option>
@@ -132,7 +133,7 @@ if (isset($_POST['cadastrar'])) {
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-3" name="cadastrar">Cadastar Imovel</button>
+            <button type="submit" class="btn btn-primary mt-3" name="cadastrar">Cadastar Imóvel</button>
         </form>
     </div>
 </body>

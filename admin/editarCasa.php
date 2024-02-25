@@ -60,7 +60,8 @@ if (isset($_POST['editar'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Imoveis.</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 </head>
 
@@ -68,59 +69,67 @@ if (isset($_POST['editar'])) {
     <div class="container my-4">
         <form method="post">
             <a href="casasCadastradas.php" class="btn btn-primary mt-3 mb-3">Voltar</a>
-         
+
             <div class="row">
                 <div class="col-md-4">
                     <label for="titulo" class="form-label">Título</label>
-                    <input type="text" class="form-control" placeholder="Título" name="titulo" value="<?php echo $editarCasa[0]['titulo']; ?>">
+                    <input type="text" class="form-control" placeholder="Título" name="titulo"
+                        value="<?php echo $editarCasa[0]['titulo']; ?>">
                 </div>
 
                 <div class="col-md-4">
                     <label for="total-area" class="form-label">Total de Área</label>
-                    <input type="text" class="form-control" name="total-area" placeholder="Total de Área" value="<?php echo $editarCasa[0]['total_area']; ?>">
+                    <input type="text" class="form-control" name="total-area" placeholder="Total de Área"
+                        value="<?php echo $editarCasa[0]['total_area']; ?>">
                 </div>
 
                 <div class="col-md-4">
                     <label for="dormitorios" class="form-label">Dormitórios</label>
-                    <input type="text" class="form-control" name="dormitorios" placeholder="Dormitórios" value="<?php echo $editarCasa[0]['dormitorios']; ?>">
+                    <input type="text" class="form-control" name="dormitorios" placeholder="Dormitórios"
+                        value="<?php echo $editarCasa[0]['dormitorios']; ?>">
                 </div>
 
                 <div class="col-md-4">
                     <label for="banheiros" class="form-label">Banheiros</label>
-                    <input type="text" class="form-control" name="banheiros" placeholder="Banheiros" value="<?php echo $editarCasa[0]['banheiros']; ?>">
+                    <input type="text" class="form-control" name="banheiros" placeholder="Banheiros"
+                        value="<?php echo $editarCasa[0]['banheiros']; ?>">
                 </div>
 
                 <div class="col-md-4">
                     <label for="tipo-imovel" class="form-label">Tipo de Imóvel</label>
                     <select class="form-control" name="tipoImovel" value="<?php echo $editarCasa[0]['tipo_imovel']; ?>">
                         <option> <?php echo $editarCasa[0]['tipo_imovel']; ?></option>
-                        <option value="residencia">Residencia</option>
-                        <option value="comercio">Comercio</option>
-                        <option value="industria">Industria</option>
+                        <option value="residencia">Residência</option>
+                        <option value="comercio">Comércio</option>
+                        <option value="industria">Indústria</option>
                         <option value="terreno">Terreno</option>
                     </select>
 
                 </div>
                 <div class="col-md-4">
                     <label for="vagas" class="form-label">Vagas</label>
-                    <input type="text" class="form-control" name="vagas" placeholder="Vagas" value="<?php echo $editarCasa[0]['vagas']; ?>">
+                    <input type="text" class="form-control" name="vagas" placeholder="Vagas"
+                        value="<?php echo $editarCasa[0]['vagas']; ?>">
                 </div>
 
                 <div class="col-md-4">
                     <label for="preco" class="form-label">Preço</label>
-                    <input type="text" class="form-control" name="preco" placeholder="Preço" value="<?php echo $editarCasa[0]['preco']; ?>">
+                    <input type="text" class="form-control" name="preco" placeholder="Preço"
+                        value="<?php echo $editarCasa[0]['preco']; ?>">
                 </div>
 
                 <div class="col-md-8">
                     <label for="descricao" class="form-label">Descrição</label>
-                    <input type="text" class="form-control" name="descricao" placeholder="Descrição" value="<?php echo $editarCasa[0]['descricao']; ?>">
+                    <input type="text" class="form-control" name="descricao" placeholder="Descrição"
+                        value="<?php echo $editarCasa[0]['descricao']; ?>">
                 </div>
                 <div class="col-md-4">
                     <label for="cidade" class="form-label">Cidade</label>
-                    <input type="text" class="form-control" name="cidade" placeholder="Cidade" value="<?php echo $editarCasa[0]['cidade']; ?>">
+                    <input type="text" class="form-control" name="cidade" placeholder="Cidade"
+                        value="<?php echo $editarCasa[0]['cidade']; ?>">
                 </div>
                 <div class="col-md-4">
-                    <label for="cidade" class="form-label">Casa Destaque</label>
+                    <label for="cidade" class="form-label">Imóvel Destaque</label>
                     <select class="form-control" name="destaque">
                         <option value="sim">Sim</option>
                         <option value="nao">Não</option>
@@ -128,7 +137,7 @@ if (isset($_POST['editar'])) {
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-3" name="editar">Salvar Imovel</button>
+            <button type="submit" class="btn btn-primary mt-3" name="editar">Salvar Imóvel</button>
             <a href="imagem.php?codigo=<?php echo $codigo ?>" class="btn btn-primary mt-3" target="_blank">Imagens</a>
         </form>
     </div>

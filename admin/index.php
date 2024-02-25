@@ -43,10 +43,10 @@ if(isset($_POST['entrar'])) {
         <form method="POST" class="formLogin">
             <h1>Login</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
-            <label for="usuario" name="usuario">Usuario</label>
-            <input type="usuario"  name="usuario" placeholder="Digite seu usuario" autofocus="true" />
+            <label for="usuario" name="usuario">Usuário</label>
+            <input type="usuario" name="usuario" placeholder="Digite seu usuario" autofocus="true" />
             <label for="senha">Senha</label>
-            <input type="password" name="senha"  placeholder="Digite sua senha" />
+            <input type="password" name="senha" placeholder="Digite sua senha" />
             <a href="cadastro.php">Criar Cadastro</a>
             <input type="submit" name="entrar" class="btn" />
         </form>
