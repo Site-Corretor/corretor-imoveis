@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['deleteImage']) && !empty($_POST['deleteImage'])) {
 
         $ftp_host = "62.72.62.235";
-        $ftp_user = "u830382291";
+        $ftp_user = "u830382291.u830382291";
         $ftp_pass = "Ricardosouza1";
 
         // $img = $_GET['img'];
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ftp_login($ftp_connection, $ftp_user, $ftp_pass) or die("Couldn't login to ftp server");
         ftp_pasv($ftp_connection, true);
 
-        $remover = '/public_html/admin/upload/';
+        $remover = '/admin/upload/';
         $remote_file = $remover . $img; // Combine o caminho do diretório remoto com o nome do arquivo
 
         if (ftp_delete($ftp_connection, $remote_file)) {

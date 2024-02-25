@@ -44,12 +44,12 @@ if (isset($_FILES['imagem']) && is_array($_FILES['imagem']['name'])) {
     ftp_login($ftp_connection, $ftp_user, $ftp_pass) or die("Couldn't login to ftp server");
     ftp_pasv($ftp_connection, true);
 
-    $uploadDirectory = '/public_html/admin/upload/';
+    $uploadDirectory = '/admin/upload/';
 
     $filesToUpload = array_filter($_FILES['imagem']['name']);
     $filesToUpload = array_values($filesToUpload);
 
-    foreach ($filesToUpload as $i => $fileName) {
+    foreach ($filesToUpload as $i => $fileName) {   
         $fileName = $_FILES['imagem']['name'][$i];
         $fileTmpName = $_FILES['imagem']['tmp_name'][$i];
 
@@ -118,51 +118,52 @@ if (isset($_POST['exluir-capa'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <title>Envio de Imagem</title>
     <style>
-        body {
-            background-color: #f8f9fa;
-        }
+    body {
+        background-color: #f8f9fa;
+    }
 
-        #page {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
+    #page {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
 
-        h2 {
-            color: #007bff;
-        }
+    h2 {
+        color: #007bff;
+    }
 
-        .custom-file {
-            margin-bottom: 20px;
-        }
+    .custom-file {
+        margin-bottom: 20px;
+    }
 
-        .image-container {
-            display: inline-block;
-            margin: 10px;
-            text-align: center;
-            width: calc(33.33% - 20px);
-            /* 33.33% para três imagens por linha com margens de 10px */
-        }
+    .image-container {
+        display: inline-block;
+        margin: 10px;
+        text-align: center;
+        width: calc(33.33% - 20px);
+        /* 33.33% para três imagens por linha com margens de 10px */
+    }
 
-        .image-container img {
-            width: 150px;
-            /* Largura desejada */
-            height: 150px;
-            /* Altura desejada */
-            object-fit: cover;
-            border-radius: 5px;
-        }
+    .image-container img {
+        width: 150px;
+        /* Largura desejada */
+        height: 150px;
+        /* Altura desejada */
+        object-fit: cover;
+        border-radius: 5px;
+    }
 
-        .delete-form {
-            margin-top: 10px;
-        }
+    .delete-form {
+        margin-top: 10px;
+    }
     </style>
 </head>
 
@@ -181,7 +182,7 @@ if (isset($_POST['exluir-capa'])) {
             // Verifica se existe uma imagem como capa
             if (!empty($imagens)) {
                 if (!empty($imagens[0]['capa'] == 1)) { ?>
-                    <button type="submit" class="btn btn-warning mt-3" name="exluir-capa">Excluir Capa</button>
+            <button type="submit" class="btn btn-warning mt-3" name="exluir-capa">Excluir Capa</button>
             <?php }
             } ?>
         </form>
@@ -193,7 +194,7 @@ if (isset($_POST['exluir-capa'])) {
             foreach ($imagens as $imagem) {
                 echo '<div class="col-md-4 image-container">';
                 // echo '<img src="' . $imagem['img'] . '" alt="Pré-visualização da imagem">';
-                echo '<img src="https://ricardosouzacorretor.com.br/admin/upload/' . $imagem['img'] . '" alt="Pré-visualização da imagem">';
+                echo '<img src="https://ricardosouzaimoveis.com.br/admin/upload/' . $imagem['img'] . '" alt="Pré-visualização da imagem">';
                 echo '<form method="post" action="excluir_imagem.php?codigo=' . $codigo . '&img=' . $imagem['img'] . '" class="delete-form">';
                 echo '<input type="hidden" name="codigo" value="' . $codigo . '">';
                 echo '<input type="hidden" name="img" value="' . $imagem['img']  . '">';

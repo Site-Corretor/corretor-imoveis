@@ -111,7 +111,7 @@ $visualizar = $u->visualizar();
                 $imagem = $u->imagem($visualizar[$i]['codigo']);
             ?>
             <div class="house">
-                <?php echo '<img src="https://ricardosouzacorretor.com.br/admin/upload/' .$imagem['img'] . '"
+                <?php echo '<img src="https://ricardosouzaimoveis.com.br/admin/upload/' .$imagem['img'] . '"
                     alt="Pré-visualização da imagem">';?>
                 <div class="house-details">
                     <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo']?></h3>

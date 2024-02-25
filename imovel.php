@@ -24,64 +24,64 @@ $imagem = $u->imagem($codigo);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descrição da casa</title>
     <style>
-        .img-g-casa img {
+    .img-g-casa img {
 
-            width: 100%;
-            height: auto;
-            max-width: 600px;
-            margin: 0 auto;
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+        margin: 0 auto;
 
+    }
+
+    /* Responsivo para telas médias e pequenas */
+    @media only screen and (max-width: 768px) {
+        .main-casa {
+            text-align: center;
         }
 
-        /* Responsivo para telas médias e pequenas */
-        @media only screen and (max-width: 768px) {
-            .main-casa {
-                text-align: center;
-            }
+        .casa {
+            /* Centralize o texto */
+            text-align: center;
+            padding-left: calc((100% - 600px) / 2);
+        }
 
-            .casa {
-                /* Centralize o texto */
-                text-align: center;
-                padding-left: calc((100% - 600px) / 2);
-            }
-
-            .img-g-casa img {
-               display: none;
-            }
+        .img-g-casa img {
+            display: none;
+        }
 
 
-            .galeria img {
-                width: 100%;
-                height: auto;
-            }
+        .galeria img {
+            width: 100%;
+            height: auto;
+        }
 
-            .descricao-casa-separada h2 {
-                font-size: 24px;
-            }
+        .descricao-casa-separada h2 {
+            font-size: 24px;
+        }
 
-            .descricao-casa-separada h3,
-            .descricao-casa-separada p {
-                font-size: 16px;
-            }
+        .descricao-casa-separada h3,
+        .descricao-casa-separada p {
+            font-size: 16px;
+        }
 
-            .descricao-texto-casa-separada {
-                font-size: 14px;
-            }
+        .descricao-texto-casa-separada {
+            font-size: 14px;
+        }
 
-            .voltar-button {
-                padding: 8px 40px;
-            }
+        .voltar-button {
+            padding: 8px 40px;
+        }
 
-            .conteudo-centralizado {
-                text-align: center;
-            }
+        .conteudo-centralizado {
+            text-align: center;
+        }
 
-            .main-casa .casa h1 {
-                text-align: center;
-                margin-bottom: 20px;
-            }
+        .main-casa .casa h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-            /* 
+        /* 
             .img-g-casa img {
                 width: 100%;
                 max-width: 600px;
@@ -89,23 +89,23 @@ $imagem = $u->imagem($codigo);
                 margin: 0 auto;
             } */
 
-            .galeria a {
-                width: 50%;
-                box-sizing: border-box;
-            }
-
-            .galeria.descricao-casa-separada {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .galeria img {
-                width: 100%;
-                height: auto;
-            }
-
+        .galeria a {
+            width: 50%;
+            box-sizing: border-box;
         }
+
+        .galeria.descricao-casa-separada {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .galeria img {
+            width: 100%;
+            height: auto;
+        }
+
+    }
     </style>
 </head>
 
@@ -138,7 +138,7 @@ $imagem = $u->imagem($codigo);
                 </h1>
             </div>
             <div class="img-g-casa">
-                <?php echo '<img src="https://ricardosouzacorretor.com.br/admin/upload/' . $imagem['img'] . '"
+                <?php echo '<img src="https://ricardosouzaimoveis.com.br/admin/upload/' . $imagem['img'] . '"
         alt="Pré-visualização da imagem" >'; ?>
             </div>
 
@@ -175,12 +175,14 @@ $imagem = $u->imagem($codigo);
 
                 if ($imagensGerais) {
                     foreach ($imagensGerais as $imagemGeral) {
-                        $images[] = 'https://ricardosouzacorretor.com.br/admin/upload/' . $imagemGeral['img'];
+                        $images[] = 'https://ricardosouzaimoveis.com.br/admin/upload/' . $imagemGeral['img'];
 
                 ?>
-                        <a href="https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>" onclick="openModal('https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
-                            <img src="https://ricardosouzacorretor.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>" alt="Pré-visualização da imagem" class="thumbnail">
-                        </a>
+                <a href="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>"
+                    onclick="openModal('https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
+                    <img src="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>"
+                        alt="Pré-visualização da imagem" class="thumbnail">
+                </a>
                 <?php
                     }
                 }
@@ -247,37 +249,37 @@ $imagem = $u->imagem($codigo);
 </body>
 
 <script>
-    var images = <?php echo json_encode($images); ?>;
-    var currentImageIndex = 0;
+var images = <?php echo json_encode($images); ?>;
+var currentImageIndex = 0;
 
-    function openModal(imageUrl) {
-        var modal = document.getElementById("myModal");
-        var modalImage = document.getElementById("modalImage");
-        currentImageIndex = images.indexOf(imageUrl);
-        modal.style.display = "block";
-        modalImage.src = imageUrl;
+function openModal(imageUrl) {
+    var modal = document.getElementById("myModal");
+    var modalImage = document.getElementById("modalImage");
+    currentImageIndex = images.indexOf(imageUrl);
+    modal.style.display = "block";
+    modalImage.src = imageUrl;
+}
+
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
+function changeImage(n) {
+    currentImageIndex += n;
+
+    // Verifica se atingiu o limite inferior
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+    }
+    // Verifica se atingiu o limite superior
+    else if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
     }
 
-    function closeModal() {
-        var modal = document.getElementById("myModal");
-        modal.style.display = "none";
-    }
-
-    function changeImage(n) {
-        currentImageIndex += n;
-
-        // Verifica se atingiu o limite inferior
-        if (currentImageIndex < 0) {
-            currentImageIndex = images.length - 1;
-        }
-        // Verifica se atingiu o limite superior
-        else if (currentImageIndex >= images.length) {
-            currentImageIndex = 0;
-        }
-
-        var modalImage = document.getElementById("modalImage");
-        modalImage.src = images[currentImageIndex];
-    }
+    var modalImage = document.getElementById("modalImage");
+    modalImage.src = images[currentImageIndex];
+}
 </script>
 
 
