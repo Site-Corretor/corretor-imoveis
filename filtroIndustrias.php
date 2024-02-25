@@ -52,13 +52,13 @@ foreach ($visualizar as $imovel) {
 
     <div class="tipos-imoveis">
         <a href="filtroResidencias.php" class="botao-filtro">
-            <div class="opcoes borda-ops fundo-ops">Residencias</div>
+            <div class="opcoes borda-ops fundo-ops">Residências</div>
         </a>
         <a href="filtroComercios.php" class="botao-filtro">
             <div class="opcoes borda-ops fundo-ops">Comércios</div>
         </a>
         <a href="filtroIndustrias.php" class="botao-filtro">
-            <div class="opcoes borda-ops fundo-ops">Industrias</div>
+            <div class="opcoes borda-ops fundo-ops">Indústrias</div>
         </a>
         <a href="filtroTerrenos.php" class="botao-filtro">
             <div class="opcoes borda-ops fundo-ops">Terrenos</div>
@@ -66,7 +66,7 @@ foreach ($visualizar as $imovel) {
     </div>
 
     <section class="main">
-        <h2 class="nome-lista">Industrias disponíveis</h2>
+        <h2 class="nome-lista">Indústrias disponíveis</h2>
         <div class="house-list">
             <?php
             if($temIndustrias){
@@ -104,7 +104,7 @@ foreach ($visualizar as $imovel) {
 
             <div class="error-image">
                 <img src="imagens/Icones/error.png" height=200px>
-                <h2 class="nome-lista">Infelizmente não temos nenhuma industria disponível no momento</h2>
+                <h2 class="nome-lista">Infelizmente não temos nenhuma indústria disponível no momento</h2>
             </div>
 
             <?php
