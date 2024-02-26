@@ -84,7 +84,7 @@ class User
     public function casaDestaque()
     {
         global $pdo;
-        $sql = $pdo->prepare("SELECT * FROM imoveis where destaque = 'sim';");
+        $sql = $pdo->prepare("SELECT * FROM imoveis where destaque = 'sim' AND ativo = 1;");
         $sql->execute();
         $lista = $sql->fetchAll();
         if ($sql->rowCount() > 0) {

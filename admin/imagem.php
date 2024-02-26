@@ -71,6 +71,8 @@ if (isset($_FILES['imagem']) && is_array($_FILES['imagem']['name'])) {
             $img = $codigo . "-" . $i . "." . $fileExtension; // Use o caminho remoto no banco de dados
             $caminho = $uploadDirectory;
             $p->updateImagem($codigo, $caminho, $img);
+            echo "<script language='javascript'>alert('Salvo Com Sucesso');</script>";
+            echo "<script language='javascript'>window.location.href='imagem.php?codigo=$codigo';</script>";
         } else {
             echo "Erro ao fazer upload do arquivo $fileName para o FTP\n";
         }

@@ -10,6 +10,8 @@ require_once 'clsControle.php';
 $u = new user;
 $u->conectar();
 $editarCasa  = $u->EditarCasa($codigo);
+$casaDestaque  = $u->casaDestaque();
+
 
 if (isset($_POST['editar'])) {
     $titulo = $_POST['titulo'];
@@ -131,6 +133,7 @@ if (isset($_POST['editar'])) {
                 <div class="col-md-4">
                     <label for="cidade" class="form-label">Imóvel Destaque</label>
                     <select class="form-control" name="destaque">
+                        <option> <?php echo $editarCasa[0]['destaque']; ?></option>
                         <option value="sim">Sim</option>
                         <option value="nao">Não</option>
                     </select>
