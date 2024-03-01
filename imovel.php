@@ -200,26 +200,28 @@ $imagem = $u->imagem($codigo);
 
 
         <div class="descricao-casa-separada">
-            <h2>DESCRIÇÃO DA CASA</h2>
+            <h3>DESCRIÇÃO DO IMÓVEL</h3><wbr>
             <h3 class="descricao-texto-casa-separada"><?php echo $imovel['titulo'] ?>
             </h3>
-            <p class="descricao-texto-casa-separada"><?php echo $imovel['total_area'] ?>m²</p>
-            <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao'] ?></p>
-            <p class="descricao-texto-casa-separada">
+            <!--<p class="descricao-texto-casa-separada"><?php echo $imovel['total_area'] ?>m²</p>-->
+            <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao1'] ?></p>
+            <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao2'] ?></p>
+            <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao3'] ?></p>
+            <!--<p class="descricao-texto-casa-separada">
                 <?php echo $imovel['dormitorios'] ?>
                 dormitórios |
                 <?php echo $imovel['banheiros'] ?>
                 banheiros |
                 <?php echo $imovel['vagas'] ?>
                 vagas de garagem
-            </p>
-            <p class="descricao-texto-casa-separada"><b>PREÇO: R$ <?php echo $imovel['preco'] ?></b></p>
+            </p>-->
+            <p class="descricao-texto-casa-separada"><b><?php echo $imovel['preco'] ?></b></p>
         </div>
 
 
 
         <div class="descricao-casa-separada">
-            <h2>CENTRAL DE NEGÓCIOS</h2>
+            <h3>CENTRAL DE NEGÓCIOS</h3><wbr>
             <p class="descricao-texto-casa-separada">
                 Para ter mais informações sobre este imóvel ligue:
             </p>

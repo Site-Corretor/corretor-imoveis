@@ -109,6 +109,7 @@ $visualizar = $u->visualizar();
             for($i=0;$i<count($visualizar);$i++){
                 if($visualizar[$i]['destaque']=='sim'){
                 $imagem = $u->imagem($visualizar[$i]['codigo']);
+                if ($visualizar[$i]['ativo'] == 1) {
             ?>
             <div class="house">
                 <?php echo '<img src="https://ricardosouzaimoveis.com.br/admin/upload/' .$imagem['img'] . '"
@@ -116,22 +117,24 @@ $visualizar = $u->visualizar();
                 <div class="house-details">
                     <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo']?></h3>
                     <p class="texto-descricao"><?php echo $visualizar[$i]['cidade']?></p>
-                    <p class="descricao-casa"><i
+                    <!--<p class="descricao-casa"><i
                             class="fas fa-ruler-combined favicon"></i><?php echo $visualizar[$i]['total_area']?>m²</p>
                     <p class="descricao-casa"><i
-                            class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios']?> dormitórios
-                    </p>
+                            class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios']?> dormitórios</p>
                     <p class="descricao-casa"><i
                             class="fas fa-restroom favicon"></i><?php echo $visualizar[$i]['banheiros']?> banheiros</p>
                     <p class="descricao-casa"><i
                             class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas']?> vagas de garagem
-                    </p>
+                    </p>-->
+                    <wbr>
+                    <p class="casa-descricao"><b><?php echo $visualizar[$i]['preco'] ?></b></p>
                     <p class="border-descrica-casa"></p>
                     <a href=<?php echo "'imovel.php?codigo=".$visualizar[$i]['codigo']."'"?>><button
                             class="house-button">Saber Mais</button></a>
                 </div>
             </div>
             <?php
+                }
             }
             }
         ?>
