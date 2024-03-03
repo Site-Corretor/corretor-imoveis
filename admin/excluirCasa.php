@@ -10,17 +10,17 @@ require_once 'clsControle.php';
 $u = new user;
 $u->conectar();
 $VisualizarCasa  = $u->VisualizarCasa($codigo);
-$editarCasa  = $u->ExcluiCasa($codigo);
 
-if (isset($_POST['excluir'])) {
+if (isset($_POST['excluirCasa'])) {
     if ($u->msgErro == "") {
-        $u->ExcluiCasa($codigo);
+        $editarCasa  = $u->ExcluiCasa($codigo);
         echo "<script language='javascript'>alert('Excluido com sucesso');</script>";
         echo "<script language='javascript'>window.location.href='casasCadastradas.php';</script>";
     } else {
         echo "Erro: " . $u->msgErro;
     }
 }
+
 
 
 
@@ -33,8 +33,7 @@ if (isset($_POST['excluir'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Imóveis</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 </head>
 
@@ -46,8 +45,7 @@ if (isset($_POST['excluir'])) {
             <div class="row">
                 <div class="col-md-8">
                     <label for="titulo" class="form-label">Título</label>
-                    <input type="text" class="form-control" placeholder="Título" name="titulo"
-                        value="<?php echo $VisualizarCasa[0]['titulo'];   ?>" disabled>
+                    <input type="text" class="form-control" placeholder="Título" name="titulo" value="<?php echo $VisualizarCasa[0]['titulo'];   ?>" disabled>
                 </div>
 
                 <!--<div class="col-md-4">
@@ -70,8 +68,7 @@ if (isset($_POST['excluir'])) {
 
                 <div class="col-md-4">
                     <label for="tipo-imovel" class="form-label">Tipo de Imóvel</label>
-                    <select class="form-control" name="tipoImovel"
-                        value="<?php echo $VisualizarCasa[0]['tipo_imovel']; ?>" disabled>
+                    <select class="form-control" name="tipoImovel" value="<?php echo $VisualizarCasa[0]['tipo_imovel']; ?>" disabled>
                         <option> <?php echo $VisualizarCasa[0]['tipo_imovel']; ?></option>
                         <option value="residencia">Residência</option>
                         <option value="comercio">Comércio</option>
@@ -88,28 +85,23 @@ if (isset($_POST['excluir'])) {
 
                 <div class="col-md-12">
                     <label for="descricao" class="form-label">Descrição 1</label>
-                    <input type="text" class="form-control" name="descricao1" placeholder="Descrição"
-                        value="<?php echo $VisualizarCasa[0]['descricao1']; ?>" disabled>
+                    <input type="text" class="form-control" name="descricao1" placeholder="Descrição" value="<?php echo $VisualizarCasa[0]['descricao1']; ?>" disabled>
                 </div>
                 <div class="col-md-12">
                     <label for="descricao" class="form-label">Descrição 2</label>
-                    <input type="text" class="form-control" name="descricao2" placeholder="Descrição"
-                        value="<?php echo $VisualizarCasa[0]['descricao2']; ?>" disabled>
+                    <input type="text" class="form-control" name="descricao2" placeholder="Descrição" value="<?php echo $VisualizarCasa[0]['descricao2']; ?>" disabled>
                 </div>
                 <div class="col-md-12">
                     <label for="descricao" class="form-label">Descrição 3</label>
-                    <input type="text" class="form-control" name="descricao3" placeholder="Descrição"
-                        value="<?php echo $VisualizarCasa[0]['descricao3']; ?>" disabled>
+                    <input type="text" class="form-control" name="descricao3" placeholder="Descrição" value="<?php echo $VisualizarCasa[0]['descricao3']; ?>" disabled>
                 </div>
                 <div class="col-md-4">
                     <label for="preco" class="form-label">Preço</label>
-                    <input type="text" class="form-control" name="preco" placeholder="Preço"
-                        value="<?php echo $VisualizarCasa[0]['preco']; ?>" disabled>
+                    <input type="text" class="form-control" name="preco" placeholder="Preço" value="<?php echo $VisualizarCasa[0]['preco']; ?>" disabled>
                 </div>
                 <div class="col-md-4">
                     <label for="cidade" class="form-label">Cidade</label>
-                    <input type="text" class="form-control" name="cidade" placeholder="Cidade"
-                        value="<?php echo $VisualizarCasa[0]['cidade']; ?>" disabled>
+                    <input type="text" class="form-control" name="cidade" placeholder="Cidade" value="<?php echo $VisualizarCasa[0]['cidade']; ?>" disabled>
                 </div>
                 <div class="col-md-4">
                     <label for="cidade" class="form-label">Imóvel Destaque</label>
@@ -120,7 +112,7 @@ if (isset($_POST['excluir'])) {
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-3" name="excluir">Excluir Imóvel</button>
+            <button type="submit" class="btn btn-primary mt-3" name="excluirCasa">Excluir Imóvel</button>
 
         </form>
     </div>
