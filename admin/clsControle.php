@@ -25,7 +25,7 @@ class User
         return true;
     }
 
-    public function cadastrarImovel($titulo, $descricao, $total_area, $dormitorios, $banheiros, $tipoImovel, $vagas, $preco, $cidade, $destaque)
+    public function cadastrarImovel($titulo, $tipoImovel, $descricao1, $descricao2, $descricao3, $preco, $cidade, $destaque)
     {
         global $pdo;
 
@@ -38,16 +38,14 @@ class User
         } while ($jaExiste);
 
 
-        $sql = $pdo->prepare("INSERT INTO imoveis (codigo,titulo, descricao,total_area,dormitorios,banheiros,tipo_imovel,vagas,preco,cidade,destaque) 
-        VALUES (:codigo,:titulo,:descricao,:total_area,:dormitorios,:banheiros,:tipo_imovel,:vagas,:preco,:cidade,:destaque);");
+        $sql = $pdo->prepare("INSERT INTO imoveis (codigo, titulo, tipo_imovel, descricao1, descricao2, descricao3, preco, cidade, destaque) 
+        VALUES (:codigo,:titulo,:tipo_imovel,:descricao1,:descricao2,:descricao3,:preco,:cidade,:destaque);");
         $sql->bindValue(":codigo", $codigo);
         $sql->bindValue(":titulo", $titulo);
-        $sql->bindValue(":descricao", $descricao);
-        $sql->bindValue(":total_area", $total_area);
-        $sql->bindValue(":dormitorios", $dormitorios);
-        $sql->bindValue(":banheiros", $banheiros);
         $sql->bindValue(":tipo_imovel", $tipoImovel);
-        $sql->bindValue(":vagas", $vagas);
+        $sql->bindValue(":descricao1", $descricao1);
+        $sql->bindValue(":descricao2", $descricao2);
+        $sql->bindValue(":descricao3", $descricao3);
         $sql->bindValue(":preco", $preco);
         $sql->bindValue(":cidade", $cidade);
         $sql->bindValue(":destaque", $destaque);
@@ -108,21 +106,18 @@ class User
         }
     }
 
-    public function EditarImovel($codigo, $titulo, $descricao, $total_area, $dormitorios, $banheiros, $tipoImovel, $vagas, $preco, $cidade, $destaque)
+    public function EditarImovel($codigo, $titulo, $tipoImovel, $descricao1, $descricao2, $descricao3, $preco, $cidade, $destaque)
     {
         global $pdo;
 
-        $sql = $pdo->prepare("UPDATE imoveis SET `titulo` = :titulo, `descricao` = :descricao, `total_area` = :total_area, `dormitorios` = :dormitorios, `banheiros` = :banheiros, `tipo_imovel` = :tipo_imovel, `vagas` = :vagas, `preco` = :preco, `cidade` = :cidade, `destaque` = :destaque   
-        WHERE codigo = :codigo;");
+        $sql = $pdo->prepare("UPDATE imoveis SET `titulo` = :titulo, `tipo_imovel` = :tipo_imovel, `descricao1` = :descricao1, `descricao2` = :descricao2, `descricao3` = :descricao3, `preco` = :preco, `cidade` = :cidade, `destaque` = :destaque WHERE codigo = :codigo;");
 
         $sql->bindValue(":codigo", $codigo);
         $sql->bindValue(":titulo", $titulo);
-        $sql->bindValue(":descricao", $descricao);
-        $sql->bindValue(":total_area", $total_area);
-        $sql->bindValue(":dormitorios", $dormitorios);
-        $sql->bindValue(":banheiros", $banheiros);
         $sql->bindValue(":tipo_imovel", $tipoImovel);
-        $sql->bindValue(":vagas", $vagas);
+        $sql->bindValue(":descricao1", $descricao1);
+        $sql->bindValue(":descricao2", $descricao2);
+        $sql->bindValue(":descricao3", $descricao3);
         $sql->bindValue(":preco", $preco);
         $sql->bindValue(":cidade", $cidade);
         $sql->bindValue(":destaque", $destaque);

@@ -15,7 +15,7 @@ $editarCasa  = $u->ExcluiCasa($codigo);
 if (isset($_POST['excluir'])) {
     if ($u->msgErro == "") {
         $u->ExcluiCasa($codigo);
-        echo "<script language='javascript'>alert('excluido  Com Sucesso');</script>";
+        echo "<script language='javascript'>alert('Excluido com sucesso');</script>";
         echo "<script language='javascript'>window.location.href='casasCadastradas.php';</script>";
     } else {
         echo "Erro: " . $u->msgErro;
@@ -44,13 +44,13 @@ if (isset($_POST['excluir'])) {
             <a href="casasCadastradas.php" class="btn btn-primary mt-3 mb-3">Voltar</a>
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-8">
                     <label for="titulo" class="form-label">Título</label>
                     <input type="text" class="form-control" placeholder="Título" name="titulo"
                         value="<?php echo $VisualizarCasa[0]['titulo'];   ?>" disabled>
                 </div>
 
-                <div class="col-md-4">
+                <!--<div class="col-md-4">
                     <label for="total-area" class="form-label">Total de Área</label>
                     <input type="text" class="form-control" name="total-area" placeholder="Total de Área"
                         value="<?php echo $VisualizarCasa[0]['total_area']; ?>" disabled>
@@ -66,7 +66,7 @@ if (isset($_POST['excluir'])) {
                     <label for="banheiros" class="form-label">Banheiros</label>
                     <input type="text" class="form-control" name="banheiros" placeholder="Banheiros"
                         value="<?php echo $VisualizarCasa[0]['banheiros']; ?>" disabled>
-                </div>
+                </div>-->
 
                 <div class="col-md-4">
                     <label for="tipo-imovel" class="form-label">Tipo de Imóvel</label>
@@ -80,22 +80,31 @@ if (isset($_POST['excluir'])) {
                     </select>
 
                 </div>
-                <div class="col-md-4">
+                <!--<div class="col-md-4">
                     <label for="vagas" class="form-label">Vagas</label>
                     <input type="text" class="form-control" name="vagas" placeholder="Vagas"
                         value="<?php echo $VisualizarCasa[0]['vagas']; ?>" disabled>
-                </div>
+                </div>-->
 
+                <div class="col-md-12">
+                    <label for="descricao" class="form-label">Descrição 1</label>
+                    <input type="text" class="form-control" name="descricao1" placeholder="Descrição"
+                        value="<?php echo $VisualizarCasa[0]['descricao1']; ?>" disabled>
+                </div>
+                <div class="col-md-12">
+                    <label for="descricao" class="form-label">Descrição 2</label>
+                    <input type="text" class="form-control" name="descricao2" placeholder="Descrição"
+                        value="<?php echo $VisualizarCasa[0]['descricao2']; ?>" disabled>
+                </div>
+                <div class="col-md-12">
+                    <label for="descricao" class="form-label">Descrição 3</label>
+                    <input type="text" class="form-control" name="descricao3" placeholder="Descrição"
+                        value="<?php echo $VisualizarCasa[0]['descricao3']; ?>" disabled>
+                </div>
                 <div class="col-md-4">
                     <label for="preco" class="form-label">Preço</label>
                     <input type="text" class="form-control" name="preco" placeholder="Preço"
                         value="<?php echo $VisualizarCasa[0]['preco']; ?>" disabled>
-                </div>
-
-                <div class="col-md-8">
-                    <label for="descricao" class="form-label">Descrição</label>
-                    <input type="text" class="form-control" name="descricao" placeholder="Descrição"
-                        value="<?php echo $VisualizarCasa[0]['descricao']; ?>" disabled>
                 </div>
                 <div class="col-md-4">
                     <label for="cidade" class="form-label">Cidade</label>

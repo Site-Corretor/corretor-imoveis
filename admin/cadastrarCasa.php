@@ -12,13 +12,15 @@ $VisualizarImoveis = $u->VisualizarImoveis();
 
 if (isset($_POST['cadastrar'])) {
     $titulo = $_POST['titulo'];
-    $total_area = $_POST['total-area'];
+    $tipoImovel = $_POST['tipoImovel'];
+    /*$total_area = $_POST['total-area'];
     $dormitorios = $_POST['dormitorios'];
     $banheiros = $_POST['banheiros'];
-    $tipoImovel = $_POST['tipoImovel'];
-    $vagas = $_POST['vagas'];
+    $vagas = $_POST['vagas'];*/
+    $descricao1 = $_POST['descricao1'];
+    $descricao2 = $_POST['descricao2'];
+    $descricao3 = $_POST['descricao3'];
     $preco = $_POST['preco'];
-    $descricao = $_POST['descricao'];
     $cidade = $_POST['cidade'];
     $destaque = $_POST['destaque'];
 
@@ -27,7 +29,7 @@ if (isset($_POST['cadastrar'])) {
     } else {
         if ($u->msgErro == "") {
             if ($destaque == "nao") {
-                $codigo = $u->cadastrarImovel($titulo, $descricao, $total_area, $dormitorios, $banheiros, $tipoImovel, $vagas, $preco, $cidade, $destaque);
+                $codigo = $u->cadastrarImovel($titulo, $tipoImovel, $descricao1, $descricao2, $descricao3, /*$total_area, $dormitorios, $banheiros, $vagas,*/ $preco, $cidade, $destaque);
                 if ($codigo) {
                     print_r($codigo);
                     echo "<script language='javascript'>alert('Salvo Com Sucesso');</script>";
@@ -39,7 +41,7 @@ if (isset($_POST['cadastrar'])) {
                 if (count($casaDestaque) >= 6) {
                     echo "<script language='javascript'>alert('Você ultrapassou o limite de imoveis em destaque.');</script>";
                 } else {
-                    $codigo = $u->cadastrarImovel($titulo, $descricao, $total_area, $dormitorios, $banheiros, $tipoImovel, $vagas, $preco, $cidade, $destaque);
+                    $codigo = $u->cadastrarImovel($titulo, $tipoImovel, $descricao1, $descricao2, $descricao3, /*$total_area, $dormitorios, $banheiros, $vagas,*/ $preco, $cidade, $destaque);
                     if ($codigo) {
                         echo "<script language='javascript'>alert('Salvo Com Sucesso');</script>";
                         echo "<script language='javascript'>window.location.href='imagem.php?codigo=$codigo';</script>";
@@ -75,25 +77,25 @@ if (isset($_POST['cadastrar'])) {
             <a href="menu.php" class="btn btn-primary mt-3 mb-3">Voltar</a>
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-8">
                     <label for="titulo" class="form-label">Título</label>
                     <input type="text" class="form-control" placeholder="Título" name="titulo">
                 </div>
 
-                <div class="col-md-4">
+                <!--<div class="col-md-4">
                     <label for="total-area" class="form-label">Total de Área</label>
                     <input type="text" class="form-control" name="total-area" placeholder="Total de Área">
-                </div>
+            </div>
 
-                <div class="col-md-4">
-                    <label for="dormitorios" class="form-label">Dormitórios</label>
-                    <input type="text" class="form-control" name="dormitorios" placeholder="Dormitórios">
-                </div>
+            <div class="col-md-4">
+                <label for="dormitorios" class="form-label">Dormitórios</label>
+                <input type="text" class="form-control" name="dormitorios" placeholder="Dormitórios">
+            </div>
 
-                <div class="col-md-4">
-                    <label for="banheiros" class="form-label">Banheiros</label>
-                    <input type="text" class="form-control" name="banheiros" placeholder="Banheiros">
-                </div>
+            <div class="col-md-4">
+                <label for="banheiros" class="form-label">Banheiros</label>
+                <input type="text" class="form-control" name="banheiros" placeholder="Banheiros">
+            </div>-->
 
                 <div class="col-md-4">
                     <label for="tipo-imovel" class="form-label">Tipo de Imóvel</label>
@@ -106,19 +108,26 @@ if (isset($_POST['cadastrar'])) {
                     </select>
 
                 </div>
-                <div class="col-md-4">
+                <!--<div class="col-md-4">
                     <label for="vagas" class="form-label">Vagas</label>
                     <input type="text" class="form-control" name="vagas" placeholder="Vagas">
-                </div>
+            </div>-->
 
+                <div class="col-md-12">
+                    <label for="descricao" class="form-label">Descrição 1</label>
+                    <input type="text" class="form-control" name="descricao1" placeholder="Descrição">
+                </div>
+                <div class="col-md-12">
+                    <label for="descricao" class="form-label">Descrição 2</label>
+                    <input type="text" class="form-control" name="descricao2" placeholder="Descrição">
+                </div>
+                <div class="col-md-12">
+                    <label for="descricao" class="form-label">Descrição 3</label>
+                    <input type="text" class="form-control" name="descricao3" placeholder="Descrição">
+                </div>
                 <div class="col-md-4">
                     <label for="preco" class="form-label">Preço</label>
                     <input type="text" class="form-control" name="preco" placeholder="Preço">
-                </div>
-
-                <div class="col-md-8">
-                    <label for="descricao" class="form-label">Descrição</label>
-                    <input type="text" class="form-control" name="descricao" placeholder="Descrição">
                 </div>
                 <div class="col-md-4">
                     <label for="cidade" class="form-label">Cidade</label>
