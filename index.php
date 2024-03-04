@@ -176,10 +176,10 @@ $visualizar = $u->visualizar();
                 <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
             </div>
             <div class="itens">
-                <img src="imagens/Icones/lupa.png" width=40px height=40px>
-                <p>Venda</p>
-                <p>Locação</p>
-                <p>Terrenos</p>
+                <a href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
+                    <img src="imagens/Icones/instagram.png" width=40px height=40px>
+                </a>
+                <p>@ricardonsouzaimoveis</p>
             </div>
         </div>
     </section>

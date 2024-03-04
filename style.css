@@ -7,7 +7,7 @@
 
 body {
     background-color: #eee;
-    width:  100%;
+    width: 100%;
 }
 
 .center {
@@ -372,9 +372,12 @@ footer {
     text-align: center;
     padding: 20px;
 }
+
 .sombrasepara {
-    max-width: 100%; /* Define a largura máxima como 100% do contêiner pai */
-    height: auto; /* Garante que a altura seja ajustada automaticamente para manter a proporção da imagem */
+    max-width: 100%;
+    /* Define a largura máxima como 100% do contêiner pai */
+    height: auto;
+    /* Garante que a altura seja ajustada automaticamente para manter a proporção da imagem */
 }
 
 footer p {
@@ -400,6 +403,7 @@ footer p {
     margin-top: -30px;
     padding: 0 0 0 235px;
 }
+
 .galeria {
     display: flex;
     flex-wrap: wrap;
@@ -412,6 +416,7 @@ footer p {
     padding: 0 20px;
     box-sizing: border-box;
 }
+
 .galeria-container {
     max-width: 100%;
     padding: 0 20px;
@@ -530,7 +535,7 @@ footer p {
     cursor: pointer;
     margin: 20px;
 
-    
+
 }
 
 .voltar-button:hover {
@@ -585,17 +590,19 @@ footer p {
     margin-top: 20px;
     margin-bottom: 35px;
 }
-.botao-filtro{
+
+.botao-filtro {
     text-decoration: none;
     color: black;
 }
-.atuacao:hover{
+
+.atuacao:hover {
     background-color: #703D13;
     transform: scale(1.03);
-   
+
 }
 
-.error-image{
+.error-image {
     text-align: center;
 }
 
@@ -603,8 +610,10 @@ footer p {
 @media (max-width: 768px) {
 
     body {
-        overflow-x: hidden; /* Oculta a barra de rolagem horizontal */
+        overflow-x: hidden;
+        /* Oculta a barra de rolagem horizontal */
     }
+
     .center {
         flex-direction: column;
         align-items: center;
@@ -637,19 +646,25 @@ footer p {
         flex-direction: column;
         align-items: center;
     }
+
     .tipos-imoveis {
         display: flex;
-        flex-wrap: nowrap; /* Mantém os itens em uma linha, sem quebra */
-        overflow-x: auto; /* Adiciona uma barra de rolagem horizontal se os itens não couberem na tela */
-    
+        flex-wrap: nowrap;
+        /* Mantém os itens em uma linha, sem quebra */
+        overflow-x: auto;
+        /* Adiciona uma barra de rolagem horizontal se os itens não couberem na tela */
+
     }
-    .fundo-ops{
+
+    .fundo-ops {
         width: 80px;
     }
 
     .botao-filtro {
-        flex: 0 0 auto; /* Permitir que os botões tenham tamanho automático */
-        margin: 10px; /* Adicionar margem entre os botões */
+        flex: 0 0 auto;
+        /* Permitir que os botões tenham tamanho automático */
+        margin: 10px;
+        /* Adicionar margem entre os botões */
     }
 
     .atuacao {
@@ -678,9 +693,12 @@ footer p {
         margin-left: 0;
         margin-top: 20px;
     }
+
     .sombrasepara {
-        max-width: 100%; /* Define a largura máxima como 100% do contêiner pai */
-        height: auto; /* Garante que a altura seja ajustada automaticamente para manter a proporção da imagem */
+        max-width: 100%;
+        /* Define a largura máxima como 100% do contêiner pai */
+        height: auto;
+        /* Garante que a altura seja ajustada automaticamente para manter a proporção da imagem */
     }
 
     .roda-pe {
@@ -690,33 +708,39 @@ footer p {
         background-color: #333;
         color: white;
         padding: 10px 0;
-        flex-wrap: wrap; /* Permite que os itens possam quebrar linha quando não houver espaço suficiente */
+        flex-wrap: wrap;
+        /* Permite que os itens possam quebrar linha quando não houver espaço suficiente */
     }
-    
+
     .roda-pe .logo,
     .roda-pe .separa,
     .roda-pe .itens {
-        margin: 0 10px; /* Adicione margem entre os elementos */
+        margin: 0 10px;
+        /* Adicione margem entre os elementos */
     }
-    
+
     .roda-pe .itens {
         display: flex;
         align-items: center;
     }
-    
+
     .roda-pe .itens img {
-        margin-right: 5px; /* Adicione margem entre a imagem e o texto */
-    }
-    
-    .roda-pe .itens p {
-        margin: 0; /* Remova as margens dos parágrafos para evitar espaçamento extra */
-        font-size: 14px; /* Ajuste o tamanho da fonte para que caiba lado a lado */
+        margin-right: 5px;
+        /* Adicione margem entre a imagem e o texto */
     }
 
-    .house-button-2{
+    .roda-pe .itens p {
+        margin: 0;
+        /* Remova as margens dos parágrafos para evitar espaçamento extra */
+        font-size: 14px;
+        /* Ajuste o tamanho da fonte para que caiba lado a lado */
+    }
+
+    .house-button-2 {
         margin-bottom: 50px;
     }
 }
+
 /* Responsivo */
 
 @media (max-width: 576px) {
@@ -771,20 +795,25 @@ footer p {
         max-width: 100%;
         height: auto;
     }
-    
+
     .tipos-imoveis {
         display: flex;
-        flex-wrap: nowrap; /* Mantém os itens em uma linha, sem quebra */
-        overflow-x: auto; /* Adiciona uma barra de rolagem horizontal se os itens não couberem na tela */
-    
+        flex-wrap: nowrap;
+        /* Mantém os itens em uma linha, sem quebra */
+        overflow-x: auto;
+        /* Adiciona uma barra de rolagem horizontal se os itens não couberem na tela */
+
     }
-    .fundo-ops{
+
+    .fundo-ops {
         width: 80px;
     }
 
     .botao-filtro {
-        flex: 0 0 auto; /* Permitir que os botões tenham tamanho automático */
-        margin: 10px; /* Adicionar margem entre os botões */
+        flex: 0 0 auto;
+        /* Permitir que os botões tenham tamanho automático */
+        margin: 10px;
+        /* Adicionar margem entre os botões */
     }
 
 
@@ -794,16 +823,19 @@ footer p {
         margin-top: 20px;
     }
 
-      footer {
+    footer {
         padding: 20px;
         text-align: center;
     }
 
     footer p {
-        margin-bottom: 0; /* Remova a margem inferior do parágrafo no rodapé */
+        margin-bottom: 0;
+        /* Remova a margem inferior do parágrafo no rodapé */
     }
+
     .sombrasepara {
-        display: none; /*oculta a linha de sombra*/
+        display: none;
+        /*oculta a linha de sombra*/
     }
 
     .roda-pe {
@@ -813,30 +845,35 @@ footer p {
         background-color: #333;
         color: white;
         padding: 10px 0;
-        flex-wrap: wrap; /* Permite que os itens possam quebrar linha quando não houver espaço suficiente */
+        flex-wrap: wrap;
+        /* Permite que os itens possam quebrar linha quando não houver espaço suficiente */
     }
-    
+
     .roda-pe .logo,
     .roda-pe .separa,
     .roda-pe .itens {
-        margin: 0 10px; /* Adicione margem entre os elementos */
+        margin: 0 10px;
+        /* Adicione margem entre os elementos */
     }
-    
+
     .roda-pe .itens {
         display: flex;
         align-items: center;
     }
-    
+
     .roda-pe .itens img {
-        margin-right: 5px; /* Adicione margem entre a imagem e o texto */
-    }
-    
-    .roda-pe .itens p {
-        margin: 0; /* Remova as margens dos parágrafos para evitar espaçamento extra */
-        font-size: 14px; /* Ajuste o tamanho da fonte para que caiba lado a lado */
+        margin-right: 5px;
+        /* Adicione margem entre a imagem e o texto */
     }
 
-    .house-button-2{
+    .roda-pe .itens p {
+        margin: 0;
+        /* Remova as margens dos parágrafos para evitar espaçamento extra */
+        font-size: 14px;
+        /* Ajuste o tamanho da fonte para que caiba lado a lado */
+    }
+
+    .house-button-2 {
         margin-bottom: 50px;
     }
 
