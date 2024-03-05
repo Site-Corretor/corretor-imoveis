@@ -69,12 +69,14 @@ foreach ($visualizar as $imovel) {
         <h2 class="nome-lista">Indústrias disponíveis</h2>
         <div class="house-list">
             <?php
+            $temIndustriasAtivas = false;
             if($temIndustrias){
                 
                 for($i=0;$i<count($visualizar);$i++){
                     if($visualizar[$i]['tipo_imovel']=='industria'){
                         $imagem = $u->imagem($visualizar[$i]['codigo']);
                         if ($visualizar[$i]['ativo'] == 1) {
+                            $temIndustriasAtivas = true;
                         ?>
 
             <div class="house">
@@ -103,7 +105,7 @@ foreach ($visualizar as $imovel) {
                 }
                 }
                 }
-            }else{
+            }if(!$temIndustriasAtivas){
             ?>
 
             <div class="error-image">

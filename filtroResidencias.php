@@ -6,6 +6,7 @@ $u->conectar();
 $visualizar = $u->visualizar();
 
 $temResidencias = false;
+
 foreach ($visualizar as $imovel) {
     if ($imovel['tipo_imovel'] == 'residencia') {
         $temResidencias = true;
@@ -69,12 +70,15 @@ foreach ($visualizar as $imovel) {
         <h2 class="nome-lista">Residências disponíveis</h2>
         <div class="house-list">
             <?php
+            $temResidenciasAtivas = false;
+            
             if($temResidencias){ 
                 
                 for($i=0;$i<count($visualizar);$i++){
                     if($visualizar[$i]['tipo_imovel']=='residencia'){
                     $imagem = $u->imagem($visualizar[$i]['codigo']);
                     if ($visualizar[$i]['ativo'] == 1) {
+                        $temResidenciasAtivas = true;
             ?>
 
             <div class="house">
@@ -104,7 +108,7 @@ foreach ($visualizar as $imovel) {
                 }
                  }
                  }    
-            }else{
+            }if(!$temResidenciasAtivas){
             ?>
 
             <div class="error-image">

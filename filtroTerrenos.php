@@ -70,12 +70,14 @@ foreach ($visualizar as $imovel) {
         <h2 class="nome-lista">Terrenos disponíveis</h2>
         <div class="house-list">
             <?php 
+            $temTerrenosAtivos = false;
             if($temTerrenos){
             
                 for($i=0;$i<count($visualizar);$i++){
                     if($visualizar[$i]['tipo_imovel']=='terreno'){
                         $imagem = $u->imagem($visualizar[$i]['codigo']);
                         if ($visualizar[$i]['ativo'] == 1) {
+                            $temTerrenosAtivos = true; 
                         ?>
 
             <div class="house">
@@ -104,7 +106,7 @@ foreach ($visualizar as $imovel) {
                 }
                 }
                 }
-            }else{
+            }if(!$temTerrenosAtivos){
             ?>
 
             <div class="error-image">
