@@ -207,6 +207,7 @@ $imagem = $u->imagem($codigo);
             <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao1'] ?></p>
             <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao2'] ?></p>
             <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao3'] ?></p>
+            <p class="descricao-texto-casa-separada"><?php echo $imovel['cidade'] ?></p>
             <!--<p class="descricao-texto-casa-separada">
                 <?php echo $imovel['dormitorios'] ?>
                 dormitórios |

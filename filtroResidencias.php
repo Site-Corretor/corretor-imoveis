@@ -53,13 +53,13 @@ foreach ($visualizar as $imovel) {
 
     <div class="tipos-imoveis">
         <a href="filtroResidencias.php" class="botao-filtro">
-            <div class="opcoes borda-ops fundo-ops">Residências</div>
+            <div class="opcoes borda-ops fundo-ops">Residencial</div>
         </a>
         <a href="filtroComercios.php" class="botao-filtro">
-            <div class="opcoes borda-ops fundo-ops">Comércios</div>
+            <div class="opcoes borda-ops fundo-ops">Comercial</div>
         </a>
         <a href="filtroIndustrias.php" class="botao-filtro">
-            <div class="opcoes borda-ops fundo-ops">Indústrias</div>
+            <div class="opcoes borda-ops fundo-ops">Industrial</div>
         </a>
         <a href="filtroTerrenos.php" class="botao-filtro">
             <div class="opcoes borda-ops fundo-ops">Terrenos</div>
