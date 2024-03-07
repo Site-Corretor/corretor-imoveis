@@ -66,7 +66,9 @@ $visualizar = $u->visualizar();
                 $imagem = $u->imagem($visualizar[$i]['codigo']);
                 if ($visualizar[$i]['ativo'] == 1) {
             ?>
-            <div class="house">
+            <div class="house"
+                onclick="window.location='<?php echo 'imovel.php?codigo=' . $visualizar[$i]['codigo']; ?>'"
+                style="cursor: pointer;">
                 <?php echo '<img src="https://ricardosouzaimoveis.com.br/admin/upload/' .$imagem['img'] . '"
                     alt="Pré-visualização da imagem">';?>
                 <div class="house-details">
@@ -105,7 +107,7 @@ $visualizar = $u->visualizar();
                 <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
                     <img src="imagens/Icones/whatsapp.png" width=40px height=40px>
                 </a>
-                <p>(11) 97035-5935</p>
+                <p>WhatsApp</p>
             </div>
             <div class="separa">
                 <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">

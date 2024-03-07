@@ -42,10 +42,14 @@
             Para ter mais informações sobre algum dos nossos imóveis entre em contato:
         </p>
         <p class="descricao-texto-casa-separada">
-            Ricardo Souza: (11) 97035-5935
+            Ricardo Souza: (11) 97035-5935 <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
+                <img src="imagens/Icones/whatsapp.png" width=13px height=13px>
+            </a>
         </p>
         <p class="descricao-texto-casa-separada">
-            Victor Martins: (11) 95423-3209
+            Victor Martins: (11) 95423-3209 <a href="https://api.whatsapp.com/send?phone=5511954233209" target="_blank">
+                <img src="imagens/Icones/whatsapp.png" width=13px height=13px>
+            </a>
         </p>
         <p class="descricao-texto-casa-separada">
             Email: ricardosouzanegocios@gmail.com
@@ -70,7 +74,7 @@
             <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
                 <img src="imagens/Icones/whatsapp.png" width=40px height=40px>
             </a>
-            <p>(11) 97035-5935</p>
+            <p>WhatsApp</p>
         </div>
         <div class="separa">
             <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">

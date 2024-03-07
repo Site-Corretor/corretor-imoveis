@@ -65,7 +65,7 @@ $visualizar = $u->visualizar();
 
         <div class="atuacoes">
 
-            <div class="atuacao">
+            <div class="atuacao" onclick="window.location='filtroResidencias.php'" style=" cursor: pointer;">
                 <a href="filtroResidencias.php" class="botao-filtro">
                     <i class="icon-atuacao"><img src="imagens/Icones/residencia_icon.png" width=60px height=60px></i>
                     <h2>Residencial</h2>
@@ -73,21 +73,21 @@ $visualizar = $u->visualizar();
                 </a>
             </div>
 
-            <div class="atuacao">
+            <div class="atuacao" onclick="window.location='filtroComercios.php'" style=" cursor: pointer;">
                 <a href="filtroComercios.php" class="botao-filtro">
                     <i class="icon-atuacao"><img src="imagens/Icones/comercio_icon.png" width=60px height=60px></i>
                     <h2>Comercial</h2>
                     <p>Encontre o espaço ideal para o seu negócio</p>
                 </a>
             </div>
-            <div class="atuacao">
+            <div class="atuacao" onclick="window.location='filtroIndustrias.php'" style=" cursor: pointer;">
                 <a href="filtroIndustrias.php" class="botao-filtro">
                     <i class="icon-atuacao"><img src="imagens/Icones/industria_icon.png" width=60px height=60px></i>
                     <h2>Industrial</h2>
                     <p>Galpões que atendem a necessidade da sua empresa</p>
                 </a>
             </div>
-            <div class="atuacao">
+            <div class="atuacao" onclick="window.location='filtroTerrenos.php'" style=" cursor: pointer;">
                 <a href="filtroTerrenos.php" class="botao-filtro">
                     <i class="icon-atuacao"><img src="imagens/Icones/terreno_icon.png" width=60px height=60px></i>
                     <h2>Terrenos</h2>
@@ -111,7 +111,10 @@ $visualizar = $u->visualizar();
                 $imagem = $u->imagem($visualizar[$i]['codigo']);
                 if ($visualizar[$i]['ativo'] == 1) {
             ?>
-            <div class="house">
+
+            <div class="house"
+                onclick="window.location=' <?php echo 'imovel.php?codigo=' . $visualizar[$i]['codigo']; ?>'"
+                style="cursor: pointer;">
                 <?php echo '<img src="https://ricardosouzaimoveis.com.br/admin/upload/' .$imagem['img'] . '"
                     alt="Pré-visualização da imagem">';?>
                 <div class="house-details">
@@ -133,6 +136,8 @@ $visualizar = $u->visualizar();
                             class="house-button">Saber Mais</button></a>
                 </div>
             </div>
+
+
             <?php
                 }
             }
@@ -170,7 +175,7 @@ $visualizar = $u->visualizar();
                 <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
                     <img src="imagens/Icones/whatsapp.png" width=40px height=40px>
                 </a>
-                <p>(11) 97035-5935</p>
+                <p>WhatsApp</p>
             </div>
             <div class="separa">
                 <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
