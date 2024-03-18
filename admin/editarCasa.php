@@ -64,8 +64,8 @@ if (isset($_POST['editar'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Imóveis</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="short cut icon" type="image/x-icon" href="../imagens/logo-ricardo.ico">
 
 </head>
 
@@ -77,8 +77,7 @@ if (isset($_POST['editar'])) {
             <div class="row">
                 <div class="col-md-8">
                     <label for="titulo" class="form-label">Título</label>
-                    <input type="text" class="form-control" placeholder="Título" name="titulo"
-                        value="<?php echo $editarCasa[0]['titulo']; ?>">
+                    <input type="text" class="form-control" placeholder="Título" name="titulo" value="<?php echo $editarCasa[0]['titulo']; ?>">
                 </div>
 
                 <!--<div class="col-md-4">
@@ -117,28 +116,23 @@ if (isset($_POST['editar'])) {
                 </div>-->
                 <div class="col-md-12">
                     <label for="descricao" class="form-label">Descrição 1</label>
-                    <input type="text" class="form-control" name="descricao1" placeholder="Descrição"
-                        value="<?php echo $editarCasa[0]['descricao1']; ?>">
+                    <input type="text" class="form-control" name="descricao1" placeholder="Descrição" value="<?php echo $editarCasa[0]['descricao1']; ?>">
                 </div>
                 <div class="col-md-12">
                     <label for="descricao" class="form-label">Descrição 2</label>
-                    <input type="text" class="form-control" name="descricao2" placeholder="Descrição"
-                        value="<?php echo $editarCasa[0]['descricao2']; ?>">
+                    <input type="text" class="form-control" name="descricao2" placeholder="Descrição" value="<?php echo $editarCasa[0]['descricao2']; ?>">
                 </div>
                 <div class="col-md-12">
                     <label for="descricao" class="form-label">Descrição 3</label>
-                    <input type="text" class="form-control" name="descricao3" placeholder="Descrição"
-                        value="<?php echo $editarCasa[0]['descricao3']; ?>">
+                    <input type="text" class="form-control" name="descricao3" placeholder="Descrição" value="<?php echo $editarCasa[0]['descricao3']; ?>">
                 </div>
                 <div class="col-md-4">
                     <label for="preco" class="form-label">Preço</label>
-                    <input type="text" class="form-control" name="preco" placeholder="Preço"
-                        value="<?php echo $editarCasa[0]['preco']; ?>">
+                    <input type="text" class="form-control" name="preco" placeholder="Preço" value="<?php echo $editarCasa[0]['preco']; ?>">
                 </div>
                 <div class="col-md-4">
                     <label for="cidade" class="form-label">Cidade</label>
-                    <input type="text" class="form-control" name="cidade" placeholder="Cidade"
-                        value="<?php echo $editarCasa[0]['cidade']; ?>">
+                    <input type="text" class="form-control" name="cidade" placeholder="Cidade" value="<?php echo $editarCasa[0]['cidade']; ?>">
                 </div>
                 <div class="col-md-4">
                     <label for="cidade" class="form-label">Imóvel Destaque</label>
