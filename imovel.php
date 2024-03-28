@@ -117,9 +117,9 @@ $imagem = $u->imagem($codigo);
             .modal .next {
                 font-size: 24px;
                 color: white;
-                background-color: rgba(0, 0, 0, 0.5);
+                background-color: rgba(0, 0, 0, 0.3);
                 cursor: pointer;
-                top: 25%;
+                top: 50%;
                 transform: translateY(-50%);
                 z-index: 1;
             }
