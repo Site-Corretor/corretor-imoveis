@@ -2,7 +2,7 @@
 require_once 'clsPrincipal.php';
 $u = new Principal;
 $u->conectar();
-   
+
 $visualizar = $u->visualizar();
 
 
@@ -107,44 +107,44 @@ $visualizar = $u->visualizar();
         <h1 class="destaque">Destaques</h1>
 
         <div class="house-list">
-            <?php 
-            for($i=0;$i<count($visualizar);$i++){
-                if($visualizar[$i]['destaque']=='sim'){
-                $imagem = $u->imagem($visualizar[$i]['codigo']);
-                if ($visualizar[$i]['ativo'] == 1) {
+            <?php
+            for ($i = 0; $i < count($visualizar); $i++) {
+                if ($visualizar[$i]['destaque'] == 'sim') {
+                    $imagem = $u->imagem($visualizar[$i]['codigo']);
+                    if ($visualizar[$i]['ativo'] == 1) {
             ?>
 
-            <div class="house"
-                onclick="window.location=' <?php echo 'imovel.php?codigo=' . $visualizar[$i]['codigo']; ?>'"
-                style="cursor: pointer;">
-                <?php echo '<img src="https://ricardosouzaimoveis.com.br/admin/upload/' .$imagem['img'] . '"
-                    alt="Pré-visualização da imagem">';?>
-                <div class="house-details">
-                    <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo']?></h3>
-                    <p class="texto-descricao"><?php echo $visualizar[$i]['cidade']?></p>
-                    <!--<p class="descricao-casa"><i
-                            class="fas fa-ruler-combined favicon"></i><?php echo $visualizar[$i]['total_area']?>m²</p>
+                        <div class="house" onclick="window.location=' <?php echo 'imovel.php?codigo=' . $visualizar[$i]['codigo']; ?>'" style="cursor: pointer;">
+                            <?php echo '<img src="https://ricardosouzaimoveis.com.br/admin/upload/' . $imagem['img'] . '"
+                    alt="Pré-visualização da imagem">'; ?>
+                            <div class="house-details">
+                                <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo'] ?></h3>
+                                <p class="texto-descricao"><?php echo $visualizar[$i]['cidade'] ?></p>
+                                <!--<p class="descricao-casa"><i
+                            class="fas fa-ruler-combined favicon"></i><?php echo $visualizar[$i]['total_area'] ?>m²</p>
                     <p class="descricao-casa"><i
-                            class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios']?> dormitórios</p>
+                            class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios'] ?> dormitórios</p>
                     <p class="descricao-casa"><i
-                            class="fas fa-restroom favicon"></i><?php echo $visualizar[$i]['banheiros']?> banheiros</p>
+                            class="fas fa-restroom favicon"></i><?php echo $visualizar[$i]['banheiros'] ?> banheiros</p>
                     <p class="descricao-casa"><i
-                            class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas']?> vagas de garagem
+                            class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas'] ?> vagas de garagem
                     </p>-->
-                    <wbr>
-                    <p class="casa-descricao"><b><?php echo $visualizar[$i]['preco'] ?></b></p>
-                    <p class="border-descrica-casa"></p>
-                    <a href=<?php echo "'imovel.php?codigo=".$visualizar[$i]['codigo']."'"?>><button
-                            class="house-button">Saber Mais</button></a>
-                </div>
-            </div>
+                                <wbr>
+                                <p class="casa-descricao"><b><?php echo $visualizar[$i]['preco'] ?></b></p>
+                                <p class="border-descrica-casa"></p>
+                                <a href=<?php echo "'imovel.php?codigo=" . $visualizar[$i]['codigo'] . "'" ?>><button class="house-button">Saber Mais</button></a>
+                            </div>
+                        </div>
 
 
             <?php
+                    }
                 }
             }
-            }
-        ?>
+            ?>
+
+        </div>
+        <div class="button-container">
             <a href="geral.php"><button class="house-button-2">Veja Mais</button></a>
         </div>
         <img class="sombrasepara" src="imagens/sombra.png">

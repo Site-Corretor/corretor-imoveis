@@ -180,6 +180,10 @@ section.main {
     padding: 8px 16px;
     cursor: pointer;
 }
+.button-container{
+    text-align: center; /* Centraliza horizontalmente o conteúdo */
+    margin-top: 20px; /* Adiciona um espaçamento superior */
+}
 
 .house-button-2:hover {
     background-color: #703D13;
@@ -736,9 +740,7 @@ footer p {
         /* Ajuste o tamanho da fonte para que caiba lado a lado */
     }
 
-    .house-button-2 {
-        margin-bottom: 50px;
-    }
+    
 }
 
 /* Responsivo */
