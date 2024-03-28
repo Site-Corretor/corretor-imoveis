@@ -25,64 +25,64 @@ $imagem = $u->imagem($codigo);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descrição da casa</title>
     <style>
-    .img-g-casa img {
-
-        width: 100%;
-        height: auto;
-        max-width: 600px;
-        margin: 0 auto;
-
-    }
-
-    /* Responsivo para telas médias e pequenas */
-    @media only screen and (max-width: 768px) {
-        .main-casa {
-            text-align: center;
-        }
-
-        .casa {
-            /* Centralize o texto */
-            text-align: center;
-            padding-left: calc((100% - 600px) / 2);
-        }
-
         .img-g-casa img {
-            display: none;
-        }
 
-
-        .galeria img {
             width: 100%;
             height: auto;
+            max-width: 600px;
+            margin: 0 auto;
+
         }
 
-        .descricao-casa-separada h2 {
-            font-size: 24px;
-        }
+        /* Responsivo para telas médias e pequenas */
+        @media only screen and (max-width: 768px) {
+            .main-casa {
+                text-align: center;
+            }
 
-        .descricao-casa-separada h3,
-        .descricao-casa-separada p {
-            font-size: 16px;
-        }
+            .casa {
+                /* Centralize o texto */
+                text-align: center;
+                padding-left: calc((100% - 600px) / 2);
+            }
 
-        .descricao-texto-casa-separada {
-            font-size: 14px;
-        }
+            .img-g-casa img {
+                display: none;
+            }
 
-        .voltar-button {
-            padding: 8px 40px;
-        }
 
-        .conteudo-centralizado {
-            text-align: center;
-        }
+            .galeria img {
+                width: 100%;
+                height: auto;
+            }
 
-        .main-casa .casa h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+            .descricao-casa-separada h2 {
+                font-size: 24px;
+            }
 
-        /* 
+            .descricao-casa-separada h3,
+            .descricao-casa-separada p {
+                font-size: 16px;
+            }
+
+            .descricao-texto-casa-separada {
+                font-size: 14px;
+            }
+
+            .voltar-button {
+                padding: 8px 40px;
+            }
+
+            .conteudo-centralizado {
+                text-align: center;
+            }
+
+            .main-casa .casa h1 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            /* 
             .img-g-casa img {
                 width: 100%;
                 max-width: 600px;
@@ -90,23 +90,51 @@ $imagem = $u->imagem($codigo);
                 margin: 0 auto;
             } */
 
-        .galeria a {
-            width: 50%;
-            box-sizing: border-box;
-        }
+            .galeria a {
+                width: 50%;
+                box-sizing: border-box;
+            }
 
-        .galeria.descricao-casa-separada {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+            .galeria.descricao-casa-separada {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
-        .galeria img {
-            width: 100%;
-            height: auto;
-        }
+            .galeria img {
+                width: 100%;
+                height: auto;
+            }
 
-    }
+            .modal .modal-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .modal .prev,
+            .modal .next {
+                font-size: 24px;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.5);
+                cursor: pointer;
+                top: 25%;
+                transform: translateY(-50%);
+                z-index: 1;
+            }
+
+            .modal .prev {
+                left: 10px;
+                /* Ajustamos a posição para o lado esquerdo */
+            }
+
+            .modal .next {
+                right: 10px;
+                /* Ajustamos a posição para o lado direito */
+            }
+
+        }
     </style>
 </head>
 
@@ -179,11 +207,9 @@ $imagem = $u->imagem($codigo);
                         $images[] = 'https://ricardosouzaimoveis.com.br/admin/upload/' . $imagemGeral['img'];
 
                 ?>
-                <a href="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>"
-                    onclick="openModal('https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
-                    <img src="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>"
-                        alt="Pré-visualização da imagem" class="thumbnail">
-                </a>
+                        <a href="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>" onclick="openModal('https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
+                            <img src="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>" alt="Pré-visualização da imagem" class="thumbnail">
+                        </a>
                 <?php
                     }
                 }
@@ -228,14 +254,12 @@ $imagem = $u->imagem($codigo);
                 Para ter mais informações sobre este imóvel ligue:
             </p>
             <p class="descricao-texto-casa-separada">
-                Ricardo Souza: (11) 97035-5935 <a href="https://api.whatsapp.com/send?phone=5511970355935"
-                    target="_blank">
+                Ricardo Souza: (11) 97035-5935 <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
                     <img src="imagens/Icones/whatsapp.png" width=13px height=13px>
                 </a>
             </p>
             <p class="descricao-texto-casa-separada">
-                Victor Martins: (11) 95423-3209 <a href="https://api.whatsapp.com/send?phone=5511954233209"
-                    target="_blank">
+                Victor Martins: (11) 95423-3209 <a href="https://api.whatsapp.com/send?phone=5511954233209" target="_blank">
                     <img src="imagens/Icones/whatsapp.png" width=13px height=13px>
                 </a>
             </p>
@@ -259,37 +283,37 @@ $imagem = $u->imagem($codigo);
 </body>
 
 <script>
-var images = <?php echo json_encode($images); ?>;
-var currentImageIndex = 0;
+    var images = <?php echo json_encode($images); ?>;
+    var currentImageIndex = 0;
 
-function openModal(imageUrl) {
-    var modal = document.getElementById("myModal");
-    var modalImage = document.getElementById("modalImage");
-    currentImageIndex = images.indexOf(imageUrl);
-    modal.style.display = "block";
-    modalImage.src = imageUrl;
-}
-
-function closeModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-}
-
-function changeImage(n) {
-    currentImageIndex += n;
-
-    // Verifica se atingiu o limite inferior
-    if (currentImageIndex < 0) {
-        currentImageIndex = images.length - 1;
-    }
-    // Verifica se atingiu o limite superior
-    else if (currentImageIndex >= images.length) {
-        currentImageIndex = 0;
+    function openModal(imageUrl) {
+        var modal = document.getElementById("myModal");
+        var modalImage = document.getElementById("modalImage");
+        currentImageIndex = images.indexOf(imageUrl);
+        modal.style.display = "block";
+        modalImage.src = imageUrl;
     }
 
-    var modalImage = document.getElementById("modalImage");
-    modalImage.src = images[currentImageIndex];
-}
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    function changeImage(n) {
+        currentImageIndex += n;
+
+        // Verifica se atingiu o limite inferior
+        if (currentImageIndex < 0) {
+            currentImageIndex = images.length - 1;
+        }
+        // Verifica se atingiu o limite superior
+        else if (currentImageIndex >= images.length) {
+            currentImageIndex = 0;
+        }
+
+        var modalImage = document.getElementById("modalImage");
+        modalImage.src = images[currentImageIndex];
+    }
 </script>
 
 
