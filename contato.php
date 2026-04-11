@@ -4,91 +4,145 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="short cut icon" type="image/x-icon" href="imagens/logo-ricardo.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatos</title>
-    <style>
-
-    </style>
+    <title>Contato</title>
 </head>
 
 <body>
     <header>
         <div class="center">
             <div class="logo">
-                <a href="index.php"><img src="imagens/logo-ricardo.png" width=145px height=70px> </a>
+                <a href="index.php"><img src="imagens/logo-ricardo.png" width="145" height="70" alt="Ricardo Souza Imóveis"></a>
             </div>
-            <!--logo-->
+
             <div class="menu">
-                <a href="geral.php">
-                    Imóveis
-                </a>
-                <a href="contato.php">
-                    Contato
-                </a>
+                <a href="geral.php">Imóveis</a>
+                <a href="sobre.php">Sobre Nós</a>
+                <a href="contato.php">Contato</a>
+                <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank" class="menu-cta">WhatsApp</a>
             </div>
-            <!--menu-->
         </div>
-        <!--center-->
     </header>
-    <div class="linha-horinzontal"></div>
 
-    <div class="descricao-casa-separada">
-        <h2>CENTRAL DE NEGÓCIOS</h2>
-        <p class="descricao-texto-casa-separada">
-            Para ter mais informações sobre algum dos nossos imóveis entre em contato:
-        </p>
-        <p class="descricao-texto-casa-separada">
-            Ricardo Souza: (11) 97035-5935 <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
-                <img src="imagens/Icones/whatsapp.png" width=13px height=13px>
-            </a>
-        </p>
-        <p class="descricao-texto-casa-separada">
-            Victor Martins: (11) 95423-3209 <a href="https://api.whatsapp.com/send?phone=5511954233209" target="_blank">
-                <img src="imagens/Icones/whatsapp.png" width=13px height=13px>
-            </a>
-        </p>
-        <p class="descricao-texto-casa-separada">
-            Email: ricardosouzanegocios@gmail.com
-        </p>
-        <p class="descricao-texto-casa-separada">
-            Arujá - São Paulo
-        </p>
+    <main class="contato-page">
+        <div class="contato-topo">
+            <span class="section-label">Central de negócios</span>
+            <h1>Fale com nossa equipe</h1>
+            <p>Para ter mais informações sobre nossos imóveis, tirar dúvidas ou iniciar um atendimento, entre em contato pelos canais abaixo.</p>
+        </div>
 
-    </div>
+        <div class="contato-grid">
+            <div class="contato-card">
+                <h2>Atendimento</h2>
+                <h3>Entre em contato agora</h3>
 
-    <div class="centralizar-conteudo">
-        <a href="index.php"><button class="voltar-button">Voltar</button></a>
-    </div>
-    <div class="roda-pe">
-        <div class="logo">
-            <a href="index.php"><img src="imagens/logo-ricardo.png" width=120px height=60px></a>
+                <p class="contato-texto">
+                    Nossa equipe está pronta para ajudar você a encontrar o imóvel ideal com mais clareza, agilidade e segurança.
+                </p>
+
+                <p class="contato-linha">
+                    <strong>Ricardo Souza:</strong> (11) 97035-5935
+                    <a class="contato-icone-link" href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
+                        <img src="imagens/Icones/whatsapp.png" width="14" height="14" alt="WhatsApp">
+                    </a>
+                </p>
+
+                <p class="contato-linha">
+                    <strong>Victor Martins:</strong> (11) 95423-3209
+                    <a class="contato-icone-link" href="https://api.whatsapp.com/send?phone=5511954233209" target="_blank">
+                        <img src="imagens/Icones/whatsapp.png" width="14" height="14" alt="WhatsApp">
+                    </a>
+                </p>
+
+                <p class="contato-linha">
+                    <strong>E-mail:</strong> ricardosouzanegocios@gmail.com
+                </p>
+
+                <p class="contato-linha">
+                    <strong>Localização:</strong> Arujá - São Paulo
+                </p>
+
+                <div class="contato-acoes">
+                    <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank" class="contato-botao">Chamar no WhatsApp</a>
+                    <a href="mailto:ricardosouzanegocios@gmail.com" class="contato-botao">Enviar e-mail</a>
+                </div>
+            </div>
+
+            <div class="contato-card">
+                <h2>Informações</h2>
+                <h3>Atendimento personalizado</h3>
+
+                <div class="contato-info-extra">
+                    <div class="contato-mini-box">
+                        <h4>Compra e venda</h4>
+                        <p>Auxílio para encontrar imóveis residenciais, comerciais, industriais e terrenos conforme seu objetivo.</p>
+                    </div>
+
+                    <div class="contato-mini-box">
+                        <h4>Locação</h4>
+                        <p>Atendimento direcionado para quem busca imóveis disponíveis para locação com mais praticidade.</p>
+                    </div>
+
+                    <div class="contato-mini-box">
+                        <h4>Suporte direto</h4>
+                        <p>Entre em contato para tirar dúvidas, solicitar informações adicionais ou agendar atendimento.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="separa">
-            <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
+
+        <div class="contato-footer-acoes">
+            <a href="index.php"><button class="voltar-button">Voltar</button></a>
         </div>
-        <div class="itens">
-            <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
-                <img src="imagens/Icones/whatsapp.png" width=40px height=40px>
-            </a>
-            <p>WhatsApp</p>
+    </main>
+
+    <footer class="footer-site">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="imagens/logo-ricardo.png" width="180" alt="Ricardo Souza Imóveis">
+                    <p>Av. Gov. Mário Covas Júnior, 2665 - Portão</p>
+                    <p>Arujá - SP</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <div class="footer-links">
+                        <a href="sobre.php">Sobre Nós</a>
+                        <a href="contato.php">Fale Conosco</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Imóveis</h4>
+                    <div class="footer-links">
+                        <a href="geral.php?tipo=residencia">Residencial</a>
+                        <a href="geral.php?tipo=comercio">Comercial</a>
+                        <a href="geral.php?tipo=industria">Industrial</a>
+                        <a href="geral.php?tipo=terreno">Terrenos</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Serviços</h4>
+                    <div class="footer-links">
+                        <p>Venda</p>
+                        <p>Locação</p>
+                        <p>Administração</p>
+                        <p>Suporte</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023. Todos os direitos reservados.</p>
+            </div>
         </div>
-        <div class="separa">
-            <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
-        </div>
-        <div class="itens">
-            <a href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
-                <img src="imagens/Icones/instagram.png" width=40px height=40px>
-            </a>
-            <p>@ricardonsouzaimoveis</p>
-        </div>
-    </div>
-    <footer>
-        <p>&copy; 2023. Todos os direitos reservados.</p>
     </footer>
 </body>
 

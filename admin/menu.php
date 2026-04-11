@@ -4,6 +4,7 @@ if (!isset($_SESSION['usuario'])) {
     header("location: index.php");
     exit;
 }
+
 require_once 'clsControle.php';
 $u = new user;
 $u->conectar();
@@ -18,134 +19,145 @@ $cadaDestaque = $u->casaDestaque();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela principal</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Painel Administrativo</title>
+
     <link rel="short cut icon" type="image/x-icon" href="../imagens/logo-ricardo.ico">
-    <style>
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: #fafafa;
-    }
-
-    #sidebar {
-        min-width: 250px;
-        max-width: 250px;
-        background: #7386D5;
-        color: #fff;
-        transition: all 0.3s;
-    }
-
-    #sidebar.active {
-        margin-left: -250px;
-    }
-
-    #sidebar .sidebar-header {
-        padding: 20px;
-        background: #6d7fcc;
-    }
-
-    #sidebar ul.components {
-        padding: 20px 0;
-        border-bottom: 1px solid #47748b;
-    }
-
-    #sidebar ul li a {
-        padding: 10px;
-        font-size: 1.1em;
-        display: block;
-        color: #fff;
-    }
-
-    #sidebar ul li a:hover {
-        background: #fff;
-        color: #7386D5;
-    }
-
-    #content {
-        width: 100%;
-        padding: 20px;
-        min-height: 100vh;
-        transition: all 0.3s;
-    }
-
-    .card {
-        background-color: #7386D5;
-        color: #fff;
-        margin-bottom: 20px;
-    }
-
-    .card-header,
-    .card-footer {
-        background-color: #6d7fcc;
-        color: #fff;
-    }
-
-    @media (max-width: 768px) {
-        #sidebar {
-            margin-left: -250px;
-        }
-
-        #sidebar.active {
-            margin-left: 0;
-        }
-    }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
 </head>
 
 <body>
-    <div class="wrapper d-flex">
-        <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Principal</h3>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="admin-sidebar-top">
+                <img src="../imagens/logo-ricardo.png" alt="Ricardo Souza Imóveis" class="admin-sidebar-logo">
+                <span class="admin-sidebar-badge">Painel administrativo</span>
             </div>
 
-            <ul class="list-unstyled components">
-                <li>
-                    <a href="https://ricardosouzaimoveis.com.br/" target="_blank">Site</a>
-                </li>
-                <li>
-                    <a href="cadastrarCasa.php" target="_blank">Cadastrar Imóvel</a>
-                </li>
+            <nav class="admin-sidebar-nav">
+                <a href="menu.php" class="active">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
 
-                <li>
-                    <a href="logoff.php">Sair</a>
-                </li>
-            </ul>
-        </nav>
+                <a href="cadastrarCasa.php">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Cadastrar Imóvel</span>
+                </a>
 
-        <!-- Page Content  -->
-        <div id="content">
+                <a href="casasCadastradas.php">
+                    <i class="fas fa-home"></i>
+                    <span>Imóveis Cadastrados</span>
+                </a>
 
-            <div class="row">
-                <div class="col-lg-6 mb-3">
-                    <div class="card">
-                        <div class="card-header"><i class="fas fa-book-open"></i> Imóveis Cadastrados</div>
-                        <div class="card-body">
-                            <h3 class="card-title"><?php echo count($casasCadastradas) ?></h3>
-                        </div>
-                        <div class="card-footer text-right">
-                            <a href="casasCadastradas.php" class="btn btn-light">
-                                Abrir <i class="fa fa-arrow-circle-right"></i>
-                            </a>
-                        </div>
+                <a href="https://ricardosouzaimoveis.com.br/" target="_blank">
+                    <i class="fas fa-globe"></i>
+                    <span>Abrir Site</span>
+                </a>
+
+                <a href="logoff.php" class="admin-sidebar-exit">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo -->
+        <main class="admin-main">
+            <header class="admin-topbar">
+                <div>
+                    <span class="admin-page-badge">Visão geral</span>
+                    <h1>Painel principal</h1>
+                    <p>Acompanhe rapidamente os principais números e acesse as áreas de gestão do site.</p>
+                </div>
+
+                <button class="admin-menu-toggle" id="adminMenuToggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </header>
+
+            <section class="admin-cards-grid">
+                <article class="admin-card">
+                    <div class="admin-card-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+
+                    <div class="admin-card-content">
+                        <span class="admin-card-label">Imóveis cadastrados</span>
+                        <h2><?php echo is_array($casasCadastradas) ? count($casasCadastradas) : 0; ?></h2>
+                        <p>Total de imóveis atualmente registrados no sistema.</p>
+                    </div>
+
+                    <div class="admin-card-footer">
+                        <a href="casasCadastradas.php" class="admin-card-link">
+                            Abrir listagem
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="admin-card">
+                    <div class="admin-card-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+
+                    <div class="admin-card-content">
+                        <span class="admin-card-label">Imóveis em destaque</span>
+                        <h2><?php echo is_array($cadaDestaque) ? count($cadaDestaque) : 0; ?></h2>
+                        <p>Quantidade de imóveis marcados como destaque no site.</p>
+                    </div>
+
+                    <div class="admin-card-footer">
+                        <a href="casasCadastradas.php" class="admin-card-link">
+                            Gerenciar destaques
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+            <section class="admin-panel">
+                <div class="admin-panel-header">
+                    <div>
+                        <span class="admin-page-badge">Acesso rápido</span>
+                        <h3>Atalhos do painel</h3>
                     </div>
                 </div>
 
-            </div>
-        </div>
+                <div class="admin-shortcuts">
+                    <a href="cadastrarCasa.php" class="admin-shortcut-box">
+                        <i class="fas fa-plus-circle"></i>
+                        <strong>Novo imóvel</strong>
+                        <span>Cadastrar um novo imóvel no sistema.</span>
+                    </a>
+
+                    <a href="casasCadastradas.php" class="admin-shortcut-box">
+                        <i class="fas fa-list-ul"></i>
+                        <strong>Listagem</strong>
+                        <span>Visualizar e gerenciar os imóveis cadastrados.</span>
+                    </a>
+
+                    <a href="https://ricardosouzaimoveis.com.br/" target="_blank" class="admin-shortcut-box">
+                        <i class="fas fa-external-link-alt"></i>
+                        <strong>Ver site</strong>
+                        <span>Abrir o site público em uma nova aba.</span>
+                    </a>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-    $(document).ready(function() {
-        $('#sidebarCollapse').on('click', function() {
-            $('#sidebar').toggleClass('active');
+        const toggleButton = document.getElementById('adminMenuToggle');
+        const sidebar = document.getElementById('adminSidebar');
+
+        toggleButton.addEventListener('click', function () {
+            sidebar.classList.toggle('open');
         });
-    });
     </script>
 </body>
 

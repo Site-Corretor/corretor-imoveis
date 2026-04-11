@@ -1,3 +1,9 @@
+/* =========================================================
+   RESET GLOBAL E CONFIGURAÇÕES BÁSICAS
+   ---------------------------------------------------------
+   Remove margens/paddings padrão do navegador e define
+   comportamento base para todo o site.
+========================================================= */
 * {
     margin: 0;
     padding: 0;
@@ -5,199 +11,153 @@
     font-family: 'Nunito', sans-serif;
 }
 
+/* =========================================================
+   VARIÁVEIS GLOBAIS
+   ---------------------------------------------------------
+   Centraliza cores, sombras, larguras e outros padrões
+   reutilizados em todo o site.
+========================================================= */
+:root {
+    --cor-primaria: #b39a7a;
+    --cor-primaria-hover: #92795d;
+    --cor-escura: #161616;
+    --cor-fundo: #f8f5f1;
+    --cor-branca: #ffffff;
+    --cor-texto: #2a2a2a;
+    --cor-texto-suave: #6e6a65;
+    --cor-borda: #e8dfd5;
+    --cor-badge: rgba(255, 255, 255, 0.14);
+
+    --sombra: 0 14px 40px rgba(0, 0, 0, 0.08);
+    --sombra-hover: 0 22px 50px rgba(0, 0, 0, 0.12);
+
+    --radius: 22px;
+    --container: 1180px;
+}
+
+/* =========================================================
+   ESTRUTURA BASE DO DOCUMENTO
+========================================================= */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #eee;
+    background: linear-gradient(180deg, #fbf9f6 0%, #f7f3ee 100%);
+    color: var(--cor-texto);
     width: 100%;
+    overflow-x: hidden;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Container central padrão usado em várias seções */
 .center {
-    max-width: 1100px;
+    max-width: var(--container);
     margin: 0 auto;
-    padding: 0 2%;
+    padding: 0 20px;
     display: flex;
+    align-items: center;
 }
 
+/* =========================================================
+   CABEÇALHO / MENU PRINCIPAL
+========================================================= */
 header {
-    background-color: #333;
-    padding: 20px 0;
-    border-bottom: 4px solid #A49585;
+    background: rgba(22, 22, 22, 0.94);
+    backdrop-filter: blur(8px);
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(179, 154, 122, 0.35);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header .center {
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo img {
+    object-fit: contain;
 }
 
 .menu {
-    width: 80%;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    width: auto;
+    padding: 0;
     text-align: right;
-    margin-left: 450px;
-
+    margin-left: 0;
 }
 
 .menu a {
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-    margin: 20px;
-    transition: 0.5s;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+/* Linha animada abaixo dos links do menu */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: var(--cor-primaria);
+    transition: 0.3s ease;
 }
 
 .menu a:hover {
-    color: #A49585;
+    color: var(--cor-primaria);
 }
 
-/*section main*/
-
-section.main {
-    padding: 50px 0;
-}
-
-.main-chamada {
+.menu a:hover::after {
     width: 100%;
-    margin: 40px 0;
-    text-align: center;
 }
 
-.main-chamada h2 {
-    font-size: 40px;
+/* Botão de destaque do menu (WhatsApp) */
+.menu .menu-cta {
+    background: var(--cor-primaria);
+    color: #fff;
+    padding: 11px 18px;
+    border-radius: 999px;
+    box-shadow: 0 10px 22px rgba(179, 154, 122, 0.22);
 }
 
-.main-chamada p {
-    font-size: 20px;
-    margin: 20px 0;
+.menu .menu-cta::after {
+    display: none;
 }
 
-.main-chamada button {
-    display: inline-block;
-    margin: -20px 0 40px 0;
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 22px;
-    border: 0;
-    cursor: pointer;
-    background-color: #A49585;
+.menu .menu-cta:hover {
+    background: var(--cor-primaria-hover);
+    color: #fff;
+    transform: translateY(-1px);
 }
 
-.main-chamada button:hover {
-    background-color: #703D13;
-    color: white;
-}
-
-.atuacoes {
-    margin-top: -30px;
-    padding: 50px 250px;
-    display: flex;
-    text-align: center;
-}
-
-.atuacao {
-    border-radius: 10px;
-    background-color: rgba(140, 140, 141, 0.205);
-    width: 23%;
-    margin-right: 2%;
-    padding: 50px 20px;
-    background-color: #A49585;
-}
-
-.atuacao h2 {
-    font-size: 17px;
-}
-
-.atuacao p {
-    padding: 10px 0 0 0;
-    font-size: 16px;
-}
-
-
-/* Começo das casas */
-.destaque {
-    text-align: center;
-    font-size: 40px;
-}
-
-.house-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
-    /* Estica a altura das divs */
-    margin: 2px -10px 0;
-    justify-content: center;
-    /* Centraliza horizontalmente */
-    margin: 20px auto;
-    /* Margens automáticas para centralizar verticalmente */
-    max-width: 1200px;
-    /* Defina a largura máxima */
-
-}
-
-.house {
-    border: 1px solid #ddd;
-    width: calc(33.33% - 40px);
-    box-sizing: border-box;
-    text-align: center;
-    transition: border 0.3s ease-in-out, padding 0.3s ease-in-out;
-    margin: 10px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 10px;
-    background-color: white;
-
-}
-
-.house img {
-    max-width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-}
-
-.house:hover {
-    transform: scale(1.03);
-}
-
-.house-details {
-    margin-top: 10px;
-}
-
-.house-button {
-    background-color: #A49585;
-    border: none;
-    font-size: 17px;
-    border-radius: 50px;
-    padding: 8px 16px;
-    cursor: pointer;
-}
-
-.house-button:hover {
-    background-color: #703D13;
-}
-
-.house-button-2 {
-    background-color: #A49585;
-    border: none;
-    font-size: 17px;
-    border-radius: 50px;
-    padding: 8px 16px;
-    cursor: pointer;
-}
-.button-container{
-    text-align: center; /* Centraliza horizontalmente o conteúdo */
-    margin-top: 20px; /* Adiciona um espaçamento superior */
-}
-
-.house-button-2:hover {
-    background-color: #703D13;
-}
-
-.house:hover {
-    border: 2px solid #703D13;
-    /* Adicione a borda amarela no hover */
-}
-
-/* conteudo do slider  */
+/* =========================================================
+   HERO / BANNER PRINCIPAL DA HOME
+========================================================= */
 .slider-container {
     overflow: hidden;
     position: relative;
+    box-shadow: var(--sombra);
 }
 
 .slider {
@@ -205,250 +165,541 @@ section.main {
     transition: transform 0.3s ease-in-out;
 }
 
-.slider>div {
+.slide-item {
     flex: 0 0 100%;
+    position: relative;
 }
 
 .slider img {
     width: 100%;
-    height: 650px;
+    height: 760px;
+    object-fit: cover;
 }
 
-.slider-buttons {
+/* Camada escura sobre a imagem do hero para melhorar leitura */
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(14, 14, 14, 0.84) 0%,
+        rgba(14, 14, 14, 0.56) 42%,
+        rgba(14, 14, 14, 0.20) 100%
+    );
     display: flex;
-    justify-content: center;
-    margin-top: 10px;
+    align-items: center;
 }
 
-.slider-button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: gray;
-    margin: 0 5px;
-    cursor: pointer;
+.slide-content {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    color: #fff;
 }
 
-.slider-button.active {
-    background-color: black;
-}
-
-.botao-veja-mais {
-    background-color: #A49585;
-    border-radius: 50px;
-    border: none;
+/* Badge usado no hero e em títulos de páginas */
+.slide-badge,
+.section-label {
+    display: inline-block;
+    margin-bottom: 14px;
     padding: 8px 16px;
-    cursor: pointer;
-    display: flex;
-    font-size: 22px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
-    /* Estica a altura das divs */
-    margin: 20px -10px 0;
-    justify-content: center;
-    /* Centraliza horizontalmente */
-    margin: 30px auto 40px;
-    /* Margens automáticas para centralizar verticalmente */
-    max-width: 1200px;
-    /* Defina a largura máxima */
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
-.botao-veja-mais:hover {
-    background-color: #703D13;
-    color: white;
+.slide-badge {
+    background: var(--cor-badge);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.section-label {
+    background: #eee5da;
+    color: #7d654b;
+}
+
+.slide-content h1 {
+    max-width: 760px;
+    font-size: 60px;
+    line-height: 1.08;
+    font-weight: 800;
+    margin-bottom: 18px;
+    letter-spacing: -0.03em;
+}
+
+.slide-content p {
+    max-width: 660px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 32px;
+}
+
+/* Botões da seção principal */
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 190px;
+    padding: 14px 26px;
+    border-radius: 999px;
+    background: var(--cor-primaria);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    transition: 0.3s ease;
+    box-shadow: 0 12px 28px rgba(179, 154, 122, 0.26);
+}
+
+.hero-btn:hover {
+    background: var(--cor-primaria-hover);
+    transform: translateY(-2px);
+}
+
+.hero-btn-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+    box-shadow: none;
+}
+
+.hero-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================================
+   SEÇÕES GERAIS / TÍTULOS
+========================================================= */
+section.main {
+    padding: 88px 0 42px;
+}
+
+section.main .center {
+    justify-content: center;
+}
+
+.main-chamada {
+    width: 100%;
+    margin: 8px 0 40px;
+    text-align: center;
+}
+
+.main-chamada h2,
+.destaque,
+.sonho {
+    color: var(--cor-escura);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.main-chamada h2 {
+    font-size: 52px;
+    line-height: 1.14;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.main-chamada p {
+    font-size: 19px;
+    color: var(--cor-texto-suave);
+    margin: 18px auto 0;
+    max-width: 780px;
+    line-height: 1.8;
+}
+
+.titulo-secao {
+    text-align: center;
+    padding: 10px 20px 0;
+    margin-bottom: 18px;
+}
+
+.titulo-secao p {
+    max-width: 680px;
+    margin: 12px auto 0;
+    color: var(--cor-texto-suave);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.destaque {
+    font-size: 46px;
+    margin: 0;
+}
+
+.sonho {
+    font-size: 34px;
+    line-height: 1.12;
+    margin: 0;
+}
+
+.nome-lista {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    color: var(--cor-escura);
+    font-weight: 800;
+}
+
+/* =========================================================
+   CATEGORIAS / CARDS DA HOME
+========================================================= */
+.atuacoes {
+    margin-top: 34px;
+    padding: 0 20px 46px;
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.atuacao {
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.95);
+    width: calc(25% - 17px);
+    min-width: 245px;
+    padding: 36px 24px 32px;
+    border: 1px solid rgba(232, 223, 213, 0.9);
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.07);
+    transition: 0.35s ease;
+    backdrop-filter: blur(10px);
+}
+
+.atuacao:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--sombra-hover);
+    border-color: #d8cabb;
+}
+
+.botao-filtro {
+    color: var(--cor-texto);
+    display: block;
+}
+
+.icon-atuacao {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f7f1ea 0%, #efe4d8 100%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.atuacao h2 {
+    font-size: 23px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--cor-escura);
+}
+
+.atuacao p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--cor-texto-suave);
+}
+
+/* =========================================================
+   FILTROS SIMPLES (BARRAS DE TIPO DE IMÓVEL)
+========================================================= */
+.tipos-imoveis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.opcoes {
+    min-width: 190px;
+    line-height: 24px;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: 0.3s ease;
+}
+
+.opcoes:hover {
+    border-color: var(--cor-primaria);
+    transform: translateY(-2px);
+}
+
+.borda-ops {
+    border-color: var(--cor-primaria);
+    background: #fff;
+    box-shadow: 0 10px 28px rgba(179, 154, 122, 0.10);
+}
+
+.fundo-ops {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--cor-escura);
+}
+
+/* =========================================================
+   CARDS GERAIS DE IMÓVEIS
+========================================================= */
+.house-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 28px;
+    margin: 30px auto 0;
+    max-width: 1260px;
+    padding: 0 20px;
+}
+
+.house {
+    border: 1px solid rgba(232, 223, 213, 0.95);
+    width: calc(33.33% - 19px);
+    min-width: 300px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.07);
+    transition: 0.35s ease;
+}
+
+.house:hover {
+    transform: translateY(-10px);
+    border: 1px solid #d9cec1;
+    box-shadow: var(--sombra-hover);
+}
+
+.house img {
+    width: 100%;
+    height: 220px;
+    min-height: 220px;
+    max-height: 220px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.house:hover img {
+    transform: scale(1.04);
+}
+
+.house-details {
+    padding: 24px 24px 22px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.house-info-topo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+}
+
+.house-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: #f3ebe2;
+    color: #7c654a;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.casa-descricao {
+    padding-bottom: 8px;
+    text-align: left;
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--cor-escura);
+    font-weight: 800;
+}
+
+.texto-descricao {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #ece7e2;
+    color: var(--cor-texto-suave);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.border-descrica-casa {
+    border-bottom: 1px solid #ece7e2;
+    margin-top: 12px;
+}
+
+.preco-imovel {
+    margin-top: 18px;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--cor-escura);
+    letter-spacing: -0.03em;
+}
+
+/* =========================================================
+   BOTÕES PADRÃO
+========================================================= */
+.house-button,
+.house-button-2,
+.botao-veja-mais,
+.voltar-button,
+.main-chamada button,
+.contato-botao {
+    background: var(--cor-escura);
+    border: none;
+    font-size: 16px;
+    font-weight: 800;
+    border-radius: 999px;
+    padding: 13px 24px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+.house-button:hover,
+.house-button-2:hover,
+.botao-veja-mais:hover,
+.voltar-button:hover,
+.main-chamada button:hover,
+.contato-botao:hover {
+    background: var(--cor-primaria);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.house-button {
+    margin: 22px 0 0;
+    width: 100%;
+}
+
+.house-button-2 {
+    margin: 0;
+    min-width: 220px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.centralizar-conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 30px auto 10px;
+    padding: 0 20px;
+}
+
+.voltar-button {
+    min-width: 160px;
 }
 
 .sombrasepara {
     display: block;
-    margin: 20px auto 80px;
-    /* Isso centraliza horizontalmente */
-}
-
-.texto-descricao {
-    padding-bottom: 5px;
-    border-bottom: 0.5px solid rgb(194, 194, 194);
-}
-
-.border-descrica-casa {
-    padding-bottom: 20px;
-    border-bottom: 0.5px solid rgb(194, 194, 194);
-}
-
-.descricao-casa {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: left;
-}
-
-.house-button {
-    margin: 20px;
-}
-
-.house-button-2 {
-    margin: 20px;
-}
-
-.sobre {
-    background-color: #A49585;
-    padding: 40px;
-    text-align: center;
-    max-width: 1200px;
-    /* Defina a largura máxima */
-    margin: 20px auto;
-
-}
-
-.sobre img {
-    height: 200px;
-    width: 200px;
-}
-
-.descricao {
-    display: inline-block;
-    max-width: 40%;
-    margin-left: 40px;
-    text-align: left;
-}
-
-.descricao p,
-.descricao h3 {
-    margin-bottom: 20px;
-
-}
-
-.roda-pe {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    display: flex;
-    /* Adicione display flex para alinhar os elementos */
-    align-items: center;
-    /* Alinhe verticalmente ao centro */
-    justify-content: center;
-    /* Alinhe horizontalmente ao centro */
-}
-
-.separa {
-    margin: 0 40px;
-    /* Adicione uma margem entre as divs */
-}
-
-.itens {
-    display: flex;
-    align-items: center;
-    /* Alinhe verticalmente ao centro */
-}
-
-.itens img {
-    margin-right: 10px;
-    /* Adicione margem à direita para separar o ícone do número */
-}
-
-.itens p {
-    margin: 0;
-    /* Remova as margens padrão dos parágrafos */
-    padding-left: 10px;
-    /* Adicione espaçamento à esquerda dos parágrafos */
-}
-
-.contact-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 20px;
-}
-
-.favicon {
-    margin-left: 10px;
-    margin-right: 5px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-.sombrasepara {
+    margin: 38px auto 78px;
     max-width: 100%;
-    /* Define a largura máxima como 100% do contêiner pai */
     height: auto;
-    /* Garante que a altura seja ajustada automaticamente para manter a proporção da imagem */
+    opacity: 0.8;
 }
 
-footer p {
-    margin-bottom: 100px;
+/* =========================================================
+   ESTADO VAZIO / MENSAGENS DE ERRO VISUAL
+========================================================= */
+.error-image {
+    text-align: center;
+    padding: 30px 20px 10px;
 }
 
-.casa {
-    width: 100%;
-    margin: 40px 0px;
-    text-align: left;
-    padding: 0 0 0 240px;
+.error-image img {
+    margin: 0 auto 18px;
 }
 
+/* =========================================================
+   ELEMENTOS GERAIS USADOS NA PÁGINA DE IMÓVEL
+========================================================= */
+.casa,
 .img-g-casa {
     width: 100%;
-    margin: 40px 0px;
+    margin: 40px 0 25px;
     text-align: left;
-    padding: 0 0 0 240px;
+    padding: 0;
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.galeria {
-    display: flex;
-    margin-top: -30px;
-    padding: 0 0 0 235px;
+.container,
+.galeria-container {
+    max-width: 1180px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .galeria {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    max-width: 85%;
-}
-
-.container {
-    max-width: 100%;
+    gap: 10px;
+    max-width: 1180px;
     padding: 0 20px;
-    box-sizing: border-box;
+    margin: 0 auto;
 }
-
-.galeria-container {
-    max-width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
 
 .galeria img:hover {
-    border: 3px solid #703D13;
+    border: 3px solid var(--cor-primaria-hover);
 }
 
 .thumbnail {
-    width: 100px;
-    height: 100px;
-    margin: 5px;
+    width: 110px;
+    height: 110px;
     cursor: pointer;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid transparent;
 }
 
+/* =========================================================
+   MODAL / LIGHTBOX DAS IMAGENS
+========================================================= */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1200;
     padding-top: 50px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.92);
 }
 
 .modal-content {
@@ -456,6 +707,7 @@ footer p {
     max-height: 90%;
     margin: auto;
     display: block;
+    border-radius: 12px;
 }
 
 .close {
@@ -478,7 +730,7 @@ footer p {
     color: white;
     font-weight: bold;
     font-size: 20px;
-    transition: 0.6s ease;
+    transition: 0.3s ease;
     border-radius: 0 3px 3px 0;
 }
 
@@ -489,394 +741,1294 @@ footer p {
 
 .prev:hover,
 .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
+/* =========================================================
+   BLOCOS DE DESCRIÇÃO / TEXTOS DESTACADOS
+========================================================= */
 .descricao-casa-separada {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 28px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 20px;
+    box-shadow: var(--sombra);
     text-align: left;
-    max-width: 1045px;
-    margin: 0 auto 20px;
-    /* Adicione margem inferior para criar espaço abaixo da descrição da casa */
-    text-align: left;
-    margin-top: 20px;
+    max-width: 1100px;
+    margin: 20px auto;
 }
 
 .descricao-casa-separada h2 {
     margin-bottom: 20px;
+    color: var(--cor-escura);
 }
 
-.centralizar-conteudo {
-    display: flex;
-    justify-content: center;
-    /* Centralizar horizontalmente */
-    align-items: center;
-    /* Centralizar verticalmente */
-    margin: 0 auto 20px;
-    /* Isso garante que a div ocupe a altura total da janela */
-}
-
-/* Estilo para o texto da descrição */
 .descricao-texto-casa-separada {
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 1.8;
     text-align: left;
-    /* Alinhar o texto à esquerda */
     margin-bottom: 10px;
-    /* Adicionar espaço entre os parágrafos */
+    color: var(--cor-texto-suave);
 }
 
-.voltar-button {
-    background-color: #A49585;
+.favicon {
+    margin-left: 10px;
+    margin-right: 5px;
+    color: var(--cor-primaria-hover);
+}
+
+/* =========================================================
+   CATÁLOGO DE IMÓVEIS / PÁGINA GERAL
+========================================================= */
+.catalogo-page {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 30px 20px 40px;
+}
+
+.catalogo-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.filtros-sidebar {
+    position: static;
+}
+
+.catalogo-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.catalogo-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.catalogo-page-title {
+    font-size: 34px;
+    line-height: 1.1;
+    color: #161616;
+    letter-spacing: -0.03em;
+    margin: 0 0 8px;
+    font-weight: 800;
+}
+
+.catalogo-page-subtitle {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #6e6a65;
+    margin: 0;
+}
+
+.catalogo-total {
+    font-size: 18px;
+    font-weight: 800;
+    color: #161616;
+}
+
+.catalogo-topbar-direita {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* =========================================================
+   CARD DE FILTROS DA PÁGINA GERAL
+========================================================= */
+.filtros-card {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(232, 223, 213, 0.95);
+    border-radius: 24px;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    background-clip: padding-box;
+}
+
+.filtros-header {
+    padding: 22px 22px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.filtros-header h2 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #161616;
+    margin: 0;
+}
+
+.limpar-filtros {
+    font-size: 14px;
+    font-weight: 700;
+    color: #92795d;
+}
+
+.filtros-body {
+    padding: 0 22px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo-filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-filtro label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #4a4a4a;
+}
+
+.campo-filtro select,
+.campo-filtro input,
+.ordenacao-select {
+    width: 100%;
+    height: 46px;
+    border-radius: 14px;
+    border: 1px solid #e6ddd2;
+    background: #fff;
+    padding: 0 14px;
+    font-size: 15px;
+    color: #2a2a2a;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.campo-filtro select:focus,
+.campo-filtro input:focus,
+.ordenacao-select:focus {
+    border-color: #b39a7a;
+    box-shadow: 0 0 0 3px rgba(179, 154, 122, 0.12);
+}
+
+.filtro-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.filtro-acoes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-top: 4px;
+}
+
+.btn-filtro {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
     border: none;
-    font-size: 17px;
-    border-radius: 50px;
-    padding: 8px 80px;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 800;
     cursor: pointer;
-    margin: 20px;
-
-
+    transition: 0.25s ease;
 }
 
-.voltar-button:hover {
-    background-color: #703D13;
+.btn-filtro-primario {
+    background: #161616;
+    color: #fff;
 }
 
-.tipos-imoveis {
-    margin-top: 30px;
+.btn-filtro-primario:hover {
+    background: #b39a7a;
+}
+
+.btn-filtro-secundario {
+    background: #f2ebe3;
+    color: #7d654b;
+}
+
+.btn-filtro-secundario:hover {
+    background: #eadfce;
+}
+
+.mobile-filter-btn {
+    display: none;
+    border: none;
+    background: #161616;
+    color: #fff;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* =========================================================
+   GRID DE CARDS DA PÁGINA DE CATÁLOGO
+========================================================= */
+.house-list.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+}
+
+.house.portal-card {
+    width: 100%;
+    min-width: unset;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(232, 223, 213, 0.95);
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.07);
+}
+
+.house.portal-card img {
+    width: 100%;
+    height: 220px;
+    min-height: 220px;
+    max-height: 220px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.portal-card .house-details {
+    padding: 22px;
+}
+
+.portal-card .casa-descricao {
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.portal-card .texto-descricao {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.portal-preco {
+    font-size: 18px;
+    font-weight: 800;
+    color: #161616;
+    margin-bottom: 14px;
+}
+
+.portal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    font-size: 14px;
+    color: #6e6a65;
+    margin-bottom: 16px;
+}
+
+.portal-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.portal-resumo {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #6e6a65;
+    margin-bottom: 18px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 46px;
+}
+
+.portal-card .house-button {
+    margin-top: 0;
+}
+
+.mobile-filtros-overlay {
+    display: none;
+}
+
+/* =========================================================
+   AJUSTE ESPECÍFICO DE BOTÃO DA PÁGINA CONTATO
+========================================================= */
+.contato-botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 190px;
+}
+
+/* =========================================================
+   RODAPÉ PADRÃO DO SITE
+========================================================= */
+.footer-site {
+    background: #121212;
+    color: #fff;
+    margin-top: 60px;
+    border-top: 1px solid rgba(179, 154, 122, 0.22);
+}
+
+.footer-site .footer-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 42px 20px 26px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 34px;
+}
+
+.footer-brand img {
+    margin-bottom: 18px;
+}
+
+.footer-brand p,
+.footer-col p,
+.footer-col a {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.footer-brand p + p {
+    margin-top: 12px;
+}
+
+.footer-col h4 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: #fff;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a:hover {
+    color: var(--cor-primaria);
+}
+
+.footer-contato-item {
+    margin-bottom: 12px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 28px;
+    padding-top: 18px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================================================
+   PÁGINA SOBRE
+========================================================= */
+.sobre-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 34px 20px 40px;
+}
+
+.sobre-topo {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(232, 223, 213, 0.9);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.05);
+    border-radius: 28px;
+    padding: 28px 28px 24px;
+    margin-bottom: 26px;
+    text-align: center;
+}
+
+.sobre-topo h1 {
+    font-size: 38px;
+    line-height: 1.15;
+    color: #161616;
+    letter-spacing: -0.03em;
+    margin-bottom: 10px;
+}
+
+.sobre-topo p {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #6e6a65;
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.sobre-card {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(232, 223, 213, 0.95);
+    border-radius: 26px;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.07);
+    padding: 26px;
+}
+
+.sobre-card h2 {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #7d654b;
+    margin-bottom: 12px;
+}
+
+.sobre-card h3 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #161616;
+    margin-bottom: 16px;
+}
+
+.sobre-card p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #6e6a65;
+    margin-bottom: 14px;
+}
+
+.sobre-destaques {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sobre-mini-box {
+    background: #faf7f3;
+    border: 1px solid #eee4d9;
+    border-radius: 18px;
+    padding: 16px 18px;
+}
+
+.sobre-mini-box h4 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #161616;
+    margin-bottom: 6px;
+}
+
+.sobre-mini-box p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #6e6a65;
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   GALERIA DA PÁGINA SOBRE
+========================================================= */
+.sobre-galeria {
+    margin-top: 28px;
+}
+
+.sobre-galeria-topo {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.sobre-galeria-topo h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #161616;
+    letter-spacing: -0.03em;
+    margin-bottom: 10px;
+}
+
+.sobre-galeria-topo p {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #6e6a65;
+}
+
+.sobre-galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.sobre-galeria-item {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(232, 223, 213, 0.95);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.07);
+    transition: 0.3s ease;
+}
+
+.sobre-galeria-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.12);
+}
+
+.sobre-galeria-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+/* =========================================================
+   PÁGINA IMÓVEL
+========================================================= */
+.imovel-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 34px 20px 40px;
+}
+
+.imovel-topo {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(232, 223, 213, 0.9);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.05);
+    border-radius: 28px;
+    padding: 28px 28px 24px;
+    margin-bottom: 26px;
+}
+
+.imovel-topo h1 {
+    font-size: 38px;
+    line-height: 1.15;
+    color: #161616;
+    letter-spacing: -0.03em;
+    margin-bottom: 10px;
+}
+
+.imovel-local {
+    font-size: 17px;
+    color: #6e6a65;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.imovel-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 26px;
+    align-items: start;
+}
+
+.imovel-coluna-principal,
+.imovel-coluna-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.imovel-card {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(232, 223, 213, 0.95);
+    border-radius: 26px;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+}
+
+.imovel-capa {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+}
+
+.imovel-capa-vazia {
+    width: 100%;
+    height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f7f1ea 0%, #efe4d8 100%);
+    color: #7d654b;
+    font-weight: 800;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+}
+
+.galeria-card {
+    padding: 22px;
+}
+
+.galeria-titulo,
+.box-titulo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #161616;
+    margin-bottom: 16px;
+}
+
+.galeria-imagens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.galeria-imagens a {
+    display: block;
+}
+
+.box-conteudo {
+    padding: 24px;
+}
+
+.descricao-titulo {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #7d654b;
+    margin-bottom: 12px;
+}
+
+.preco-destaque {
+    margin-top: 18px;
+    font-size: 32px;
+    font-weight: 800;
+    color: #161616;
+    letter-spacing: -0.03em;
+}
+
+.box-negocios .descricao-texto-casa-separada strong {
+    color: #161616;
+}
+
+.whatsapp-inline {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.whatsapp-inline img {
+    display: block;
+}
+
+.imovel-acoes {
     display: flex;
     justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+/* Informações resumidas do imóvel com ícones */
+.imovel-info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.imovel-info-item {
+    display: inline-flex;
     align-items: center;
-    margin-bottom: -30px;
+    gap: 8px;
+    background: #faf7f3;
+    border: 1px solid #eee4d9;
+    border-radius: 14px;
+    padding: 10px 14px;
+    color: #5f5a54;
+    font-size: 14px;
+    font-weight: 700;
 }
 
-.opcoes {
-    float: left;
-    width: 250px;
-    line-height: 25px;
-    padding: 5px;
-    background-color: #f1f1f1;
+.imovel-info-item i {
+    color: #92795d;
+    font-size: 14px;
+}
+
+/* =========================================================
+   PÁGINA CONTATO
+========================================================= */
+.contato-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 34px 20px 40px;
+}
+
+.contato-topo {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(232, 223, 213, 0.9);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.05);
+    border-radius: 28px;
+    padding: 28px 28px 24px;
+    margin-bottom: 26px;
     text-align: center;
-    cursor: pointer;
-    border-bottom: 5px solid;
-
 }
 
-.opcoes:hover {
-    border-color: #A49585;
+.contato-topo h1 {
+    font-size: 38px;
+    line-height: 1.15;
+    color: #161616;
+    letter-spacing: -0.03em;
+    margin-bottom: 10px;
 }
 
-.borda-ops {
-    border-color: #703D13;
+.contato-topo p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.75;
+    color: #6e6a65;
 }
 
-.fundo-ops {
-    font-size: 20px;
-    font-weight: 400;
-    text-decoration: none;
-    font-weight: bold;
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
 }
 
-.sonho {
-    text-align: center;
-    font-size: 40px;
-    margin-top: 60px;
-    margin-bottom: 60px;
+.contato-card {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(232, 223, 213, 0.95);
+    border-radius: 26px;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.07);
+    padding: 26px;
 }
 
-.nome-lista {
-    text-align: center;
-    font-size: 30px;
+.contato-card h2 {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #7d654b;
+    margin-bottom: 12px;
+}
+
+.contato-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #161616;
+    margin-bottom: 14px;
+}
+
+.contato-texto {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #6e6a65;
+    margin-bottom: 12px;
+}
+
+.contato-linha {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #6e6a65;
+    margin-bottom: 14px;
+}
+
+.contato-linha strong {
+    color: #161616;
+}
+
+.contato-icone-link {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.contato-icone-link img {
+    display: block;
+}
+
+.contato-acoes {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
     margin-top: 20px;
-    margin-bottom: 35px;
 }
 
-.botao-filtro {
-    text-decoration: none;
-    color: black;
+.contato-info-extra {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
-.atuacao:hover {
-    background-color: #703D13;
-    transform: scale(1.03);
-
+.contato-mini-box {
+    background: #faf7f3;
+    border: 1px solid #eee4d9;
+    border-radius: 18px;
+    padding: 16px 18px;
 }
 
-.error-image {
-    text-align: center;
+.contato-mini-box h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #161616;
+    margin-bottom: 6px;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
+.contato-mini-box p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #6e6a65;
+}
 
-    body {
-        overflow-x: hidden;
-        /* Oculta a barra de rolagem horizontal */
+.contato-footer-acoes {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ---------------------------------------------------------
+   Blocos separados por largura de tela para facilitar
+   manutenção futura.
+========================================================= */
+
+/* Desktop grande: filtro lateral fixo com rolagem própria */
+@media (min-width: 1200px) {
+    .filtros-sidebar {
+        position: sticky;
+        top: 100px;
+        max-height: calc(100vh - 140px);
+        overflow: visible;
+        border-radius: 24px;
     }
 
+    .filtros-card {
+        max-height: calc(100vh - 140px);
+        overflow-y: auto;
+        padding-bottom: 22px;
+    }
+}
+
+/* Ajustes para telas até 1200px */
+@media (max-width: 1200px) {
+    .house-list.portal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Ajustes intermediários */
+@media (max-width: 1100px) {
+    .slide-content h1 {
+        font-size: 48px;
+    }
+
+    .house {
+        width: calc(50% - 14px);
+    }
+
+    .sonho {
+        font-size: 30px;
+    }
+}
+
+/* Tablets e telas médias */
+@media (max-width: 900px) {
+    .catalogo-layout,
+    .sobre-grid,
+    .contato-grid,
+    .imovel-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filtros-sidebar {
+        display: none;
+    }
+
+    .mobile-filter-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-filtros-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 1200;
+        padding: 20px 14px;
+        overflow-y: auto;
+    }
+
+    .mobile-filtros-overlay.active {
+        display: block;
+    }
+
+    .mobile-filtros-box {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    .house-list.portal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile e tablets menores */
+@media (max-width: 768px) {
     .center {
         flex-direction: column;
         align-items: center;
         margin: 0;
+        padding: 0 20px;
+    }
+
+    header .center {
+        gap: 18px;
+    }
+
+    .menu {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .menu a {
+        margin: 0;
+        font-size: 15px;
+    }
+
+    .slider img {
+        height: 520px;
+    }
+
+    .slide-overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(14, 14, 14, 0.76) 0%,
+            rgba(14, 14, 14, 0.48) 100%
+        );
+    }
+
+    .slide-content {
+        text-align: center;
+    }
+
+    .slide-content h1 {
+        font-size: 36px;
+        max-width: 100%;
+    }
+
+    .slide-content p {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    section.main {
+        padding: 32px 0 30px;
+    }
+
+    .tipos-imoveis {
+        gap: 10px;
+    }
+
+    .opcoes {
+        min-width: 150px;
+        width: auto;
+    }
+
+    .house {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .sobre-page,
+    .contato-page,
+    .imovel-page {
+        padding: 24px 16px 30px;
+    }
+
+    .sobre-topo,
+    .contato-topo,
+    .imovel-topo {
+        padding: 22px 18px 18px;
+        border-radius: 22px;
+    }
+
+    .sobre-topo h1,
+    .contato-topo h1,
+    .imovel-topo h1 {
+        font-size: 28px;
+    }
+
+    .sobre-topo p,
+    .contato-topo p,
+    .sobre-galeria-topo p {
+        font-size: 15px;
+    }
+
+    .sobre-card,
+    .contato-card {
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    .sobre-card h3,
+    .contato-card h3 {
+        font-size: 22px;
+    }
+
+    .sobre-galeria-topo h2 {
+        font-size: 26px;
+    }
+
+    .imovel-local {
+        font-size: 15px;
+    }
+
+    .imovel-capa,
+    .imovel-capa-vazia {
+        height: 280px;
+    }
+
+    .imovel-capa,
+    .img-g-casa img {
+        width: 100%;
+        height: 460px;
+        object-fit: cover;
+        display: block;
+}
+
+    .galeria-imagens {
+        justify-content: center;
+    }
+
+    .thumbnail {
+        width: 90px;
+        height: 90px;
+    }
+
+    .preco-destaque {
+        font-size: 26px;
+    }
+
+    .imovel-acoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imovel-acoes .voltar-button,
+    .contato-botao {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .contato-acoes {
+        flex-direction: column;
+    }
+
+    .modal .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .modal .prev,
+    .modal .next {
+        font-size: 24px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    .modal .prev {
+        left: 10px;
+    }
+
+    .modal .next {
+        right: 10px;
+    }
+
+    .imovel-info-grid {
+        gap: 10px;
+    }
+
+    .imovel-info-item {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* Mobile pequeno */
+@media (max-width: 576px) {
+    .menu {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .slider img {
+        height: 430px;
+    }
+
+    .slide-content h1 {
+        font-size: 28px;
+    }
+
+    .slide-content p {
+        font-size: 15px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        min-width: unset;
+        max-width: 280px;
+    }
+
+    .sonho {
+        font-size: 24px;
+    }
+
+    .tipos-imoveis {
+        flex-direction: column;
         padding: 0;
     }
 
-    .menu {
+    .opcoes {
         width: 100%;
-        padding: 20px 0;
-        margin: 20px 0;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
+        min-width: unset;
     }
 
-    .menu a {
-        margin: 10px 0;
+    .catalogo-page {
+        padding: 22px 14px 30px;
     }
 
-    /* Estilos para o slider */
-    .slider img {
-        height: auto;
-        max-height: 400px;
+    .catalogo-page-title {
+        font-size: 28px;
     }
 
-    /* Estilos para a seção "main" */
-    .atuacoes {
-        padding: 20px;
-        flex-direction: column;
-        align-items: center;
+    .catalogo-page-subtitle {
+        font-size: 15px;
     }
 
-    .tipos-imoveis {
-        display: flex;
-        flex-wrap: nowrap;
-        /* Mantém os itens em uma linha, sem quebra */
-        overflow-x: auto;
-        /* Adiciona uma barra de rolagem horizontal se os itens não couberem na tela */
-
+    .catalogo-total {
+        font-size: 16px;
     }
 
-    .fundo-ops {
-        width: 80px;
-    }
-
-    .botao-filtro {
-        flex: 0 0 auto;
-        /* Permitir que os botões tenham tamanho automático */
-        margin: 10px;
-        /* Adicionar margem entre os botões */
-    }
-
-    .atuacao {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    /* Estilos para as casas na seção "main" */
-    .house {
+    .ordenacao-select {
+        min-width: unset;
         width: 100%;
     }
 
-    /* Estilos para a seção "sobre" */
-    .sobre {
-        padding: 20px;
-        text-align: center;
-    }
-
-    .sobre img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .descricao {
-        max-width: 100%;
-        margin-left: 0;
-        margin-top: 20px;
-    }
-
-    .sombrasepara {
-        max-width: 100%;
-        /* Define a largura máxima como 100% do contêiner pai */
-        height: auto;
-        /* Garante que a altura seja ajustada automaticamente para manter a proporção da imagem */
-    }
-
-    .roda-pe {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #333;
-        color: white;
-        padding: 10px 0;
-        flex-wrap: wrap;
-        /* Permite que os itens possam quebrar linha quando não houver espaço suficiente */
-    }
-
-    .roda-pe .logo,
-    .roda-pe .separa,
-    .roda-pe .itens {
-        margin: 0 10px;
-        /* Adicione margem entre os elementos */
-    }
-
-    .roda-pe .itens {
-        display: flex;
-        align-items: center;
-    }
-
-    .roda-pe .itens img {
-        margin-right: 5px;
-        /* Adicione margem entre a imagem e o texto */
-    }
-
-    .roda-pe .itens p {
-        margin: 0;
-        /* Remova as margens dos parágrafos para evitar espaçamento extra */
-        font-size: 14px;
-        /* Ajuste o tamanho da fonte para que caiba lado a lado */
-    }
-
-    
-}
-
-/* Responsivo */
-
-@media (max-width: 576px) {
-    /* Adicione seus estilos para telas pequenas aqui */
-
-    /* Exemplo de modificação para o menu */
-    .menu {
-        width: 100%;
-        padding: 20px 0;
-        margin: 20px 0;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .menu a {
-        margin: 10px 0;
-    }
-
-    /* Restante dos estilos... */
-
-    /* Estilos para o slider */
-    .slider img {
-        height: auto;
-        max-height: 400px;
-    }
-
-    /* Estilos para a seção "main" */
-    .atuacoes {
-        padding: 20px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .atuacao {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    /* Estilos para as casas na seção "main" */
-    .house {
+    .catalogo-topbar-direita {
         width: 100%;
     }
 
-    /* Estilos para a seção "sobre" */
-    .sobre {
-        padding: 20px;
-        text-align: center;
+    .catalogo-topbar-direita form {
+        width: 100%;
     }
 
-    .sobre img {
-        max-width: 100%;
-        height: auto;
+    .portal-card .house-details {
+        padding: 18px;
     }
 
-    .tipos-imoveis {
-        display: flex;
-        flex-wrap: nowrap;
-        /* Mantém os itens em uma linha, sem quebra */
-        overflow-x: auto;
-        /* Adiciona uma barra de rolagem horizontal se os itens não couberem na tela */
-
-    }
-
-    .fundo-ops {
-        width: 80px;
-    }
-
-    .botao-filtro {
-        flex: 0 0 auto;
-        /* Permitir que os botões tenham tamanho automático */
-        margin: 10px;
-        /* Adicionar margem entre os botões */
-    }
-
-
-    .descricao {
-        max-width: 100%;
-        margin-left: 0;
-        margin-top: 20px;
-    }
-
-    footer {
-        padding: 20px;
-        text-align: center;
-    }
-
-    footer p {
-        margin-bottom: 0;
-        /* Remova a margem inferior do parágrafo no rodapé */
+    .filtro-grid-2 {
+        grid-template-columns: 1fr;
     }
 
     .sombrasepara {
         display: none;
-        /*oculta a linha de sombra*/
     }
 
-    .roda-pe {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #333;
-        color: white;
-        padding: 10px 0;
-        flex-wrap: wrap;
-        /* Permite que os itens possam quebrar linha quando não houver espaço suficiente */
+    .casa-descricao {
+        font-size: 18px;
     }
 
-    .roda-pe .logo,
-    .roda-pe .separa,
-    .roda-pe .itens {
-        margin: 0 10px;
-        /* Adicione margem entre os elementos */
+    .preco-imovel {
+        font-size: 24px;
     }
 
-    .roda-pe .itens {
-        display: flex;
-        align-items: center;
+    .descricao-casa-separada {
+        padding: 20px;
     }
 
-    .roda-pe .itens img {
-        margin-right: 5px;
-        /* Adicione margem entre a imagem e o texto */
+    .centralizar-conteudo {
+        flex-direction: column;
     }
 
-    .roda-pe .itens p {
-        margin: 0;
-        /* Remova as margens dos parágrafos para evitar espaçamento extra */
-        font-size: 14px;
-        /* Ajuste o tamanho da fonte para que caiba lado a lado */
+    .voltar-button {
+        width: 100%;
+        max-width: 260px;
     }
 
-    .house-button-2 {
-        margin-bottom: 50px;
+    .footer-site .footer-inner {
+        padding: 34px 16px 22px;
     }
 
+    .footer-col h4 {
+        font-size: 19px;
+    }
+
+    .sobre-galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-galeria-item img {
+        height: 220px;
+    }
+}
+
+/* Padronização das imagens dos imóveis */
+.house img,
+.house.portal-card img {
+    width: 100% !important;
+    height: 220px !important;
+    min-height: 220px !important;
+    max-height: 220px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
 }
