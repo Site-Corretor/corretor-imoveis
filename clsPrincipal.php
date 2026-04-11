@@ -8,8 +8,8 @@ class Principal
 		global $pdo;
 		try 
 		{
-            // $pdo = new PDO( 'mysql:host=localhost;dbname=corretora', 'root');
-            $pdo = new PDO("mysql:dbname="."u830382291_corretor".";host="."br-asc-web1181.main-hosting.eu", "u830382291_corretor", "Ricardosouza1");
+            $pdo = new PDO( 'mysql:host=localhost;dbname=corretora', 'root');
+            //$pdo = new PDO("mysql:dbname="."u830382291_corretor".";host="."br-asc-web1181.main-hosting.eu", "u830382291_corretor", "Ricardosouza1");
 
 		} 
 		catch (PDOException $e) 
@@ -78,7 +78,7 @@ class Principal
         }
     }
 
-    public function imagem($codigo) {
+    /*public function imagem($codigo) {
         global $pdo;
         $sql = $pdo->prepare("SELECT * FROM regstro_anexos WHERE codigo = :codigo AND capa = 1;");
         $sql->bindValue(":codigo", $codigo);
@@ -91,8 +91,33 @@ class Principal
         } else {
             return false;
         }
+    }*/
+    public function imagem($codigo)
+{
+    global $pdo;
+
+    /* Primeiro tenta buscar a imagem marcada como capa */
+    $sql = $pdo->prepare("SELECT * FROM regstro_anexos WHERE codigo = :codigo AND capa = 1 LIMIT 1;");
+    $sql->bindValue(":codigo", $codigo);
+    $sql->execute();
+
+    if ($sql->rowCount() > 0) {
+        return $sql->fetch();
     }
-    
+
+    /* Se não houver capa definida, pega a primeira imagem disponível */
+    $sql = $pdo->prepare("SELECT * FROM regstro_anexos WHERE codigo = :codigo LIMIT 1;");
+    $sql->bindValue(":codigo", $codigo);
+    $sql->execute();
+
+    if ($sql->rowCount() > 0) {
+        return $sql->fetch();
+    }
+
+    return false;
+}
+
+
     public function tdsImagem($codigo) {
         global $pdo;
         $sql = $pdo->prepare("SELECT * FROM regstro_anexos WHERE codigo = :codigo;");

@@ -4,8 +4,6 @@ $u = new Principal;
 $u->conectar();
 
 $visualizar = $u->visualizar();
-
-
 ?>
 
 <!DOCTYPE html>
@@ -14,11 +12,10 @@ $visualizar = $u->visualizar();
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="short cut icon" type="image/x-icon" href="imagens/logo-ricardo.ico">
-
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,174 +26,194 @@ $visualizar = $u->visualizar();
     <header>
         <div class="center">
             <div class="logo">
-                <a href="index.php"><img src="imagens/logo-ricardo.png" width=145px height=70px> </a>
+                <a href="index.php">
+                    <img src="imagens/logo-ricardo.png" width="145" height="70" alt="Ricardo Souza Imóveis">
+                </a>
             </div>
-            <!--logo-->
+
             <div class="menu">
-                <a href="geral.php">
-                    Imóveis
-                </a>
-                <a href="contato.php">
-                    Contato
-                </a>
+                <a href="geral.php">Imóveis</a>
+                <a href="sobre.php">Sobre Nós</a>
+                <a href="contato.php">Contato</a>
+                <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank" class="menu-cta">WhatsApp</a>
             </div>
-            <!--menu-->
         </div>
-        <!--center-->
     </header>
-    <div class="linha-horinzontal"></div>
-    <div class=" slider-container">
-        <!--div que pegar os elementos que vao dentro-->
+
+    <div class="slider-container">
         <div class="slider">
-            <!--div para cada elemento.-->
-            <div>
-                <img src="imagens/fotocapa.jpg" alt="casa 1">
+            <div class="slide-item">
+                <img src="imagens/fotocapa.jpg" alt="Imagem principal do site">
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <span class="slide-badge">Atendimento especializado</span>
+                        <h1>Referência em imóveis de alto padrão, galpões e áreas industriais</h1>
+                        <p>Atuamos com vendas e locações de imóveis em toda a região da Grande São Paulo e Litoral, com atendimento próximo, estratégico e profissional.</p>
+                        <div class="hero-buttons">
+                            <a href="geral.php" class="hero-btn hero-btn-outline">Ver imóveis</a>
+                            <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank" class="hero-btn">Entrar em contato</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
     <section class="main">
         <div class="center">
             <div class="main-chamada">
-                <h2>Referência em imóveis de alto padrão, <br /> galpões e áreas industriais</h2>
-                <p>Atuamos com vendas e locações de imóveis em toda região da Grande São Paulo e Litoral</p>
-
+                <span class="section-label">Especialidades</span>
+                <h2>Encontre o imóvel ideal para morar, investir ou expandir seu negócio</h2>
+                <p>Uma seleção completa de oportunidades residenciais, comerciais, industriais e terrenos em localizações estratégicas.</p>
             </div>
-            <!--main-chamada-->
         </div>
-        <!--center-->
 
         <div class="atuacoes">
-
-            <div class="atuacao" onclick="window.location='filtroResidencias.php'" style=" cursor: pointer;">
-                <a href="filtroResidencias.php" class="botao-filtro">
-                    <i class="icon-atuacao"><img src="imagens/Icones/residencia_icon.png" width=60px height=60px></i>
+            <div class="atuacao" onclick="window.location='geral.php?tipo=residencia'" style="cursor: pointer;">
+                <a href="geral.php?tipo=residencia" class="botao-filtro">
+                    <i class="icon-atuacao">
+                        <img src="imagens/Icones/residencia_icon.png" width="60" height="60" alt="Residencial">
+                    </i>
                     <h2>Residencial</h2>
-                    <p>Diversas opções de casas e apartamentos</p>
+                    <p>Diversas opções de casas e apartamentos para diferentes estilos de vida.</p>
                 </a>
             </div>
 
-            <div class="atuacao" onclick="window.location='filtroComercios.php'" style=" cursor: pointer;">
-                <a href="filtroComercios.php" class="botao-filtro">
-                    <i class="icon-atuacao"><img src="imagens/Icones/comercio_icon.png" width=60px height=60px></i>
+            <div class="atuacao" onclick="window.location='geral.php?tipo=comercio'" style="cursor: pointer;">
+                <a href="geral.php?tipo=comercio" class="botao-filtro">
+                    <i class="icon-atuacao">
+                        <img src="imagens/Icones/comercio_icon.png" width="60" height="60" alt="Comercial">
+                    </i>
                     <h2>Comercial</h2>
-                    <p>Encontre o espaço ideal para o seu negócio</p>
+                    <p>Encontre o espaço ideal para instalar, ampliar ou reposicionar seu negócio.</p>
                 </a>
             </div>
-            <div class="atuacao" onclick="window.location='filtroIndustrias.php'" style=" cursor: pointer;">
-                <a href="filtroIndustrias.php" class="botao-filtro">
-                    <i class="icon-atuacao"><img src="imagens/Icones/industria_icon.png" width=60px height=60px></i>
+
+            <div class="atuacao" onclick="window.location='geral.php?tipo=industria'" style="cursor: pointer;">
+                <a href="geral.php?tipo=industria" class="botao-filtro">
+                    <i class="icon-atuacao">
+                        <img src="imagens/Icones/industria_icon.png" width="60" height="60" alt="Industrial">
+                    </i>
                     <h2>Industrial</h2>
-                    <p>Galpões que atendem a necessidade da sua empresa</p>
+                    <p>Galpões e áreas que atendem às necessidades operacionais da sua empresa.</p>
                 </a>
             </div>
-            <div class="atuacao" onclick="window.location='filtroTerrenos.php'" style=" cursor: pointer;">
-                <a href="filtroTerrenos.php" class="botao-filtro">
-                    <i class="icon-atuacao"><img src="imagens/Icones/terreno_icon.png" width=60px height=60px></i>
+
+            <div class="atuacao" onclick="window.location='geral.php?tipo=terreno'" style="cursor: pointer;">
+                <a href="geral.php?tipo=terreno" class="botao-filtro">
+                    <i class="icon-atuacao">
+                        <img src="imagens/Icones/terreno_icon.png" width="60" height="60" alt="Terrenos">
+                    </i>
                     <h2>Terrenos</h2>
-                    <p>Diversas opções lotes residenciais e áreas industriais</p>
+                    <p>Diversas opções de lotes residenciais e áreas industriais para investimento.</p>
                 </a>
             </div>
         </div>
-        <!--atuacoes-->
 
-        <div class="main-chamada">
-            <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank"><button>Entrar em
-                    contato</button></a>
+        <div class="titulo-secao">
+            <span class="section-label">Imóveis em destaque</span>
+            <h1 class="destaque">Oportunidades selecionadas</h1>
+            <p>Confira alguns dos imóveis em evidência no momento.</p>
         </div>
-
-        <h1 class="destaque">Destaques</h1>
 
         <div class="house-list">
             <?php
-            for ($i = 0; $i < count($visualizar); $i++) {
-                if ($visualizar[$i]['destaque'] == 'sim') {
-                    $imagem = $u->imagem($visualizar[$i]['codigo']);
-                    if ($visualizar[$i]['ativo'] == 1) {
+            if ($visualizar && count($visualizar) > 0) {
+                for ($i = 0; $i < count($visualizar); $i++) {
+                    if ($visualizar[$i]['destaque'] == 'sim') {
+                        $imagem = $u->imagem($visualizar[$i]['codigo']);
+                        if ($visualizar[$i]['ativo'] == 1) {
             ?>
+                            <div class="house" onclick="window.location='<?php echo 'imovel.php?codigo=' . $visualizar[$i]['codigo']; ?>'" style="cursor: pointer;">
+                                <?php
+                                if ($imagem && !empty($imagem['img'])) {
+                                    //echo '<img src="https://ricardosouzaimoveis.com.br/admin/upload/' . $imagem['img'] . '" alt="Pré-visualização do imóvel">';
+                                    echo '<img src="admin/upload/' . $imagem['img'] . '" alt="Pré-visualização do imóvel">';
+                                } else {
+                                    echo '<img src="imagens/fotocapa.jpg" alt="Imagem padrão do imóvel">';
+                                }
+                                ?>
 
-                        <div class="house" onclick="window.location=' <?php echo 'imovel.php?codigo=' . $visualizar[$i]['codigo']; ?>'" style="cursor: pointer;">
-                            <?php echo '<img src="https://ricardosouzaimoveis.com.br/admin/upload/' . $imagem['img'] . '"
-                    alt="Pré-visualização da imagem">'; ?>
-                            <div class="house-details">
-                                <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo'] ?></h3>
-                                <p class="texto-descricao"><?php echo $visualizar[$i]['cidade'] ?></p>
-                                <!--<p class="descricao-casa"><i
-                            class="fas fa-ruler-combined favicon"></i><?php echo $visualizar[$i]['total_area'] ?>m²</p>
-                    <p class="descricao-casa"><i
-                            class="fas fa-bed favicon"></i><?php echo $visualizar[$i]['dormitorios'] ?> dormitórios</p>
-                    <p class="descricao-casa"><i
-                            class="fas fa-restroom favicon"></i><?php echo $visualizar[$i]['banheiros'] ?> banheiros</p>
-                    <p class="descricao-casa"><i
-                            class="fas fa-warehouse favicon"></i><?php echo $visualizar[$i]['vagas'] ?> vagas de garagem
-                    </p>-->
-                                <wbr>
-                                <p class="casa-descricao"><b><?php echo $visualizar[$i]['preco'] ?></b></p>
-                                <p class="border-descrica-casa"></p>
-                                <a href=<?php echo "'imovel.php?codigo=" . $visualizar[$i]['codigo'] . "'" ?>><button class="house-button">Saber Mais</button></a>
+                                <div class="house-details">
+                                    <div class="house-info-topo">
+                                        <span class="house-tag">Destaque</span>
+                                    </div>
+
+                                    <h3 class="casa-descricao"><?php echo $visualizar[$i]['titulo']; ?></h3>
+                                    <p class="texto-descricao">
+                                        <i class="fas fa-map-marker-alt favicon"></i>
+                                        <?php echo $visualizar[$i]['cidade']; ?>
+                                    </p>
+
+                                    <p class="preco-imovel"><?php echo 'R$ ' . number_format((float)$visualizar[$i]['preco'], 2, ',', '.'); ?></p>
+                                    <p class="border-descrica-casa"></p>
+
+                                    <a href="<?php echo 'imovel.php?codigo=' . $visualizar[$i]['codigo']; ?>">
+                                        <button class="house-button">Saber mais</button>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-
-
             <?php
+                        }
                     }
                 }
             }
             ?>
-
         </div>
+
         <div class="button-container">
-            <a href="geral.php"><button class="house-button-2">Veja Mais</button></a>
+            <a href="geral.php">
+                <button class="house-button-2">Ver todos os imóveis</button>
+            </a>
         </div>
-        <img class="sombrasepara" src="imagens/sombra.png">
 
-        <!-- <div class="sobre">
-            <img class="foto"
-                src="https://patriciaamaralcorretora.com.br/wp-content/uploads/2023/08/Patricia-Amaral.jpg"
-                alt="Pessoa">
-            <div class="descricao">
-                <h3>Ricardo Souza - CRECI: 218535</h3>
-                <p>Carlos Fontana é conhecido por dar palestra que abalam a estrutura do marketing
-                    tradicional.Prepara-se para sair
-                    do evento com uma nova visão do que é posivel ser feito para o seu negócio decolar.
-                </p>
-                <p>
-                    Formado em Marketing pela Universidade de XYZ e fundador da MarkUp, a empresa vencedora dos
-                    úiltimos
-                    5 prêmios MarketingBr.
-                </p>
-            </div>
-        </div> -->
-        <div class="roda-pe">
-            <div class="logo">
-                <a href="index.php"><img src="imagens/logo-ricardo.png" width=120px height=60px></a>
-            </div>
-            <div class="separa">
-                <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
-            </div>
-            <div class="itens">
-                <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
-                    <img src="imagens/Icones/whatsapp.png" width=40px height=40px>
-                </a>
-                <p>WhatsApp</p>
-            </div>
-            <div class="separa">
-                <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
-            </div>
-            <div class="itens">
-                <a href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
-                    <img src="imagens/Icones/instagram.png" width=40px height=40px>
-                </a>
-                <p>@ricardonsouzaimoveis</p>
-            </div>
-        </div>
+        <img class="sombrasepara" src="imagens/sombra.png" alt="Separador">
     </section>
-    <!--main-->
 
-    <footer>
-        <p>&copy; 2023. Todos os direitos reservados.</p>
+    <footer class="footer-site">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="imagens/logo-ricardo.png" width="180" alt="Ricardo Souza Imóveis">
+                    <p>Av. Gov. Mário Covas Júnior, 2665 
+                        - Portão</p>
+                    <p>Arujá - SP</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <div class="footer-links">
+                        <a href="sobre.php">Sobre Nós</a>
+                        <a href="contato.php">Fale Conosco</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Imóveis</h4>
+                    <div class="footer-links">
+                        <a href="geral.php?tipo=residencia">Residencial</p>
+                        <a href="geral.php?tipo=comercio">Comercial</p>
+                        <a href="geral.php?tipo=industria">Industrial</p>
+                        <a href="geral.php?tipo=terreno">Terrenos</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Serviços</h4>
+                    <div class="footer-links">
+                        <p>Venda</p>
+                        <p>Locação</p>
+                        <p>Administração</p>
+                        <p>Suporte</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
-
 </body>
 
 </html>
-<script src="script.js"></script>

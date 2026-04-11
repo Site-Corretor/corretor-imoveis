@@ -3,12 +3,20 @@ require_once 'clsPrincipal.php';
 $u = new Principal;
 $u->conectar();
 
-$visualizar = $u->visualizar();
-
 $codigo = $_GET['codigo'];
 $imovel = $u->imovel($codigo);
 $imagem = $u->imagem($codigo);
 
+$descricao = isset($imovel['descricao']) ? trim($imovel['descricao']) : '';
+
+$cidade = isset($imovel['cidade']) ? $imovel['cidade'] : '';
+$preco = isset($imovel['preco']) ? $imovel['preco'] : '';
+$titulo = isset($imovel['titulo']) ? $imovel['titulo'] : '';
+
+$dormitorios = isset($imovel['dormitorios']) ? $imovel['dormitorios'] : '';
+$banheiros = isset($imovel['banheiros']) ? $imovel['banheiros'] : '';
+$vagas = isset($imovel['vagas']) ? $imovel['vagas'] : '';
+$total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
 ?>
 
 <!DOCTYPE html>
@@ -17,304 +25,249 @@ $imagem = $u->imagem($codigo);
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="short cut icon" type="image/x-icon" href="imagens/logo-ricardo.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descrição da casa</title>
-    <style>
-        .img-g-casa img {
-
-            width: 100%;
-            height: auto;
-            max-width: 600px;
-            margin: 0 auto;
-
-        }
-
-        /* Responsivo para telas médias e pequenas */
-        @media only screen and (max-width: 768px) {
-            .main-casa {
-                text-align: center;
-            }
-
-            .casa {
-                /* Centralize o texto */
-                text-align: center;
-                padding-left: calc((100% - 600px) / 2);
-            }
-
-            .img-g-casa img {
-                display: none;
-            }
-
-
-            .galeria img {
-                width: 100%;
-                height: auto;
-            }
-
-            .descricao-casa-separada h2 {
-                font-size: 24px;
-            }
-
-            .descricao-casa-separada h3,
-            .descricao-casa-separada p {
-                font-size: 16px;
-            }
-
-            .descricao-texto-casa-separada {
-                font-size: 14px;
-            }
-
-            .voltar-button {
-                padding: 8px 40px;
-            }
-
-            .conteudo-centralizado {
-                text-align: center;
-            }
-
-            .main-casa .casa h1 {
-                text-align: center;
-                margin-bottom: 20px;
-            }
-
-            /* 
-            .img-g-casa img {
-                width: 100%;
-                max-width: 600px;
-                height: auto;
-                margin: 0 auto;
-            } */
-
-            .galeria a {
-                width: 50%;
-                box-sizing: border-box;
-            }
-
-            .galeria.descricao-casa-separada {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .galeria img {
-                width: 100%;
-                height: auto;
-            }
-
-            .modal .modal-content {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-
-            .modal .prev,
-            .modal .next {
-                font-size: 24px;
-                color: white;
-                background-color: rgba(0, 0, 0, 0.3);
-                cursor: pointer;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 1;
-            }
-
-            .modal .prev {
-                left: 10px;
-                /* Ajustamos a posição para o lado esquerdo */
-            }
-
-            .modal .next {
-                right: 10px;
-                /* Ajustamos a posição para o lado direito */
-            }
-
-        }
-    </style>
+    <title>Detalhes do imóvel</title>
 </head>
-
 
 <body>
     <header>
         <div class="center">
             <div class="logo">
-                <a href="index.php"><img src="imagens/logo-ricardo.png" width=145px height=70px> </a>
+                <a href="index.php">
+                    <img src="imagens/logo-ricardo.png" width="145" height="70" alt="Ricardo Souza Imóveis">
+                </a>
             </div>
-            <!--logo-->
+
             <div class="menu">
-                <a href="geral.php">
-                    Imóveis
-                </a>
-                <a href="contato.php">
-                    Contato
-                </a>
+                <a href="geral.php">Imóveis</a>
+                <a href="sobre.php">Sobre Nós</a>
+                <a href="contato.php">Contato</a>
+                <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank" class="menu-cta">WhatsApp</a>
             </div>
-            <!--menu-->
         </div>
-        <!--center-->
     </header>
-    <div class="linha-horinzontal"></div>
-    <div class="container conteudo-centralizado">
-        <section class="main-casa">
-            <div class="casa">
-                <h1>
-                    <?php echo $imovel['titulo'] ?>
-                </h1>
-            </div>
-            <div class="img-g-casa">
-                <?php echo '<img src="https://ricardosouzaimoveis.com.br/admin/upload/' . $imagem['img'] . '"
-        alt="Pré-visualização da imagem" >'; ?>
-            </div>
 
-            <div class="roda-pe">
-                <div class="logo">
-                    <a href="index.php"><img src="imagens/logo-ricardo.png" width=120px height=60px></a>
-                </div>
-                <div class="separa">
-                    <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
-                </div>
-                <div class="itens">
-                    <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
-                        <img src="imagens/Icones/whatsapp.png" width=40px height=40px>
-                    </a>
-                    <p>WhatsApp</p>
-                </div>
-                <div class="separa">
-                    <img src="https://admin01.imobibrasil.net/t20/imagensc/rodape_ic-separa.png" alt="">
-                </div>
-                <div class="itens">
-                    <a href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
-                        <img src="imagens/Icones/instagram.png" width=40px height=40px>
-                    </a>
-                    <p>@ricardonsouzaimoveis</p>
-                </div>
-            </div>
-        </section>
-        <div class="galeria-container">
-            <div class="galeria descricao-casa-separada">
-
-                <?php
-                $images = [];
-                $imagensGerais = $u->tdsImagem($codigo);
-
-                if ($imagensGerais) {
-                    foreach ($imagensGerais as $imagemGeral) {
-                        $images[] = 'https://ricardosouzaimoveis.com.br/admin/upload/' . $imagemGeral['img'];
-
-                ?>
-                        <a href="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>" onclick="openModal('https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
-                            <img src="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>" alt="Pré-visualização da imagem" class="thumbnail">
-                        </a>
-                <?php
-                    }
-                }
-                ?>
-            </div>
+    <main class="imovel-page">
+        <div class="imovel-topo">
+            <span class="section-label">Detalhes do imóvel</span>
+            <h1><?php echo $titulo; ?></h1>
+            <p class="imovel-local">
+                <i class="fas fa-map-marker-alt"></i>
+                <?php echo $cidade; ?>
+            </p>
         </div>
 
+        <div class="imovel-grid">
+            <div class="imovel-coluna-principal">
+                <div class="imovel-card">
+                    <?php if ($imagem && !empty($imagem['img'])) { ?>
+                        <!--<img class="imovel-capa" src="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagem['img']; ?>" alt="Imagem principal do imóvel">-->
+                        <img class="imovel-capa" src="admin/upload/<?php echo $imagem['img']; ?>" alt="Imagem principal do imóvel">
+                    <?php } else { ?>
+                        <div class="imovel-capa-vazia">Imagem principal não disponível no momento</div>
+                    <?php } ?>
+                </div>
+
+                <div class="imovel-card galeria-card">
+                    <h3 class="galeria-titulo">Galeria de fotos</h3>
+                    <div class="galeria-imagens">
+                        <?php
+                        $images = [];
+                        $imagensGerais = $u->tdsImagem($codigo);
+
+                        if ($imagensGerais) {
+                            foreach ($imagensGerais as $imagemGeral) {
+                                //$images[] = 'https://ricardosouzaimoveis.com.br/admin/upload/' . $imagemGeral['img'];
+                                $images[] = 'admin/upload/' . $imagemGeral['img'];
+                        ?>
+                                <!--<a href="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>" onclick="openModal('https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
+                                    <img src="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>" alt="Pré-visualização da imagem" class="thumbnail">
+                                </a>-->
+                                <a href="admin/upload/<?php echo $imagemGeral['img']; ?>" onclick="openModal('admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
+                                    <img src="admin/upload/<?php echo $imagemGeral['img']; ?>" alt="Pré-visualização da imagem" class="thumbnail">
+                                </a>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
+
+                <div class="imovel-card">
+                    <div class="box-conteudo">
+                        <p class="descricao-titulo">Descrição do imóvel</p>
+
+                        <div class="imovel-info-grid">
+                            <?php if ($dormitorios !== '' && $dormitorios !== null) { ?>
+                                <div class="imovel-info-item">
+                                    <i class="fas fa-bed"></i>
+                                    <span><?php echo $dormitorios; ?> dormitório(s)</span>
+                                </div>
+                            <?php } ?>
+
+                            <?php if ($banheiros !== '' && $banheiros !== null) { ?>
+                                <div class="imovel-info-item">
+                                    <i class="fas fa-bath"></i>
+                                    <span><?php echo $banheiros; ?> banheiro(s)</span>
+                                </div>
+                            <?php } ?>
+
+                            <?php if ($vagas !== '' && $vagas !== null) { ?>
+                                <div class="imovel-info-item">
+                                    <i class="fas fa-car"></i>
+                                    <span><?php echo $vagas; ?> vaga(s)</span>
+                                </div>
+                            <?php } ?>
+
+                            <?php if ($total_area !== '' && $total_area !== null) { ?>
+                                <div class="imovel-info-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span><?php echo $total_area; ?> m²</span>
+                                </div>
+                            <?php } ?>
+
+                        </div>
+
+                        <?php if ($descricao !== '') { ?>
+    <p class="descricao-texto-casa-separada"><?php echo $descricao; ?></p>
+<?php } else { ?>
+    <p class="descricao-texto-casa-separada">Descrição não informada no momento.</p>
+<?php } ?>
+
+                        <p class="preco-destaque"><?php echo 'R$ ' . number_format((Float)$preco, 2, ',', '.'); ?></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="imovel-coluna-lateral">
+                <div class="imovel-card box-negocios">
+                    <div class="box-conteudo">
+                        <p class="descricao-titulo">Central de negócios</p>
+                        <h3 class="box-titulo">Fale com nossa equipe</h3>
+
+                        <p class="descricao-texto-casa-separada">
+                            Para ter mais informações sobre este imóvel, entre em contato:
+                        </p>
+
+                        <p class="descricao-texto-casa-separada">
+                            <strong>Ricardo Souza:</strong> (11) 97035-5935
+                            <a class="whatsapp-inline" href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
+                                <img src="imagens/Icones/whatsapp.png" width="14" height="14" alt="WhatsApp">
+                            </a>
+                        </p>
+
+                        <p class="descricao-texto-casa-separada">
+                            <strong>Victor Martins:</strong> (11) 95423-3209
+                            <a class="whatsapp-inline" href="https://api.whatsapp.com/send?phone=5511954233209" target="_blank">
+                                <img src="imagens/Icones/whatsapp.png" width="14" height="14" alt="WhatsApp">
+                            </a>
+                        </p>
+
+                        <p class="descricao-texto-casa-separada">
+                            <strong>E-mail:</strong> ricardosouzanegocios@gmail.com
+                        </p>
+
+                        <p class="descricao-texto-casa-separada">
+                            <strong>Localização:</strong> Arujá - São Paulo
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div id="myModal" class="modal">
             <span class="close" onclick="closeModal()">&times;</span>
             <span class="prev" onclick="changeImage(-1)">&#10094;</span>
             <span class="next" onclick="changeImage(1)">&#10095;</span>
-            <img id="modalImage" class="modal-content">
+            <img id="modalImage" class="modal-content" alt="Imagem ampliada">
         </div>
 
-
-        <div class="descricao-casa-separada">
-            <h3>DESCRIÇÃO DO IMÓVEL</h3><wbr>
-            <h3 class="descricao-texto-casa-separada"><?php echo $imovel['titulo'] ?>
-            </h3>
-            <!--<p class="descricao-texto-casa-separada"><?php echo $imovel['total_area'] ?>m²</p>-->
-            <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao1'] ?></p>
-            <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao2'] ?></p>
-            <p class="descricao-texto-casa-separada"><?php echo $imovel['descricao3'] ?></p>
-            <p class="descricao-texto-casa-separada"><?php echo $imovel['cidade'] ?></p>
-            <!--<p class="descricao-texto-casa-separada">
-                <?php echo $imovel['dormitorios'] ?>
-                dormitórios |
-                <?php echo $imovel['banheiros'] ?>
-                banheiros |
-                <?php echo $imovel['vagas'] ?>
-                vagas de garagem
-            </p>-->
-            <p class="descricao-texto-casa-separada"><b><?php echo $imovel['preco'] ?></b></p>
-        </div>
-
-
-
-        <div class="descricao-casa-separada">
-            <h3>CENTRAL DE NEGÓCIOS</h3><wbr>
-            <p class="descricao-texto-casa-separada">
-                Para ter mais informações sobre este imóvel ligue:
-            </p>
-            <p class="descricao-texto-casa-separada">
-                Ricardo Souza: (11) 97035-5935 <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank">
-                    <img src="imagens/Icones/whatsapp.png" width=13px height=13px>
-                </a>
-            </p>
-            <p class="descricao-texto-casa-separada">
-                Victor Martins: (11) 95423-3209 <a href="https://api.whatsapp.com/send?phone=5511954233209" target="_blank">
-                    <img src="imagens/Icones/whatsapp.png" width=13px height=13px>
-                </a>
-            </p>
-            <p class="descricao-texto-casa-separada">
-                Email: ricardosouzanegocios@gmail.com
-            </p>
-            <p class="descricao-texto-casa-separada">
-                Arujá - São Paulo
-            </p>
-
-        </div>
-        <div class="centralizar-conteudo">
+        <div class="imovel-acoes">
             <a href="index.php"><button class="voltar-button">Início</button></a>
             <a href="geral.php"><button class="voltar-button">Voltar</button></a>
         </div>
+    </main>
 
-    </div>
-    <footer>
-        <p>&copy; 2023. Todos os direitos reservados.</p>
+    <footer class="footer-site">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="imagens/logo-ricardo.png" width="180" alt="Ricardo Souza Imóveis">
+                    <p>Av. Gov. Mário Covas Júnior, 2665 
+                        - Portão</p>
+                    <p>Arujá - SP</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <div class="footer-links">
+                        <a href="sobre.php">Sobre Nós</a>
+                        <a href="contato.php">Fale Conosco</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Imóveis</h4>
+                    <div class="footer-links">
+                        <a href="geral.php?tipo=residencia">Residencial</p>
+                        <a href="geral.php?tipo=comercio">Comercial</p>
+                        <a href="geral.php?tipo=industria">Industrial</p>
+                        <a href="geral.php?tipo=terreno">Terrenos</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Serviços</h4>
+                    <div class="footer-links">
+                        <p>Venda</p>
+                        <p>Locação</p>
+                        <p>Administração</p>
+                        <p>Suporte</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        var images = <?php echo json_encode($images); ?>;
+        var currentImageIndex = 0;
+
+        function openModal(imageUrl) {
+            var modal = document.getElementById("myModal");
+            var modalImage = document.getElementById("modalImage");
+            currentImageIndex = images.indexOf(imageUrl);
+            modal.style.display = "block";
+            modalImage.src = imageUrl;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        function changeImage(n) {
+            currentImageIndex += n;
+
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            } else if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+
+            var modalImage = document.getElementById("modalImage");
+            modalImage.src = images[currentImageIndex];
+        }
+    </script>
 </body>
-
-<script>
-    var images = <?php echo json_encode($images); ?>;
-    var currentImageIndex = 0;
-
-    function openModal(imageUrl) {
-        var modal = document.getElementById("myModal");
-        var modalImage = document.getElementById("modalImage");
-        currentImageIndex = images.indexOf(imageUrl);
-        modal.style.display = "block";
-        modalImage.src = imageUrl;
-    }
-
-    function closeModal() {
-        var modal = document.getElementById("myModal");
-        modal.style.display = "none";
-    }
-
-    function changeImage(n) {
-        currentImageIndex += n;
-
-        // Verifica se atingiu o limite inferior
-        if (currentImageIndex < 0) {
-            currentImageIndex = images.length - 1;
-        }
-        // Verifica se atingiu o limite superior
-        else if (currentImageIndex >= images.length) {
-            currentImageIndex = 0;
-        }
-
-        var modalImage = document.getElementById("modalImage");
-        modalImage.src = images[currentImageIndex];
-    }
-</script>
-
 
 </html>
