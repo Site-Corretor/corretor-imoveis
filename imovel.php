@@ -28,7 +28,8 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> -->
+    <link rel="stylesheet" href="/css/all.min.css">
     <link rel="short cut icon" type="image/x-icon" href="imagens/logo-ricardo.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,12 +136,12 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
                         </div>
 
                         <?php if ($descricao !== '') { ?>
-    <p class="descricao-texto-casa-separada"><?php echo $descricao; ?></p>
-<?php } else { ?>
-    <p class="descricao-texto-casa-separada">Descrição não informada no momento.</p>
-<?php } ?>
+                            <p class="descricao-texto-casa-separada"><?php echo $descricao; ?></p>
+                        <?php } else { ?>
+                            <p class="descricao-texto-casa-separada">Descrição não informada no momento.</p>
+                        <?php } ?>
 
-                        <p class="preco-destaque"><?php echo 'R$ ' . number_format((Float)$preco, 2, ',', '.'); ?></p>
+                        <p class="preco-destaque"><?php echo 'R$ ' . number_format((float)$preco, 2, ',', '.'); ?></p>
                     </div>
                 </div>
             </div>
@@ -199,7 +200,7 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
             <div class="footer-grid">
                 <div class="footer-brand">
                     <img src="imagens/logo-ricardo.png" width="180" alt="Ricardo Souza Imóveis">
-                    <p>Av. Gov. Mário Covas Júnior, 2665 
+                    <p>Av. Gov. Mário Covas Júnior, 2665
                         - Portão</p>
                     <p>Arujá - SP</p>
                 </div>
@@ -215,9 +216,9 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
                     <h4>Imóveis</h4>
                     <div class="footer-links">
                         <a href="geral.php?tipo=residencia">Residencial</p>
-                        <a href="geral.php?tipo=comercio">Comercial</p>
-                        <a href="geral.php?tipo=industria">Industrial</p>
-                        <a href="geral.php?tipo=terreno">Terrenos</p>
+                            <a href="geral.php?tipo=comercio">Comercial</p>
+                                <a href="geral.php?tipo=industria">Industrial</p>
+                                    <a href="geral.php?tipo=terreno">Terrenos</p>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -229,8 +230,8 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
                         <p>Suporte</p>
                     </div>
                 </div>
-                
-                
+
+
             </div>
 
             <div class="footer-bottom">

@@ -223,7 +223,8 @@ if (isset($_SESSION['flash_sucesso'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> -->
+    <link rel="stylesheet" href="/css/all.min.css">
     <link rel="stylesheet" href="admin.css">
 </head>
 
@@ -332,8 +333,7 @@ if (isset($_SESSION['flash_sucesso'])) {
                                     <button
                                         type="button"
                                         class="admin-table-btn delete js-open-delete-modal"
-                                        data-img="<?php echo htmlspecialchars($imagem['img']); ?>"
-                                    >
+                                        data-img="<?php echo htmlspecialchars($imagem['img']); ?>">
                                         Excluir
                                     </button>
 
@@ -345,8 +345,7 @@ if (isset($_SESSION['flash_sucesso'])) {
                                                 type="radio"
                                                 name="capa_radio_global"
                                                 class="admin-capa-radio"
-                                                <?php echo (isset($imagem['capa']) && $imagem['capa'] == 1) ? 'checked' : ''; ?>
-                                            >
+                                                <?php echo (isset($imagem['capa']) && $imagem['capa'] == 1) ? 'checked' : ''; ?>>
                                             <span>Definir como capa</span>
                                         </label>
                                     </form>
@@ -390,7 +389,7 @@ if (isset($_SESSION['flash_sucesso'])) {
         const sidebar = document.getElementById('adminSidebar');
 
         if (toggleButton) {
-            toggleButton.addEventListener('click', function () {
+            toggleButton.addEventListener('click', function() {
                 sidebar.classList.toggle('open');
             });
         }
@@ -401,7 +400,7 @@ if (isset($_SESSION['flash_sucesso'])) {
         capaForms.forEach((form) => {
             const radio = form.querySelector('.admin-capa-radio');
 
-            radio.addEventListener('change', async function () {
+            radio.addEventListener('change', async function() {
                 const formData = new FormData();
                 formData.append('ajax_action', 'alterar_capa');
                 formData.append('img_capa', form.querySelector('input[name="img_capa"]').value);
@@ -469,7 +468,7 @@ if (isset($_SESSION['flash_sucesso'])) {
         }
 
         deleteButtons.forEach((button) => {
-            button.addEventListener('click', function () {
+            button.addEventListener('click', function() {
                 openDeleteModal(this.dataset.img);
             });
         });
@@ -477,13 +476,13 @@ if (isset($_SESSION['flash_sucesso'])) {
         closeDeleteModal.addEventListener('click', hideDeleteModal);
         cancelDeleteModal.addEventListener('click', hideDeleteModal);
 
-        deleteModal.addEventListener('click', function (event) {
+        deleteModal.addEventListener('click', function(event) {
             if (event.target === deleteModal) {
                 hideDeleteModal();
             }
         });
 
-        confirmDeleteModal.addEventListener('click', async function () {
+        confirmDeleteModal.addEventListener('click', async function() {
             if (!selectedImgToDelete) return;
 
             confirmDeleteModal.disabled = true;

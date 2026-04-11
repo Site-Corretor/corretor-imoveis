@@ -315,6 +315,7 @@ if (isset($_SESSION['flash_erro'])) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -325,7 +326,8 @@ if (isset($_SESSION['flash_erro'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> -->
+    <link rel="stylesheet" href="/css/all.min.css">
     <link rel="stylesheet" href="admin.css">
 
     <style>
@@ -334,46 +336,56 @@ if (isset($_SESSION['flash_erro'])) {
             grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important;
             gap: 14px !important;
         }
+
         .admin-form-unico .admin-image-card-compact {
             border-radius: 16px !important;
             overflow: hidden !important;
         }
+
         .admin-form-unico .admin-image-preview-compact {
             height: 120px !important;
         }
+
         .admin-form-unico .admin-image-preview-compact img {
             width: 100% !important;
             height: 120px !important;
             object-fit: cover !important;
         }
+
         .admin-form-unico .admin-image-info {
             padding: 10px 10px 8px !important;
             gap: 8px !important;
         }
+
         .admin-form-unico .admin-image-name {
             font-size: 13px !important;
             line-height: 1.35 !important;
         }
+
         .admin-form-unico .admin-status-badge {
             font-size: 10px !important;
             padding: 6px 10px !important;
         }
+
         .admin-form-unico .admin-image-actions {
             padding: 0 10px 10px !important;
             display: flex !important;
             flex-direction: column !important;
             gap: 8px !important;
         }
+
         .admin-form-unico .admin-image-actions .admin-table-btn {
             width: 100% !important;
             min-width: unset !important;
             padding: 9px 12px !important;
             font-size: 13px !important;
         }
+
         .admin-form-unico .admin-capa-wrap {
             width: 100% !important;
             margin: 0 !important;
         }
+
         .admin-form-unico .admin-capa-radio-label {
             display: flex !important;
             align-items: center !important;
@@ -390,10 +402,12 @@ if (isset($_SESSION['flash_erro'])) {
             font-weight: 700 !important;
             line-height: 1.3 !important;
         }
+
         .admin-form-unico .admin-capa-radio-label span {
             font-size: 12px !important;
             font-weight: 700 !important;
         }
+
         .admin-form-unico .admin-capa-radio {
             appearance: radio !important;
             -webkit-appearance: radio !important;
@@ -413,6 +427,7 @@ if (isset($_SESSION['flash_erro'])) {
             accent-color: #b39a7a !important;
             cursor: pointer !important;
         }
+
         .admin-form-unico .admin-form-actions-final {
             display: flex !important;
             justify-content: flex-end !important;
@@ -423,6 +438,7 @@ if (isset($_SESSION['flash_erro'])) {
         }
     </style>
 </head>
+
 <body>
     <div class="admin-layout">
         <aside class="admin-sidebar" id="adminSidebar">
@@ -636,7 +652,7 @@ if (isset($_SESSION['flash_erro'])) {
 
                 radio.dataset.bound = '1';
 
-                radio.addEventListener('change', async function () {
+                radio.addEventListener('change', async function() {
                     const formData = new FormData();
                     formData.append('ajax_action', 'alterar_capa_temp');
                     formData.append('img_capa', wrap.dataset.img);
@@ -678,7 +694,7 @@ if (isset($_SESSION['flash_erro'])) {
                 if (button.dataset.bound === '1') return;
                 button.dataset.bound = '1';
 
-                button.addEventListener('click', function () {
+                button.addEventListener('click', function() {
                     openDeleteModal(this.dataset.img);
                 });
             });
@@ -720,7 +736,7 @@ if (isset($_SESSION['flash_erro'])) {
         const btnAnexarImagens = document.getElementById('btnAnexarImagens');
         const inputImagem = document.getElementById('imagem');
 
-        btnAnexarImagens.addEventListener('click', async function () {
+        btnAnexarImagens.addEventListener('click', async function() {
             if (!inputImagem.files || inputImagem.files.length === 0) return;
 
             btnAnexarImagens.disabled = true;
@@ -772,8 +788,7 @@ if (isset($_SESSION['flash_erro'])) {
 
                 bindCapaEvents();
                 bindDeleteEvents();
-            } catch (e) {
-            } finally {
+            } catch (e) {} finally {
                 btnAnexarImagens.disabled = false;
             }
         });
@@ -798,11 +813,11 @@ if (isset($_SESSION['flash_erro'])) {
         closeDeleteModal.addEventListener('click', hideDeleteModal);
         cancelDeleteModal.addEventListener('click', hideDeleteModal);
 
-        deleteModal.addEventListener('click', function (event) {
+        deleteModal.addEventListener('click', function(event) {
             if (event.target === deleteModal) hideDeleteModal();
         });
 
-        confirmDeleteModal.addEventListener('click', async function () {
+        confirmDeleteModal.addEventListener('click', async function() {
             if (!selectedImgToDelete) return;
 
             confirmDeleteModal.disabled = true;
@@ -857,8 +872,7 @@ if (isset($_SESSION['flash_erro'])) {
                 }
 
                 hideDeleteModal();
-            } catch (e) {
-            } finally {
+            } catch (e) {} finally {
                 confirmDeleteModal.disabled = false;
             }
         });
@@ -867,4 +881,5 @@ if (isset($_SESSION['flash_erro'])) {
         bindDeleteEvents();
     </script>
 </body>
+
 </html>

@@ -53,7 +53,8 @@ if (isset($_POST['pesquisar'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> -->
+    <link rel="stylesheet" href="/css/all.min.css">
     <link rel="stylesheet" href="admin.css">
 
     <style>
@@ -272,8 +273,7 @@ if (isset($_POST['pesquisar'])) {
                                                         class="admin-table-btn delete admin-delete-trigger"
                                                         data-codigo="<?php echo htmlspecialchars($casasCadastradas[$i]['codigo']); ?>"
                                                         data-titulo="<?php echo htmlspecialchars($casasCadastradas[$i]['titulo']); ?>"
-                                                        data-destaque="<?php echo htmlspecialchars($casasCadastradas[$i]['destaque']); ?>"
-                                                    >
+                                                        data-destaque="<?php echo htmlspecialchars($casasCadastradas[$i]['destaque']); ?>">
                                                         Excluir
                                                     </button>
                                                 </td>
@@ -305,8 +305,7 @@ if (isset($_POST['pesquisar'])) {
                                             class="admin-table-btn delete admin-delete-trigger"
                                             data-codigo="<?php echo htmlspecialchars($casaPesquisada['codigo']); ?>"
                                             data-titulo="<?php echo htmlspecialchars($casaPesquisada['titulo']); ?>"
-                                            data-destaque="<?php echo htmlspecialchars($casaPesquisada['destaque']); ?>"
-                                        >
+                                            data-destaque="<?php echo htmlspecialchars($casaPesquisada['destaque']); ?>">
                                             Excluir
                                         </button>
                                     </td>
@@ -351,7 +350,7 @@ if (isset($_POST['pesquisar'])) {
         const toggleButton = document.getElementById('adminMenuToggle');
         const sidebar = document.getElementById('adminSidebar');
 
-        toggleButton.addEventListener('click', function () {
+        toggleButton.addEventListener('click', function() {
             sidebar.classList.toggle('open');
         });
 
@@ -365,7 +364,7 @@ if (isset($_POST['pesquisar'])) {
         const codigoExcluirInput = document.getElementById('codigoExcluirInput');
 
         deleteTriggers.forEach((button) => {
-            button.addEventListener('click', function () {
+            button.addEventListener('click', function() {
                 modalCodigo.textContent = this.dataset.codigo || '-';
                 modalTitulo.textContent = this.dataset.titulo || '-';
                 modalDestaque.textContent = this.dataset.destaque || '-';
@@ -374,7 +373,7 @@ if (isset($_POST['pesquisar'])) {
             });
         });
 
-        cancelDelete.addEventListener('click', function () {
+        cancelDelete.addEventListener('click', function() {
             deleteModal.classList.remove('active');
         });
 
