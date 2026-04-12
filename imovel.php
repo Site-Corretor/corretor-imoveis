@@ -70,8 +70,8 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
             <div class="imovel-coluna-principal">
                 <div class="imovel-card">
                     <?php if ($imagem && !empty($imagem['img'])) { ?>
-                        <!--<img class="imovel-capa" src="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagem['img']; ?>" alt="Imagem principal do imóvel">-->
-                        <img class="imovel-capa" src="admin/upload/<?php echo $imagem['img']; ?>" alt="Imagem principal do imóvel">
+                        <img class="imovel-capa" src="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagem['img']; ?>" alt="Imagem principal do imóvel">
+                        <!--<img class="imovel-capa" src="admin/upload/<?php echo $imagem['img']; ?>" alt="Imagem principal do imóvel">-->
                     <?php } else { ?>
                         <div class="imovel-capa-vazia">Imagem principal não disponível no momento</div>
                     <?php } ?>
@@ -86,15 +86,15 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
 
                         if ($imagensGerais) {
                             foreach ($imagensGerais as $imagemGeral) {
-                                //$images[] = 'https://ricardosouzaimoveis.com.br/admin/upload/' . $imagemGeral['img'];
-                                $images[] = 'admin/upload/' . $imagemGeral['img'];
+                                $images[] = 'https://ricardosouzaimoveis.com.br/admin/upload/' . $imagemGeral['img'];
+                                //$images[] = 'admin/upload/' . $imagemGeral['img'];
                         ?>
-                                <!--<a href="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>" onclick="openModal('https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
+                                <a href="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>" onclick="openModal('https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
                                     <img src="https://ricardosouzaimoveis.com.br/admin/upload/<?php echo $imagemGeral['img']; ?>" alt="Pré-visualização da imagem" class="thumbnail">
-                                </a>-->
-                                <a href="admin/upload/<?php echo $imagemGeral['img']; ?>" onclick="openModal('admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
-                                    <img src="admin/upload/<?php echo $imagemGeral['img']; ?>" alt="Pré-visualização da imagem" class="thumbnail">
                                 </a>
+                                <!--<a href="admin/upload/<?php echo $imagemGeral['img']; ?>" onclick="openModal('admin/upload/<?php echo $imagemGeral['img']; ?>'); return false;">
+                                    <img src="admin/upload/<?php echo $imagemGeral['img']; ?>" alt="Pré-visualização da imagem" class="thumbnail">
+                                </a>-->
                         <?php
                             }
                         }
