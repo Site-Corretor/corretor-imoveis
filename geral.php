@@ -252,8 +252,8 @@ if ($tipo === 'residencia') {
                             <div class="house portal-card" onclick="window.location='<?php echo 'imovel.php?codigo=' . $imovel['codigo']; ?>'" style="cursor: pointer;">
                                 <?php
                                 if ($imagem && !empty($imagem['img'])) {
-                                    //echo '<img src="https://ricardosouzaimoveis.com.br/admin/upload/' . $imagem['img'] . '" alt="Pré-visualização do imóvel">';
-                                    echo '<img src="admin/upload/' . $imagem['img'] . '" alt="Pré-visualização do imóvel">';
+                                    echo '<img src="https://ricardosouzaimoveis.com.br/admin/upload/' . $imagem['img'] . '" alt="Pré-visualização do imóvel">';
+                                    //echo '<img src="admin/upload/' . $imagem['img'] . '" alt="Pré-visualização do imóvel">';
                                 } else {
                                     echo '<img src="imagens/fotocapa.jpg" alt="Imagem padrão do imóvel">';
                                 }
