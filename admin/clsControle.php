@@ -10,8 +10,8 @@ class User
     {
         global $pdo;
         try {
-            $pdo = new PDO('mysql:host=localhost;dbname=corretora', 'root');
-            //$pdo = new PDO("mysql:dbname=" . "u830382291_corretor" . ";host=" . "br-asc-web1181.main-hosting.eu", "u830382291_corretor", "Ricardosouza1");
+             $pdo = new PDO( 'mysql:host=localhost;dbname=corretora', 'root');
+            //$pdo = new PDO("mysql:dbname="."u830382291_corretor".";host="."br-asc-web1181.main-hosting.eu", "u830382291_corretor", "Ricardosouza1");
         } catch (PDOException $e) {
             $msgErro = $e->getMessage();
         }
@@ -221,8 +221,8 @@ class User
     {
         global $pdo;
         try {
-            $pdo = new PDO('mysql:host=localhost;dbname=corretora', 'root');
-            //$pdo = new PDO("mysql:dbname=" . "u830382291_corretor" . ";host=" . "br-asc-web1181.main-hosting.eu", "u830382291_corretor", "Ricardosouza1");
+            // $pdo = new PDO('mysql:host=localhost;dbname=corretora', 'root');
+            $pdo = new PDO("mysql:dbname="."u359090171_corretor".";host="."193.203.175.228", "u359090171_corretor", "Ricardosouza1");
         } catch (PDOException $e) {
             $msgErro = $e->getMessage();
         }
@@ -251,8 +251,8 @@ class User
             $jaExiste = $sqlVerifica->fetchColumn() > 0;
         } while ($jaExiste);
 
-        $sql = $pdo->prepare("INSERT INTO imoveis (codigo, titulo, tipo_imovel, descricao, total_area, dormitorios, banheiros, vagas, preco, cidade, destaque,) 
-        VALUES (:codigo,:titulo,:tipo_imovel,:descricao,:total_area,:dormitorios,:banheiros,:vagas,:preco,:cidade,:destaque,);");
+        $sql = $pdo->prepare("INSERT INTO imoveis (codigo, titulo, tipo_imovel, descricao, total_area, dormitorios, banheiros, vagas, preco, cidade, destaque) 
+        VALUES (:codigo,:titulo,:tipo_imovel,:descricao,:total_area,:dormitorios,:banheiros,:vagas,:preco,:cidade,:destaque);");
         $sql->bindValue(":codigo", $codigo);
         $sql->bindValue(":titulo", $titulo);
         $sql->bindValue(":tipo_imovel", $tipoImovel);
