@@ -326,7 +326,7 @@ class User
     {
         global $pdo;
 
-        $sql = $pdo->prepare("UPDATE imoveis SET `titulo` = :titulo, `tipo_imovel` = :tipo_imovel, `descricao` = :descricao, `total_area` = :total_area, `dormitorios` = :dormitorios, `banheiros` = :banheiros, `vagas` = :vagas, `preco` = :preco, `cidade` = :cidade, `destaque` = :destaque = WHERE codigo = :codigo;");
+        $sql = $pdo->prepare("UPDATE imoveis SET `titulo` = :titulo, `tipo_imovel` = :tipo_imovel, `descricao` = :descricao, `total_area` = :total_area, `dormitorios` = :dormitorios, `banheiros` = :banheiros, `vagas` = :vagas, `preco` = :preco, `cidade` = :cidade, `destaque` = :destaque  WHERE codigo = :codigo;");
 
         $sql->bindValue(":codigo", $codigo);
         $sql->bindValue(":titulo", $titulo);
