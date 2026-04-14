@@ -1089,24 +1089,63 @@ section.main .center {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
     gap: 34px;
+    align-items: start;
 }
 
 .footer-brand img {
     margin-bottom: 18px;
 }
 
-.footer-brand p,
-.footer-col p,
-.footer-col a {
+.footer-creci {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(179, 154, 122, 0.14);
+    color: #d8c2a3;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.footer-brand-text {
     color: rgba(255, 255, 255, 0.82);
     font-size: 15px;
     line-height: 1.8;
+    margin-bottom: 18px;
 }
 
-.footer-brand p + p {
-    margin-top: 12px;
+.footer-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-contact-list p {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.footer-contact-list i {
+    color: var(--cor-primaria);
+    min-width: 16px;
+    margin-top: 4px;
+}
+
+.footer-contact-list a {
+    color: rgba(255, 255, 255, 0.82);
+    transition: 0.25s ease;
+}
+
+.footer-contact-list a:hover {
+    color: var(--cor-primaria);
 }
 
 .footer-col h4 {
@@ -1122,6 +1161,14 @@ section.main .center {
     gap: 10px;
 }
 
+.footer-col p,
+.footer-col a {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+}
+
 .footer-links a:hover {
     color: var(--cor-primaria);
 }
@@ -1134,7 +1181,10 @@ section.main .center {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     margin-top: 28px;
     padding-top: 18px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .footer-bottom p {
@@ -1780,6 +1830,11 @@ section.main .center {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 26px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .sobre-page,

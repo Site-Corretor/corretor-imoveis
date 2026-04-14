@@ -6,9 +6,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <link href="style.css?v=2" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> -->
+    <link href="/style.css?v=2" rel="stylesheet" />
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">--> 
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">--> 
     <link rel="stylesheet" href="/css/all.min.css">
 
     <link rel="short cut icon" type="image/x-icon" href="imagens/logo-ricardo.ico">
@@ -64,6 +64,13 @@
                 </p>
 
                 <p class="contato-linha">
+                    <strong>Instagram:</strong> @ricardonsouzaimoveis
+                    <a class="contato-icone-link" href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
+                        <img src="imagens/Icones/instagram.png" width="14" height="14" alt="Instagram">
+                    </a>
+                </p>
+                
+                <p class="contato-linha">
                     <strong>E-mail:</strong> ricardosouzanegocios@gmail.com
                 </p>
 
@@ -109,9 +116,28 @@
         <div class="footer-inner">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="imagens/logo-ricardo.png" width="180" alt="Ricardo Souza Imóveis">
-                    <p>Av. Gov. Mário Covas Júnior, 2665 - Portão</p>
-                    <p>Arujá - SP</p>
+                    <img src="imagens/logo-ricardo.png" width="160" alt="Ricardo Souza Imóveis">
+
+                    <p class="footer-creci">CRECI 218535</p>
+
+                    <div class="footer-contact-list">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Av. Gov. Mário Covas Júnior, 2665 (Sala 1), Bairro do Portão - Arujá/SP - CEP: 07412-000
+                        </p>
+
+                        <p>
+                            <a href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            ricardonsouzaimoveis</a>
+                        </p>
+
+                        <p>
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:11970355935">(11) 97035-5935</a> / 
+                            <a href="tel:11954233209">(11) 95423-3209</a>
+                        </p>
+                    </div>
                 </div>
 
                 <div class="footer-col">
@@ -144,7 +170,8 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2023. Todos os direitos reservados.</p>
+                <p>&copy; 2026 Ricardo Souza Imóveis. Todos os direitos reservados.</p>
+                <p>Desenvolvido por Trimod Tech Solutions.</p>
             </div>
         </div>
     </footer>

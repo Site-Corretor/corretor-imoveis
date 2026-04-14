@@ -13,7 +13,7 @@ $visualizar = $u->visualizar();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
+    
     <link href="style.css?v=2" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> -->
@@ -174,49 +174,68 @@ $visualizar = $u->visualizar();
     </section>
 
     <footer class="footer-site">
-        <div class="footer-inner">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="imagens/logo-ricardo.png" width="180" alt="Ricardo Souza Imóveis">
-                    <p>Av. Gov. Mário Covas Júnior, 2665
-                        - Portão</p>
-                    <p>Arujá - SP</p>
-                </div>
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="imagens/logo-ricardo.png" width="160" alt="Ricardo Souza Imóveis">
 
-                <div class="footer-col">
-                    <h4>Empresa</h4>
-                    <div class="footer-links">
-                        <a href="sobre.php">Sobre Nós</a>
-                        <a href="contato.php">Fale Conosco</a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Imóveis</h4>
-                    <div class="footer-links">
-                        <a href="geral.php?tipo=residencia">Residencial</p>
-                            <a href="geral.php?tipo=comercio">Comercial</p>
-                                <a href="geral.php?tipo=industria">Industrial</p>
-                                    <a href="geral.php?tipo=terreno">Terrenos</p>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Serviços</h4>
-                    <div class="footer-links">
-                        <p>Venda</p>
-                        <p>Locação</p>
-                        <p>Administração</p>
-                        <p>Suporte</p>
-                    </div>
-                </div>
+                <p class="footer-creci">CRECI 218535</p>
 
+                <div class="footer-contact-list">
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Av. Gov. Mário Covas Júnior, 2665 (Sala 1), Bairro do Portão - Arujá/SP - CEP: 07412-000
+                    </p>
 
+                    <p>
+                        <a href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        ricardonsouzaimoveis</a>
+                    </p>
+
+                    <p>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:11970355935">(11) 97035-5935</a> / 
+                        <a href="tel:11954233209">(11) 95423-3209</a>
+                    </p>
+                </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2023. Todos os direitos reservados.</p>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <div class="footer-links">
+                    <a href="sobre.php">Sobre Nós</a>
+                    <a href="contato.php">Fale Conosco</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Imóveis</h4>
+                <div class="footer-links">
+                    <a href="geral.php?tipo=residencia">Residencial</a>
+                    <a href="geral.php?tipo=comercio">Comercial</a>
+                    <a href="geral.php?tipo=industria">Industrial</a>
+                    <a href="geral.php?tipo=terreno">Terrenos</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <div class="footer-links">
+                    <p>Venda</p>
+                    <p>Locação</p>
+                    <p>Administração</p>
+                    <p>Suporte</p>
+                </div>
             </div>
         </div>
-    </footer>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ricardo Souza Imóveis. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Trimod Tech Solutions.</p>
+        </div>
+    </div>
+</footer>
 </body>
 
 </html>
