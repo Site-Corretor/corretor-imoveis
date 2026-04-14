@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <link href="/style.css?v=2" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> 
-    <!-- <link rel="stylesheet" href="/css/all.min.css">-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">--> 
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">--> 
+    <link rel="stylesheet" href="/css/all.min.css">
 
     <link rel="short cut icon" type="image/x-icon" href="imagens/logo-ricardo.ico">
     <meta charset="UTF-8">
@@ -63,6 +63,13 @@
                     </a>
                 </p>
 
+                <p class="contato-linha">
+                    <strong>Instagram:</strong> @ricardonsouzaimoveis
+                    <a class="contato-icone-link" href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
+                        <img src="imagens/Icones/instagram.png" width="14" height="14" alt="Instagram">
+                    </a>
+                </p>
+                
                 <p class="contato-linha">
                     <strong>E-mail:</strong> ricardosouzanegocios@gmail.com
                 </p>

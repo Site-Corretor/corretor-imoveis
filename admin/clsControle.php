@@ -221,8 +221,8 @@ class User
     {
         global $pdo;
         try {
-            $pdo = new PDO('mysql:host=localhost;dbname=corretora', 'root');
-            //$pdo = new PDO("mysql:dbname="."u359090171_corretor".";host="."193.203.175.228", "u359090171_corretor", "Ricardosouza1");
+            //$pdo = new PDO('mysql:host=localhost;dbname=corretora', 'root');
+            $pdo = new PDO("mysql:dbname="."u359090171_corretor".";host="."193.203.175.228", "u359090171_corretor", "Ricardosouza1");
         } catch (PDOException $e) {
             $msgErro = $e->getMessage();
         }
@@ -326,7 +326,7 @@ class User
     {
         global $pdo;
 
-        $sql = $pdo->prepare("UPDATE imoveis SET `titulo` = :titulo, `tipo_imovel` = :tipo_imovel, `descricao` = :descricao, `total_area` = :total_area, `dormitorios` = :dormitorios, `banheiros` = :banheiros, `vagas` = :vagas, `preco` = :preco, `cidade` = :cidade, `destaque` = :destaque = WHERE codigo = :codigo;");
+        $sql = $pdo->prepare("UPDATE imoveis SET `titulo` = :titulo, `tipo_imovel` = :tipo_imovel, `descricao` = :descricao, `total_area` = :total_area, `dormitorios` = :dormitorios, `banheiros` = :banheiros, `vagas` = :vagas, `preco` = :preco, `cidade` = :cidade, `destaque` = :destaque  WHERE codigo = :codigo;");
 
         $sql->bindValue(":codigo", $codigo);
         $sql->bindValue(":titulo", $titulo);

@@ -85,9 +85,9 @@ class User
         global $pdo;
 
         try {
-            $pdo = new PDO('mysql:host=localhost;dbname=corretora', 'root');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            //$pdo = new PDO("mysql:dbname="."u359090171_corretor".";host="."193.203.175.228", "u359090171_corretor", "Ricardosouza1");
+            //$pdo = new PDO('mysql:host=localhost;dbname=corretora', 'root');
+            //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $pdo = new PDO("mysql:dbname="."u359090171_corretor".";host="."193.203.175.228", "u359090171_corretor", "Ricardosouza1");
         } catch (PDOException $e) {
             $this->msgErro = $e->getMessage();
         }

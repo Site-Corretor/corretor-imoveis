@@ -286,8 +286,7 @@ if (isset($_POST['salvar_tudo'])) {
             $_SESSION['flash_sucesso'] = 'Imóvel cadastrado com sucesso.';
             header("Location: cadastrarCasa.php?sucesso=1");
             exit;
-        } catch (Throwable $e) {
-            $_SESSION['flash_erro'] = 'Erro ao cadastrar o imóvel.';
+        
             header("Location: cadastrarCasa.php");
             exit;
         }
