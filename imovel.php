@@ -32,7 +32,7 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> -->
     <link rel="stylesheet" href="/css/all.min.css">
 
-    <link rel="short cut icon" type="image/x-icon" href="imagens/logo-ricardo.ico">
+    <link rel="short cut icon" type="image/x-icon" href="imagens/logo-ricardo.ico?v=2">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do imóvel</title>
@@ -43,7 +43,7 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
         <div class="center">
             <div class="logo">
                 <a href="index.php">
-                    <img src="imagens/logo-ricardo.png" width="145" height="70" alt="Ricardo Souza Imóveis">
+                    <img src="imagens/logo-ricardo.png?v=2" width="145" height="70" alt="Ricardo Souza Imóveis">
                 </a>
             </div>
 
@@ -201,7 +201,7 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
         <div class="footer-inner">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="imagens/logo-ricardo.png" width="160" alt="Ricardo Souza Imóveis">
+                    <img src="imagens/logo-ricardo.png?v=2" width="160" alt="Ricardo Souza Imóveis">
 
                     <p class="footer-creci">CRECI 218535</p>
 

@@ -21,7 +21,7 @@ $cadaDestaque = $u->casaDestaque();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Administrativo</title>
 
-    <link rel="short cut icon" type="image/x-icon" href="../imagens/logo-ricardo.ico">
+    <link rel="short cut icon" type="image/x-icon" href="../imagens/logo-ricardo.ico?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@ $cadaDestaque = $u->casaDestaque();
         <!-- Sidebar -->
         <aside class="admin-sidebar" id="adminSidebar">
             <div class="admin-sidebar-top">
-                <img src="../imagens/logo-ricardo.png" alt="Ricardo Souza Imóveis" class="admin-sidebar-logo">
+                <img src="../imagens/logo-ricardo.png?v=2" alt="Ricardo Souza Imóveis" class="admin-sidebar-logo">
                 <span class="admin-sidebar-badge">Painel administrativo</span>
             </div>
 

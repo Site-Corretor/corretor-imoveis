@@ -59,7 +59,7 @@ if (isset($_POST['nome'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Conta - Painel Administrativo</title>
 
-    <link rel="short cut icon" type="image/x-icon" href="../imagens/logo-ricardo.ico">
+    <link rel="short cut icon" type="image/x-icon" href="../imagens/logo-ricardo.ico?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -72,7 +72,7 @@ if (isset($_POST['nome'])) {
             <div class="admin-register-brand">
                 <div class="admin-register-brand-overlay"></div>
                 <div class="admin-register-brand-content">
-                    <img src="../imagens/logo-ricardo.png" alt="Ricardo Souza Imóveis" class="admin-register-logo">
+                    <img src="../imagens/logo-ricardo.png?v=2" alt="Ricardo Souza Imóveis" class="admin-register-logo">
 
                     <span class="admin-register-badge">Área administrativa</span>
 
