@@ -201,10 +201,28 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
         <div class="footer-inner">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="imagens/logo-ricardo.png" width="180" alt="Ricardo Souza Imóveis">
-                    <p>Av. Gov. Mário Covas Júnior, 2665
-                        - Portão</p>
-                    <p>Arujá - SP</p>
+                    <img src="imagens/logo-ricardo.png" width="160" alt="Ricardo Souza Imóveis">
+
+                    <p class="footer-creci">CRECI 218535</p>
+
+                    <div class="footer-contact-list">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Av. Gov. Mário Covas Júnior, 2665 (Sala 1), Bairro do Portão - Arujá/SP - CEP: 07412-000
+                        </p>
+
+                        <p>
+                            <a href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            ricardonsouzaimoveis</a>
+                        </p>
+
+                        <p>
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:11970355935">(11) 97035-5935</a> / 
+                            <a href="tel:11954233209">(11) 95423-3209</a>
+                        </p>
+                    </div>
                 </div>
 
                 <div class="footer-col">
@@ -214,15 +232,17 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
                         <a href="contato.php">Fale Conosco</a>
                     </div>
                 </div>
+
                 <div class="footer-col">
                     <h4>Imóveis</h4>
                     <div class="footer-links">
-                        <a href="geral.php?tipo=residencia">Residencial</p>
-                            <a href="geral.php?tipo=comercio">Comercial</p>
-                                <a href="geral.php?tipo=industria">Industrial</p>
-                                    <a href="geral.php?tipo=terreno">Terrenos</p>
+                        <a href="geral.php?tipo=residencia">Residencial</a>
+                        <a href="geral.php?tipo=comercio">Comercial</a>
+                        <a href="geral.php?tipo=industria">Industrial</a>
+                        <a href="geral.php?tipo=terreno">Terrenos</a>
                     </div>
                 </div>
+
                 <div class="footer-col">
                     <h4>Serviços</h4>
                     <div class="footer-links">
@@ -232,12 +252,11 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
                         <p>Suporte</p>
                     </div>
                 </div>
-
-
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2023. Todos os direitos reservados.</p>
+                <p>&copy; 2026 Ricardo Souza Imóveis. Todos os direitos reservados.</p>
+                <p>Desenvolvido por Trimod Tech Solutions.</p>
             </div>
         </div>
     </footer>
