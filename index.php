@@ -14,11 +14,11 @@ $visualizar = $u->visualizar();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
-    <link href="style.css?v=2" rel="stylesheet" />
+    <link href="style.css?v=3" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> -->
     <link rel="stylesheet" href="./css/all.min.css">
-    
+
     <link rel="short cut icon" type="image/x-icon" href="imagens/logo-ricardo.ico?v=2">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
