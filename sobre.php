@@ -9,7 +9,7 @@
     <link href="style.css?v=2" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> -->
-    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
 
     <link rel="short cut icon" type="image/x-icon" href="imagens/logo-ricardo.ico?v=2">
     <meta charset="UTF-8">
@@ -45,11 +45,11 @@
                 <h2>Quem somos</h2>
                 <h3>Atendimento imobiliário com visão estratégica</h3>
 
-                <p>A Ricardo Souza Imóveis atua com imóveis residenciais, comerciais, industriais e terrenos, oferecendo suporte completo para compra, venda e locação.</p>
+                <p>Somos uma imobiliária especializada em conectar clientes exigentes às melhores oportunidades do mercado de alto padrão, galpões logísticos e áreas industriais. Atuamos com excelência, discrição e profundo conhecimento do setor, oferecendo soluções personalizadas tanto para investidores quanto para empresas que buscam expansão estratégica.</p>
 
-                <p>Nosso objetivo é proporcionar um atendimento próximo, transparente e eficiente, entendendo a necessidade de cada cliente e apresentando opções que realmente façam sentido.</p>
+                <p>No segmento residencial de alto padrão, trabalhamos com imóveis exclusivos que aliam sofisticação, localização privilegiada e alto potencial de valorização. Já na área industrial e logística, disponibilizamos galpões modernos e áreas estrategicamente posicionadas, ideais para operações eficientes e crescimento sustentável.</p>
 
-                <p>Mais do que intermediar negociações, buscamos construir relações de confiança, com acompanhamento responsável em cada etapa do processo.</p>
+                <p>Nossa equipe é formada por profissionais experientes, comprometidos em entender as necessidades de cada cliente e oferecer um atendimento consultivo, transparente e orientado a resultados. Mais do que intermediar negócios, criamos oportunidades sólidas e seguras para quem busca excelência no mercado imobiliário.</p>
             </div>
 
             <div class="sobre-card">
@@ -100,68 +100,67 @@
     </main>
 
     <footer class="footer-site">
-        <div class="footer-inner">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="imagens/logo-ricardo.png?v=2" width="160" alt="Ricardo Souza Imóveis">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
 
-                    <p class="footer-creci">CRECI 218535</p>
+                <p class="footer-creci">CRECI 218535</p>
 
-                    <div class="footer-contact-list">
-                        <p>
-                            <i class="fas fa-map-marker-alt"></i>
-                            Av. Gov. Mário Covas Júnior, 2665 (Sala 1), Bairro do Portão - Arujá/SP - CEP: 07412-000
-                        </p>
+                <div class="footer-contact-list">
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Av. Gov. Mário Covas Júnior, 2665 (Sala 1), Bairro do Portão - Arujá/SP - CEP: 07412-000
+                    </p>
 
-                        <p>
-                            <a href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                            ricardonsouzaimoveis</a>
-                        </p>
+                    <p>
+                        <a href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        ricardonsouzaimoveis</a>
+                    </p>
 
-                        <p>
-                            <i class="fas fa-phone-alt"></i>
-                            <a href="tel:11970355935">(11) 97035-5935</a> / 
-                            <a href="tel:11954233209">(11) 95423-3209</a>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Empresa</h4>
-                    <div class="footer-links">
-                        <a href="sobre.php">Sobre Nós</a>
-                        <a href="contato.php">Fale Conosco</a>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Imóveis</h4>
-                    <div class="footer-links">
-                        <a href="geral.php?tipo=residencia">Residencial</a>
-                        <a href="geral.php?tipo=comercio">Comercial</a>
-                        <a href="geral.php?tipo=industria">Industrial</a>
-                        <a href="geral.php?tipo=terreno">Terrenos</a>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Serviços</h4>
-                    <div class="footer-links">
-                        <p>Venda</p>
-                        <p>Locação</p>
-                        <p>Administração</p>
-                        <p>Suporte</p>
-                    </div>
+                    <p>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:11970355935">(11) 97035-5935</a> / 
+                        <a href="tel:11954233209">(11) 95423-3209</a>
+                    </p>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2026 Ricardo Souza Imóveis. Todos os direitos reservados.</p>
-                <p>Desenvolvido por Trimod Tech Solutions.</p>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <div class="footer-links">
+                    <a href="sobre.php">Sobre Nós</a>
+                    <a href="contato.php">Fale Conosco</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Imóveis</h4>
+                <div class="footer-links">
+                    <a href="geral.php?tipo=residencia">Residencial</a>
+                    <a href="geral.php?tipo=comercio">Comercial</a>
+                    <a href="geral.php?tipo=industria">Industrial</a>
+                    <a href="geral.php?tipo=terreno">Terrenos</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <div class="footer-links">
+                    <p>Venda</p>
+                    <p>Locação</p>
+                    <p>Administração</p>
+                    <p>Suporte</p>
+                </div>
             </div>
         </div>
-    </footer>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ricardo Souza Imóveis. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Trimod Tech Solutions.</p>
+        </div>
+    </div>
+</footer>
 </body>
 
 </html>

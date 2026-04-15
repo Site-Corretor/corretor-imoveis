@@ -18,8 +18,8 @@ $visualizar = $u->visualizar();
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> -->
     <link rel="stylesheet" href="./css/all.min.css">
+    
     <link rel="short cut icon" type="image/x-icon" href="imagens/logo-ricardo.ico?v=2">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ricardo Souza - Corretor de Imóveis</title>
@@ -177,7 +177,6 @@ $visualizar = $u->visualizar();
     <div class="footer-inner">
         <div class="footer-grid">
             <div class="footer-brand">
-                <img src="imagens/logo-ricardo.png?v=2" width="160" alt="Ricardo Souza Imóveis">
 
                 <p class="footer-creci">CRECI 218535</p>
 
