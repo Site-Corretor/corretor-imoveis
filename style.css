@@ -2087,3 +2087,7 @@ section.main .center {
     object-position: center !important;
     display: block !important;
 }
+
+.footer-site {
+    border-top: 5px solid red !important;
+}
