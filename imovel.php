@@ -42,17 +42,21 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
     <header>
         <div class="center">
             <div class="logo">
-                <a href="index.php">
-                    <img src="imagens/logo-ricardo.png?v=2" width="145" height="70" alt="Ricardo Souza Imóveis">
-                </a>
+                <a href="index.php"><img src="imagens/logo-ricardo.png?v=2" width="145" height="70" alt="Ricardo Souza Imóveis"></a>
             </div>
 
-            <div class="menu">
+            <div class="menu" id="menu">
                 <a href="geral.php">Imóveis</a>
                 <a href="sobre.php">Sobre Nós</a>
                 <a href="contato.php">Contato</a>
                 <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank" class="menu-cta">WhatsApp</a>
             </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -260,36 +264,58 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
     </div>
 </footer>
 
-    <script>
-        var images = <?php echo json_encode($images); ?>;
-        var currentImageIndex = 0;
+<script>
+    var images = <?php echo json_encode($images); ?>;
+    var currentImageIndex = 0;
 
-        function openModal(imageUrl) {
-            var modal = document.getElementById("myModal");
-            var modalImage = document.getElementById("modalImage");
-            currentImageIndex = images.indexOf(imageUrl);
-            modal.style.display = "block";
-            modalImage.src = imageUrl;
+    function openModal(imageUrl) {
+        var modal = document.getElementById("myModal");
+        var modalImage = document.getElementById("modalImage");
+        currentImageIndex = images.indexOf(imageUrl);
+        modal.style.display = "block";
+        modalImage.src = imageUrl;
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    function changeImage(n) {
+        currentImageIndex += n;
+
+        if (currentImageIndex < 0) {
+            currentImageIndex = images.length - 1;
+        } else if (currentImageIndex >= images.length) {
+            currentImageIndex = 0;
         }
 
-        function closeModal() {
-            var modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        }
+        var modalImage = document.getElementById("modalImage");
+        modalImage.src = images[currentImageIndex];
+    }
+</script>
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
 
-        function changeImage(n) {
-            currentImageIndex += n;
+    if (menuToggle && menu) {
+        menuToggle.addEventListener('click', function () {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
 
-            if (currentImageIndex < 0) {
-                currentImageIndex = images.length - 1;
-            } else if (currentImageIndex >= images.length) {
-                currentImageIndex = 0;
+        document.addEventListener('click', function (event) {
+            const clicouNoMenu = menu.contains(event.target);
+            const clicouNoBotao = menuToggle.contains(event.target);
+
+            if (!clicouNoMenu && !clicouNoBotao) {
+                menu.classList.remove('active');
+                menuToggle.classList.remove('active');
             }
+        });
+    }
+</script>
 
-            var modalImage = document.getElementById("modalImage");
-            modalImage.src = images[currentImageIndex];
-        }
-    </script>
 </body>
 
 </html>

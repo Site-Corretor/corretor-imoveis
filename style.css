@@ -151,6 +151,47 @@ header .center {
     transform: translateY(-1px);
 }
 
+
+/* ======================================
+    MENU SUSPENSO PARA MOBILE
+   ====================================== */
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(179, 154, 122, 0.35);
+    border-radius: 12px;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    border-radius: 999px;
+    transition: 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+
 /* =========================================================
    HERO / BANNER PRINCIPAL DA HOME
 ========================================================= */
@@ -1753,30 +1794,72 @@ section.main .center {
 /* Mobile e tablets menores */
 @media (max-width: 768px) {
     .center {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: space-between;
         margin: 0;
         padding: 0 20px;
     }
 
     header .center {
-        gap: 18px;
+        gap: 14px;
+        position: relative;
+    }
+
+    .logo img {
+        width: 125px;
+        height: auto;
     }
 
     .menu {
-        width: 100%;
-        padding: 0;
+        display: none;
         margin: 0;
-        text-align: center;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 14px;
+        width: auto;
     }
 
-    .menu a {
-        margin: 0;
+    .menu-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+
+    .menu.active {
+        display: flex;
+        position: absolute;
+        top: calc(100% + 14px);
+        right: 20px;
+        width: 220px;
+        background: rgba(22, 22, 22, 0.98);
+        border: 1px solid rgba(179, 154, 122, 0.22);
+        border-radius: 18px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+        padding: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        text-align: left;
+        z-index: 1000;
+    }
+
+    .menu.active a {
+        display: block;
+        width: 100%;
         font-size: 15px;
+    }
+    
+    .menu.active a:not(.menu-cta) {
+        display: block;
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .menu.active .menu-cta {
+        width: 100%;
+        justify-content: center;
+        margin-top: 4px;
+    }
+
+    .menu.active a::after {
+        display: none;
     }
 
     .slider img {
@@ -1831,68 +1914,6 @@ section.main .center {
         grid-template-columns: 1fr;
         gap: 26px;
     }
-
-    .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .sobre-page,
-    .contato-page,
-    .imovel-page {
-        padding: 24px 16px 30px;
-    }
-
-    .sobre-topo,
-    .contato-topo,
-    .imovel-topo {
-        padding: 22px 18px 18px;
-        border-radius: 22px;
-    }
-
-    .sobre-topo h1,
-    .contato-topo h1,
-    .imovel-topo h1 {
-        font-size: 28px;
-    }
-
-    .sobre-topo p,
-    .contato-topo p,
-    .sobre-galeria-topo p {
-        font-size: 15px;
-    }
-
-    .sobre-card,
-    .contato-card {
-        padding: 20px;
-        border-radius: 22px;
-    }
-
-    .sobre-card h3,
-    .contato-card h3 {
-        font-size: 22px;
-    }
-
-    .sobre-galeria-topo h2 {
-        font-size: 26px;
-    }
-
-    .imovel-local {
-        font-size: 15px;
-    }
-
-    .imovel-capa,
-    .imovel-capa-vazia {
-        height: 280px;
-    }
-
-    .imovel-capa,
-    .img-g-casa img {
-        width: 100%;
-        height: 460px;
-        object-fit: cover;
-        display: block;
-}
 
     .galeria-imagens {
         justify-content: center;
@@ -1960,9 +1981,10 @@ section.main .center {
 
 /* Mobile pequeno */
 @media (max-width: 576px) {
-    .menu {
-        flex-direction: column;
-        gap: 12px;
+
+    .menu.active {
+        width: 200px;
+        right: 16px;
     }
 
     .slider img {
@@ -2065,14 +2087,6 @@ section.main .center {
 
     .footer-col h4 {
         font-size: 19px;
-    }
-
-    .sobre-galeria-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .sobre-galeria-item img {
-        height: 220px;
     }
 }
 
