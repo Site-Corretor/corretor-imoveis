@@ -24,12 +24,18 @@
                 <a href="index.php"><img src="imagens/logo-ricardo.png?v=2" width="145" height="70" alt="Ricardo Souza Imóveis"></a>
             </div>
 
-            <div class="menu">
+            <div class="menu" id="menu">
                 <a href="geral.php">Imóveis</a>
                 <a href="sobre.php">Sobre Nós</a>
                 <a href="contato.php">Contato</a>
                 <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank" class="menu-cta">WhatsApp</a>
             </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -161,6 +167,29 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+
+    if (menuToggle && menu) {
+        menuToggle.addEventListener('click', function () {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function (event) {
+            const clicouNoMenu = menu.contains(event.target);
+            const clicouNoBotao = menuToggle.contains(event.target);
+
+            if (!clicouNoMenu && !clicouNoBotao) {
+                menu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
+    }
+</script>
+
 </body>
 
 </html>
