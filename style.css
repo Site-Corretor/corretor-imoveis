@@ -1304,6 +1304,7 @@ section.main .center {
     line-height: 1.9;
     color: #6e6a65;
     margin-bottom: 14px;
+    text-align: justify;
 }
 
 .sobre-destaques {

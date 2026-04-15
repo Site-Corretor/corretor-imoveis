@@ -42,20 +42,21 @@
     <main class="sobre-page">
         <div class="sobre-topo">
             <span class="section-label">Sobre nós</span>
-            <h1>Confiança, experiência e atendimento próximo</h1>
-            <p>Trabalhamos com foco em oferecer soluções imobiliárias com clareza, segurança e atenção aos detalhes, ajudando nossos clientes a encontrar oportunidades alinhadas aos seus objetivos.</p>
+            
+            <p>A Ricardo Souza imóveis busca mais do que intermediar negócios. Criamos oportunidades sólidas e seguras para quem busca excelência no mercado imobiliário.</p>
         </div>
 
         <div class="sobre-grid">
             <div class="sobre-card">
                 <h2>Quem somos</h2>
-                <h3>Atendimento imobiliário com visão estratégica</h3>
 
-                <p>Somos uma imobiliária especializada em conectar clientes exigentes às melhores oportunidades do mercado de alto padrão, galpões logísticos e áreas industriais. Atuamos com excelência, discrição e profundo conhecimento do setor, oferecendo soluções personalizadas tanto para investidores quanto para empresas que buscam expansão estratégica.</p>
+                <p>Somos uma imobiliária especializada em conectar clientes exigentes às melhores oportunidades do mercado de alto padrão, galpões logísticos e áreas industriais.</p>
 
-                <p>No segmento residencial de alto padrão, trabalhamos com imóveis exclusivos que aliam sofisticação, localização privilegiada e alto potencial de valorização. Já na área industrial e logística, disponibilizamos galpões modernos e áreas estrategicamente posicionadas, ideais para operações eficientes e crescimento sustentável.</p>
+                <p>Atuamos com excelência, discrição e profundo conhecimento do setor, disponibilizamos galpões modernos e áreas estrategicamente posicionadas, ideais para operações eficientes e crescimento sustentável, oferecendo soluções personalizadas tanto para investidores quanto para empresas que buscam expansão estratégica.</p>
 
-                <p>Nossa equipe é formada por profissionais experientes, comprometidos em entender as necessidades de cada cliente e oferecer um atendimento consultivo, transparente e orientado a resultados. Mais do que intermediar negócios, criamos oportunidades sólidas e seguras para quem busca excelência no mercado imobiliário.</p>
+                <p>Trabalhamos com imóveis de alto padrão exclusivos que aliam sofisticação, localização privilegiada e alto potencial de valorização.</p>
+
+                <p>Nossa equipe é formada por profissionais experientes, comprometidos em entender as necessidades de cada cliente e oferecer um atendimento consultivo, transparente e orientado a resultados.</p>
             </div>
 
             <div class="sobre-card">
