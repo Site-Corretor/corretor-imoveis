@@ -124,12 +124,12 @@ if ($tipo === 'residencia') {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <link href="style.css?v=2" rel="stylesheet" />
+    <link href="style.css?v=3" rel="stylesheet" />
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">-->
-    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    
     <link rel="short cut icon" type="image/x-icon" href="imagens/logo-ricardo.ico?v=2">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ricardo Souza - Corretor de Imóveis</title>
@@ -383,69 +383,68 @@ if ($tipo === 'residencia') {
         </div>
     </div>
 
-    <footer class="footer-site">
-        <div class="footer-inner">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="imagens/logo-ricardo.png?v=2" width="160" alt="Ricardo Souza Imóveis">
+        <footer class="footer-site">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
 
-                    <p class="footer-creci">CRECI 218535</p>
+                <p class="footer-creci">CRECI 218535</p>
 
-                    <div class="footer-contact-list">
-                        <p>
-                            <i class="fas fa-map-marker-alt"></i>
-                            Av. Gov. Mário Covas Júnior, 2665 (Sala 1), Bairro do Portão - Arujá/SP - CEP: 07412-000
-                        </p>
+                <div class="footer-contact-list">
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Av. Gov. Mário Covas Júnior, 2665 (Sala 1), Bairro do Portão - Arujá/SP - CEP: 07412-000
+                    </p>
 
-                        <p>
-                            <a href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                            ricardonsouzaimoveis</a>
-                        </p>
+                    <p>
+                        <a href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        ricardonsouzaimoveis</a>
+                    </p>
 
-                        <p>
-                            <i class="fas fa-phone-alt"></i>
-                            <a href="tel:11970355935">(11) 97035-5935</a> / 
-                            <a href="tel:11954233209">(11) 95423-3209</a>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Empresa</h4>
-                    <div class="footer-links">
-                        <a href="sobre.php">Sobre Nós</a>
-                        <a href="contato.php">Fale Conosco</a>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Imóveis</h4>
-                    <div class="footer-links">
-                        <a href="geral.php?tipo=residencia">Residencial</a>
-                        <a href="geral.php?tipo=comercio">Comercial</a>
-                        <a href="geral.php?tipo=industria">Industrial</a>
-                        <a href="geral.php?tipo=terreno">Terrenos</a>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Serviços</h4>
-                    <div class="footer-links">
-                        <p>Venda</p>
-                        <p>Locação</p>
-                        <p>Administração</p>
-                        <p>Suporte</p>
-                    </div>
+                    <p>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:11970355935">(11) 97035-5935</a> / 
+                        <a href="tel:11954233209">(11) 95423-3209</a>
+                    </p>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2026 Ricardo Souza Imóveis. Todos os direitos reservados.</p>
-                <p>Desenvolvido por Trimod Tech Solutions.</p>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <div class="footer-links">
+                    <a href="sobre.php">Sobre Nós</a>
+                    <a href="contato.php">Fale Conosco</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Imóveis</h4>
+                <div class="footer-links">
+                    <a href="geral.php?tipo=residencia">Residencial</a>
+                    <a href="geral.php?tipo=comercio">Comercial</a>
+                    <a href="geral.php?tipo=industria">Industrial</a>
+                    <a href="geral.php?tipo=terreno">Terrenos</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <div class="footer-links">
+                    <p>Venda</p>
+                    <p>Locação</p>
+                    <p>Administração</p>
+                    <p>Suporte</p>
+                </div>
             </div>
         </div>
-    </footer>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ricardo Souza Imóveis. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Trimod Tech Solutions.</p>
+        </div>
+    </div>
+</footer>
 
     <script>
         function abrirFiltros() {
