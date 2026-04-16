@@ -60,23 +60,29 @@
             </div>
 
             <div class="sobre-card">
-                <h2>Diferenciais</h2>
-                <h3>O que valorizamos no atendimento</h3>
+                <h2>Missão, Visão e Valores.</h2>
 
                 <div class="sobre-destaques">
                     <div class="sobre-mini-box">
-                        <h4>Atendimento personalizado</h4>
-                        <p>Cada cliente recebe orientação conforme seu perfil, objetivo e momento de compra, venda ou locação.</p>
+                        <h4>Missão</h4>
+                        <p>Oferecer soluções imobiliárias estratégicas e personalizadas, conectando clientes a oportunidades exclusivas com excelência, segurança e visão de longo prazo.</p>
                     </div>
 
                     <div class="sobre-mini-box">
-                        <h4>Imóveis selecionados</h4>
-                        <p>Trabalhamos com oportunidades residenciais, comerciais, industriais e terrenos em localizações estratégicas.</p>
+                        <h4>Visão</h4>
+                        <p>Ser referência no mercado imobiliário, reconhecida pela credibilidade, transparência ética, inovação e capacidade de gerar valor consistente para clientes, investidores e parceiros.</p>
                     </div>
 
                     <div class="sobre-mini-box">
-                        <h4>Transparência em todo o processo</h4>
-                        <p>Nosso compromisso é oferecer clareza nas informações e segurança durante toda a negociação.</p>
+                        <h4>Valores</h4>
+                        <p><strong>Exclusividade</strong>: Seleção criteriosa de oportunidades únicas e de alto valor.</p>
+                        <p><strong>Discrição Absoluta</strong>: Confidencialidade como princípio essencial em todas as relações.</p>
+                        <p><strong>Autoridade de Mercado</strong>: Profundo conhecimento técnico e estratégico no setor imobiliário.</p>
+                        <p><strong>Relacionamento Premium</strong>: Atendimento próximo, personalizado e orientado ao longo prazo.</p>
+                        <p><strong>Integridade</strong>: Transparência e ética como pilares inegociáveis.</p>
+                        <p><strong>Visão de Valor</strong>: Foco na geração de patrimônio e oportunidades consistentes para clientes e investidores.</p>
+                        <p><strong>Sofisticação</strong>: Estética, comunicação e postura alinhadas a um público altamente seletivo.</p>
+
                     </div>
                 </div>
             </div>

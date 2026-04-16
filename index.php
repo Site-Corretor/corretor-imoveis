@@ -53,11 +53,11 @@ $visualizar = $u->visualizar();
                 <img src="imagens/fotocapa.jpg" alt="Imagem principal do site">
                 <div class="slide-overlay">
                     <div class="slide-content">
-                        <span class="slide-badge">Atendimento especializado</span>
+                        <span class="slide-badge">Soluções exclusivas em imóveis</span>
                         <h1>Referência em imóveis de alto padrão, galpões e áreas industriais</h1>
-                        <p>Atuamos com vendas e locações de imóveis em toda a região da Grande São Paulo e Litoral, com atendimento próximo, estratégico e profissional.</p>
+                        <p>Seleção criteriosa e atuação estratégica nos principais segmentos do mercado imobiliário de alto padrão e industrial.</p>
                         <div class="hero-buttons">
-                            <a href="geral.php" class="hero-btn hero-btn-outline">Ver imóveis</a>
+                            <a href="geral.php" class="hero-btn hero-btn-outline">Explorar portfólio</a>
                             <a href="https://api.whatsapp.com/send?phone=5511970355935" target="_blank" class="hero-btn">Entrar em contato</a>
                         </div>
                     </div>
@@ -70,57 +70,52 @@ $visualizar = $u->visualizar();
         <div class="center">
             <div class="main-chamada">
                 <span class="section-label">Especialidades</span>
-                <h2>Encontre o imóvel ideal para morar, investir ou expandir seu negócio</h2>
-                <p>Uma seleção completa de oportunidades residenciais, comerciais, industriais e terrenos em localizações estratégicas.</p>
+                <!--<h2>Encontre o imóvel ideal para morar, investir ou expandir seu negócio</h2>-->
+                <p>Especialização em ativos imobiliários que impulsionam crescimento, expansão e decisões de alto valor.</p>
             </div>
         </div>
 
         <div class="atuacoes">
             <div class="atuacao" onclick="window.location='geral.php?tipo=residencia'" style="cursor: pointer;">
                 <a href="geral.php?tipo=residencia" class="botao-filtro">
-                    <i class="icon-atuacao">
-                        <img src="imagens/Icones/residencia_icon.png" width="60" height="60" alt="Residencial">
-                    </i>
-                    <h2>Residencial</h2>
-                    <p>Diversas opções de casas e apartamentos para diferentes estilos de vida.</p>
+                    <div class="atuacao-imagem">
+                        <img src="imagens/categorias/condominio.png" alt="Condomínios">
+                    </div>
+                    <h2>Condomínios</h2>
                 </a>
             </div>
 
             <div class="atuacao" onclick="window.location='geral.php?tipo=comercio'" style="cursor: pointer;">
                 <a href="geral.php?tipo=comercio" class="botao-filtro">
-                    <i class="icon-atuacao">
-                        <img src="imagens/Icones/comercio_icon.png" width="60" height="60" alt="Comercial">
-                    </i>
+                    <div class="atuacao-imagem">
+                        <img src="imagens/categorias/comercial.png" alt="Comercial">
+                    </div>
                     <h2>Comercial</h2>
-                    <p>Encontre o espaço ideal para instalar, ampliar ou reposicionar seu negócio.</p>
                 </a>
             </div>
 
             <div class="atuacao" onclick="window.location='geral.php?tipo=industria'" style="cursor: pointer;">
                 <a href="geral.php?tipo=industria" class="botao-filtro">
-                    <i class="icon-atuacao">
-                        <img src="imagens/Icones/industria_icon.png" width="60" height="60" alt="Industrial">
-                    </i>
+                    <div class="atuacao-imagem">
+                        <img src="imagens/categorias/industrial.png" alt="Industrial">
+                    </div>
                     <h2>Industrial</h2>
-                    <p>Galpões e áreas que atendem às necessidades operacionais da sua empresa.</p>
                 </a>
             </div>
 
             <div class="atuacao" onclick="window.location='geral.php?tipo=terreno'" style="cursor: pointer;">
                 <a href="geral.php?tipo=terreno" class="botao-filtro">
-                    <i class="icon-atuacao">
-                        <img src="imagens/Icones/terreno_icon.png" width="60" height="60" alt="Terrenos">
-                    </i>
-                    <h2>Terrenos</h2>
-                    <p>Diversas opções de lotes residenciais e áreas industriais para investimento.</p>
+                    <div class="atuacao-imagem">
+                        <img src="imagens/categorias/area.png" alt="Áreas">
+                    </div>
+                    <h2>Áreas</h2>
                 </a>
             </div>
         </div>
 
         <div class="titulo-secao">
-            <span class="section-label">Imóveis em destaque</span>
-            <h1 class="destaque">Oportunidades selecionadas</h1>
-            <p>Confira alguns dos imóveis em evidência no momento.</p>
+            <span class="section-label">Seleção exclusiva</span>
+            <p>Uma seleção criteriosa de ativos imobiliários que se destacam por sua localização, padrão construtivo e potencial estratégico</p>
         </div>
 
         <div class="house-list">

@@ -42,14 +42,12 @@
     <main class="contato-page">
         <div class="contato-topo">
             <span class="section-label">Central de negócios</span>
-            <h1>Fale com nossa equipe</h1>
             <p>Para ter mais informações sobre nossos imóveis, tirar dúvidas ou iniciar um atendimento, entre em contato pelos canais abaixo.</p>
         </div>
 
         <div class="contato-grid">
             <div class="contato-card">
                 <h2>Atendimento</h2>
-                <h3>Entre em contato agora</h3>
 
                 <p class="contato-texto">
                     Nossa equipe está pronta para ajudar você a encontrar o imóvel ideal com mais clareza, agilidade e segurança.
@@ -92,7 +90,6 @@
 
             <div class="contato-card">
                 <h2>Informações</h2>
-                <h3>Atendimento personalizado</h3>
 
                 <div class="contato-info-extra">
                     <div class="contato-mini-box">
