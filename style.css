@@ -247,7 +247,7 @@ header .center {
     padding: 8px 16px;
     border-radius: 999px;
     font-size: 13px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
@@ -264,11 +264,10 @@ header .center {
 
 .slide-content h1 {
     max-width: 760px;
-    font-size: 60px;
-    line-height: 1.08;
-    font-weight: 800;
+    font-size: 48px;
+    line-height: 1.15;
+    font-weight: 600;
     margin-bottom: 18px;
-    letter-spacing: -0.03em;
 }
 
 .slide-content p {
@@ -296,7 +295,7 @@ header .center {
     background: var(--cor-primaria);
     color: #fff;
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 700;
     transition: 0.3s ease;
     box-shadow: 0 12px 28px rgba(179, 154, 122, 0.26);
 }
@@ -322,7 +321,7 @@ header .center {
    SEÇÕES GERAIS / TÍTULOS
 ========================================================= */
 section.main {
-    padding: 88px 0 42px;
+    padding: 75px 0 42px;
 }
 
 section.main .center {
@@ -339,7 +338,7 @@ section.main .center {
 .destaque,
 .sonho {
     color: var(--cor-escura);
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: -0.03em;
 }
 
@@ -389,15 +388,15 @@ section.main .center {
     margin-top: 20px;
     margin-bottom: 35px;
     color: var(--cor-escura);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 /* =========================================================
    CATEGORIAS / CARDS DA HOME
 ========================================================= */
 .atuacoes {
-    margin-top: 34px;
-    padding: 0 20px 46px;
+    margin-top: 10px;
+    padding: 0 20px 75px;
     display: flex;
     gap: 22px;
     justify-content: center;
@@ -410,11 +409,10 @@ section.main .center {
     background: rgba(255, 255, 255, 0.95);
     width: calc(25% - 17px);
     min-width: 245px;
-    padding: 36px 24px 32px;
     border: 1px solid rgba(232, 223, 213, 0.9);
     box-shadow: 0 16px 42px rgba(0, 0, 0, 0.07);
     transition: 0.35s ease;
-    backdrop-filter: blur(10px);
+    overflow: hidden;
 }
 
 .atuacao:hover {
@@ -425,26 +423,38 @@ section.main .center {
 
 .botao-filtro {
     color: var(--cor-texto);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.icon-atuacao {
-    width: 88px;
-    height: 88px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #f7f1ea 0%, #efe4d8 100%);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 18px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+.atuacao-imagem{
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+    background: #f3efe9;
+}
+
+.atuacao-imagem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.atuacao:hover .atuacao-imagem img {
+    transform: scale(1.04);
 }
 
 .atuacao h2 {
-    font-size: 23px;
-    font-weight: 800;
-    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
     color: var(--cor-escura);
+    padding: 18px 16px 20px;
+    background: #fff;
+    line-height: 1.2;
 }
 
 .atuacao p {
@@ -490,7 +500,7 @@ section.main .center {
 
 .fundo-ops {
     font-size: 17px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--cor-escura);
 }
 
@@ -568,7 +578,7 @@ section.main .center {
     background: #f3ebe2;
     color: #7c654a;
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
@@ -579,7 +589,7 @@ section.main .center {
     font-size: 22px;
     line-height: 1.3;
     color: var(--cor-escura);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .texto-descricao {
@@ -598,7 +608,7 @@ section.main .center {
 .preco-imovel {
     margin-top: 18px;
     font-size: 30px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--cor-escura);
     letter-spacing: -0.03em;
 }
@@ -615,7 +625,7 @@ section.main .center {
     background: var(--cor-escura);
     border: none;
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 700;
     border-radius: 999px;
     padding: 13px 24px;
     cursor: pointer;
@@ -853,12 +863,12 @@ section.main .center {
 }
 
 .catalogo-page-title {
-    font-size: 34px;
+    font-size: 24px;
     line-height: 1.1;
     color: #161616;
     letter-spacing: -0.03em;
     margin: 0 0 8px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .catalogo-page-subtitle {
@@ -870,7 +880,7 @@ section.main .center {
 
 .catalogo-total {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 700;
     color: #161616;
 }
 
@@ -903,7 +913,7 @@ section.main .center {
 
 .filtros-header h2 {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 700;
     color: #161616;
     margin: 0;
 }
@@ -977,7 +987,7 @@ section.main .center {
     border-radius: 999px;
     padding: 12px 18px;
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 700;
     cursor: pointer;
     transition: 0.25s ease;
 }
@@ -1008,7 +1018,7 @@ section.main .center {
     border-radius: 999px;
     padding: 12px 18px;
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 700;
     cursor: pointer;
 }
 
@@ -1062,7 +1072,7 @@ section.main .center {
 
 .portal-preco {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 700;
     color: #161616;
     margin-bottom: 14px;
 }
@@ -1147,7 +1157,7 @@ section.main .center {
     background: rgba(179, 154, 122, 0.14);
     color: #d8c2a3;
     font-size: 13px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.04em;
 }
 
@@ -1191,7 +1201,7 @@ section.main .center {
 
 .footer-col h4 {
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 14px;
     color: #fff;
 }
@@ -1285,7 +1295,7 @@ section.main .center {
 
 .sobre-card h2 {
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #7d654b;
@@ -1294,7 +1304,7 @@ section.main .center {
 
 .sobre-card h3 {
     font-size: 26px;
-    font-weight: 800;
+    font-weight: 700;
     color: #161616;
     margin-bottom: 16px;
 }
@@ -1322,7 +1332,7 @@ section.main .center {
 
 .sobre-mini-box h4 {
     font-size: 17px;
-    font-weight: 800;
+    font-weight: 700;
     color: #161616;
     margin-bottom: 6px;
 }
@@ -1347,8 +1357,8 @@ section.main .center {
 }
 
 .sobre-galeria-topo h2 {
-    font-size: 32px;
-    font-weight: 800;
+    font-size: 24px;
+    font-weight: 700;
     color: #161616;
     letter-spacing: -0.03em;
     margin-bottom: 10px;
@@ -1459,7 +1469,7 @@ section.main .center {
     justify-content: center;
     background: linear-gradient(135deg, #f7f1ea 0%, #efe4d8 100%);
     color: #7d654b;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 18px;
     text-align: center;
     padding: 20px;
@@ -1472,7 +1482,7 @@ section.main .center {
 .galeria-titulo,
 .box-titulo {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 700;
     color: #161616;
     margin-bottom: 16px;
 }
@@ -1493,7 +1503,7 @@ section.main .center {
 
 .descricao-titulo {
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #7d654b;
@@ -1503,7 +1513,7 @@ section.main .center {
 .preco-destaque {
     margin-top: 18px;
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 700;
     color: #161616;
     letter-spacing: -0.03em;
 }
@@ -1577,7 +1587,7 @@ section.main .center {
 }
 
 .contato-topo h1 {
-    font-size: 38px;
+    font-size: 24px;
     line-height: 1.15;
     color: #161616;
     letter-spacing: -0.03em;
@@ -1608,7 +1618,7 @@ section.main .center {
 
 .contato-card h2 {
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #7d654b;
@@ -1617,7 +1627,7 @@ section.main .center {
 
 .contato-card h3 {
     font-size: 24px;
-    font-weight: 800;
+    font-weight: 700;
     color: #161616;
     margin-bottom: 14px;
 }
@@ -1673,7 +1683,7 @@ section.main .center {
 
 .contato-mini-box h4 {
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 700;
     color: #161616;
     margin-bottom: 6px;
 }
@@ -1727,6 +1737,10 @@ section.main .center {
 
 /* Ajustes intermediários */
 @media (max-width: 1100px) {
+    .atuacao {
+        width: calc(50% - 14px);
+    }
+
     .slide-content h1 {
         font-size: 48px;
     }
@@ -1978,6 +1992,16 @@ section.main .center {
         width: 100%;
         justify-content: flex-start;
     }
+
+    .atuacao {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .atuacao-imagem {
+        height: 260px;
+    }
+
 }
 
 /* Mobile pequeno */
@@ -2025,11 +2049,11 @@ section.main .center {
     }
 
     .catalogo-page-title {
-        font-size: 28px;
+        font-size: 18px;
     }
 
     .catalogo-page-subtitle {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .catalogo-total {
