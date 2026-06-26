@@ -14,7 +14,7 @@ $visualizar = $u->visualizar();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
-    <link href="style.css?v=6" rel="stylesheet" />
+    <link href="style.css?v=8" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> -->
     <link rel="stylesheet" href="./css/all.min.css">
@@ -49,8 +49,12 @@ $visualizar = $u->visualizar();
 
     <div class="slider-container">
         <div class="slider">
-            <div class="slide-item">
-                <img src="imagens/fotocapa.jpg" alt="Imagem principal do site">
+            <div class="slide-item video-slide">
+                <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="imagens/fotocapa.jpg">
+                    <source src="imagens/video-escritorio.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo em HTML5.
+                </video>
+
                 <div class="slide-overlay">
                     <div class="slide-content">
                         <span class="slide-badge">Soluções exclusivas em imóveis</span>

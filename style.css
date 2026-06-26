@@ -211,10 +211,25 @@ header .center {
     position: relative;
 }
 
-.slider img {
+.slider img, 
+.slider video {
     width: 100%;
     height: 760px;
     object-fit: cover;
+    display: block;
+}
+
+.video-slide { 
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-video {
+    width: 100%;
+    height: 760px;
+    object-fit: cover;
+    display: block;
+    background: #000;
 }
 
 /* Camada escura sobre a imagem do hero para melhorar leitura */
@@ -1877,7 +1892,12 @@ section.main .center {
         display: none;
     }
 
-    .slider img {
+    .slider img,
+    .slider video {
+        height: 520px;
+    }
+
+    .hero-video {
         height: 520px;
     }
 
@@ -2012,7 +2032,12 @@ section.main .center {
         right: 16px;
     }
 
-    .slider img {
+    .slider img,
+    .slider video {
+        height: 430px;
+    }
+
+    .hero-video {
         height: 430px;
     }
 

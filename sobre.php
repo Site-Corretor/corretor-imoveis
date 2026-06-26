@@ -97,16 +97,16 @@
 
             <div class="sobre-galeria-grid">
                 <div class="sobre-galeria-item">
-                    <img src="imagens/escritorio-1.jpg" alt="Escritório - imagem 1">
+                    <img src="imagens/escritorio-1.jpeg" alt="Escritório - imagem 1">
                 </div>
                 <div class="sobre-galeria-item">
-                    <img src="imagens/escritorio-2.jpg" alt="Escritório - imagem 2">
+                    <img src="imagens/escritorio-2.jpeg" alt="Escritório - imagem 2">
                 </div>
                 <div class="sobre-galeria-item">
-                    <img src="imagens/escritorio-3.jpg" alt="Escritório - imagem 3">
+                    <img src="imagens/escritorio-3.jpeg" alt="Escritório - imagem 3">
                 </div>
                 <div class="sobre-galeria-item">
-                    <img src="imagens/escritorio-4.jpg" alt="Escritório - imagem 4">
+                    <img src="imagens/escritorio-4.jpeg" alt="Escritório - imagem 4">
                 </div>
             </div>
         </section>
