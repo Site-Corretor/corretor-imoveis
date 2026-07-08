@@ -75,11 +75,11 @@
                 </p>
 
                 <p class="contato-linha">
-                    <strong>E-mail:</strong> ricardosouzanegocios@gmail.com
+                    <strong>E-mail:</strong> ricardosouzaimv@gmail.com
                 </p>
 
                 <p class="contato-linha">
-                    <strong>Localização:</strong> Av. Gov. Mário Covas Júnior, 2665 (Sala 1) - Bairro do Portão - Arujá/SP - CEP: 07412-000
+                    <strong>Localização:</strong> Av. Gov. Mário Covas Júnior, 2665 - Sala 1 - 1º Andar, Portão - Arujá-SP. CEP: 07412-000
                 </p>
 
                 <div class="contato-acoes">
@@ -125,7 +125,7 @@
                 <div class="footer-contact-list">
                     <p>
                         <i class="fas fa-map-marker-alt"></i>
-                        Av. Gov. Mário Covas Júnior, 2665 (Sala 1), Bairro do Portão - Arujá/SP - CEP: 07412-000
+                        Av. Gov. Mário Covas Júnior, 2665 - Sala 1 - 1º Andar, Portão - Arujá-SP. CEP: 07412-000
                     </p>
 
                     <p>

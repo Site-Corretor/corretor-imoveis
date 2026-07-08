@@ -111,6 +111,13 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
                         <p class="descricao-titulo">Descrição do imóvel</p>
 
                         <div class="imovel-info-grid">
+                            <?php if ($total_area !== '' && $total_area !== null) { ?>
+                                <div class="imovel-info-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span><?php echo $total_area; ?> m²</span>
+                                </div>
+                            <?php } ?>    
+                        
                             <?php if ($dormitorios !== '' && $dormitorios !== null) { ?>
                                 <div class="imovel-info-item">
                                     <i class="fas fa-bed"></i>
@@ -132,17 +139,10 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
                                 </div>
                             <?php } ?>
 
-                            <?php if ($total_area !== '' && $total_area !== null) { ?>
-                                <div class="imovel-info-item">
-                                    <i class="fas fa-ruler-combined"></i>
-                                    <span><?php echo $total_area; ?> m²</span>
-                                </div>
-                            <?php } ?>
-
                         </div>
 
                         <?php if ($descricao !== '') { ?>
-                            <p class="descricao-texto-casa-separada"><?php echo $descricao; ?></p>
+                            <p class="descricao-texto-casa-separada"><?php echo nl2br(htmlspecialchars($descricao)); ?></p>
                         <?php } else { ?>
                             <p class="descricao-texto-casa-separada">Descrição não informada no momento.</p>
                         <?php } ?>
@@ -177,11 +177,11 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
                         </p>
 
                         <p class="descricao-texto-casa-separada">
-                            <strong>E-mail:</strong> ricardosouzanegocios@gmail.com
+                            <strong>E-mail:</strong> ricardosouzaimv@gmail.com
                         </p>
 
                         <p class="descricao-texto-casa-separada">
-                            <strong>Localização:</strong> Arujá - São Paulo
+                            <strong>Localização:</strong> Av. Gov. Mário Covas Júnior, 2665 - Sala 1 - 1º Andar, Portão - Arujá-SP. CEP: 07412-000
                         </p>
                     </div>
                 </div>
@@ -211,7 +211,7 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
                 <div class="footer-contact-list">
                     <p>
                         <i class="fas fa-map-marker-alt"></i>
-                        Av. Gov. Mário Covas Júnior, 2665 (Sala 1), Bairro do Portão - Arujá/SP - CEP: 07412-000
+                        Av. Gov. Mário Covas Júnior, 2665 - Sala 1 - 1º Andar, Portão - Arujá-SP. CEP: 07412-000
                     </p>
 
                     <p>

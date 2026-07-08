@@ -278,6 +278,9 @@ if ($tipo === 'residencia') {
                                     <p class="portal-preco"><?php echo 'R$ ' . number_format((float)$imovel['preco'], 2, ',', '.'); ?></p>
 
                                     <div class="portal-meta">
+                                        <?php if (!empty($imovel['total_area'])) { ?>
+                                            <span><i class="fas fa-ruler-combined"></i> <?php echo $imovel['total_area']; ?> m²</span>
+                                        <?php } ?>
                                         <?php if (!empty($imovel['dormitorios'])) { ?>
                                             <span><i class="fas fa-bed"></i> <?php echo $imovel['dormitorios']; ?></span>
                                         <?php } ?>
@@ -286,9 +289,6 @@ if ($tipo === 'residencia') {
                                         <?php } ?>
                                         <?php if (!empty($imovel['vagas'])) { ?>
                                             <span><i class="fas fa-car"></i> <?php echo $imovel['vagas']; ?></span>
-                                        <?php } ?>
-                                        <?php if (!empty($imovel['total_area'])) { ?>
-                                            <span><i class="fas fa-ruler-combined"></i> <?php echo $imovel['total_area']; ?> m²</span>
                                         <?php } ?>
                                     </div>
 
@@ -397,7 +397,7 @@ if ($tipo === 'residencia') {
                 <div class="footer-contact-list">
                     <p>
                         <i class="fas fa-map-marker-alt"></i>
-                        Av. Gov. Mário Covas Júnior, 2665 (Sala 1), Bairro do Portão - Arujá/SP - CEP: 07412-000
+                        Av. Gov. Mário Covas Júnior, 2665 - Sala 1 - 1º Andar, Portão - Arujá-SP. CEP: 07412-000
                     </p>
 
                     <p>
