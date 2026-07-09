@@ -24,6 +24,7 @@ function valorSelecionado($valorAtual, $valorEsperado)
 }
 
 $tipo = isset($_GET['tipo']) ? trim($_GET['tipo']) : '';
+$finalidade = isset($_GET['finalidade']) ? trim($_GET['finalidade']) : '';
 $cidade = isset($_GET['cidade']) ? trim($_GET['cidade']) : '';
 $preco_min = isset($_GET['preco_min']) ? trim($_GET['preco_min']) : '';
 $preco_max = isset($_GET['preco_max']) ? trim($_GET['preco_max']) : '';
@@ -58,6 +59,10 @@ if ($visualizar && count($visualizar) > 0) {
         }
 
         if ($cidade !== '' && isset($imovel['cidade']) && trim($imovel['cidade']) !== $cidade) {
+            continue;
+        }
+
+        if ($finalidade !== '' && isset($imovel['finalidade']) && $imovel['finalidade'] !== $finalidade) {
             continue;
         }
 
@@ -124,7 +129,7 @@ if ($tipo === 'residencia') {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <link href="style.css?v=6" rel="stylesheet" />
+    <link href="style.css?v=11" rel="stylesheet" />
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">-->
     <link rel="stylesheet" href="./css/all.min.css">
@@ -179,6 +184,15 @@ if ($tipo === 'residencia') {
                         </div>
 
                         <div class="campo-filtro">
+                            <label for="finalidade">Finalidade</label>
+                            <select name="finalidade" id="finalidade">
+                                <option value="">Todas</option>
+                                <option value="venda" <?php echo valorSelecionado($finalidade, 'venda'); ?>>Venda</option>
+                                <option value="locacao" <?php echo valorSelecionado($finalidade, 'locacao'); ?>>Locação</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-filtro">
                             <label for="cidade">Cidade</label>
                             <select name="cidade" id="cidade">
                                 <option value="">Todas</option>
@@ -229,6 +243,7 @@ if ($tipo === 'residencia') {
 
                         <form method="GET">
                             <input type="hidden" name="tipo" value="<?php echo htmlspecialchars($tipo); ?>">
+                            <input type="hidden" name="finalidade" value="<?php echo htmlspecialchars($finalidade); ?>">
                             <input type="hidden" name="cidade" value="<?php echo htmlspecialchars($cidade); ?>">
                             <input type="hidden" name="preco_min" value="<?php echo htmlspecialchars($preco_min); ?>">
                             <input type="hidden" name="preco_max" value="<?php echo htmlspecialchars($preco_max); ?>">
@@ -275,8 +290,13 @@ if ($tipo === 'residencia') {
                                         <?php echo $imovel['cidade']; ?>
                                     </p>
 
-                                    <p class="portal-preco"><?php echo 'R$ ' . number_format((float)$imovel['preco'], 2, ',', '.'); ?></p>
-
+                                    <div class="preco-finalidade-wrap">
+                                        <p class="preco-imovel"><?php echo 'R$ ' . number_format((float)$imovel['preco'], 2, ',', '.'); ?></p>
+                                        <p class="tipo-negocio-imovel">
+                                            <?php echo ($imovel['finalidade'] == 'locacao') ? 'Locação' : 'Venda'; ?>
+                                        </p>
+                                    </div>
+                                    
                                     <div class="portal-meta">
                                         <?php if (!empty($imovel['total_area'])) { ?>
                                             <span><i class="fas fa-ruler-combined"></i> <?php echo $imovel['total_area']; ?> m²</span>
@@ -348,6 +368,15 @@ if ($tipo === 'residencia') {
                     </div>
 
                     <div class="campo-filtro">
+                        <label for="finalidade-mobile">Finalidade</label>
+                        <select name="finalidade" id="finalidade-mobile">
+                            <option value="">Todas</option>
+                            <option value="venda" <?php echo valorSelecionado($finalidade, 'venda'); ?>>Venda</option>
+                            <option value="locacao" <?php echo valorSelecionado($finalidade, 'locacao'); ?>>Locação</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-filtro">
                         <label for="cidade-mobile">Cidade</label>
                         <select name="cidade" id="cidade-mobile">
                             <option value="">Todas</option>
@@ -387,100 +416,100 @@ if ($tipo === 'residencia') {
         </div>
     </div>
 
-        <footer class="footer-site">
-    <div class="footer-inner">
-        <div class="footer-grid">
-            <div class="footer-brand">
+    <footer class="footer-site">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
 
-                <p class="footer-creci">CRECI 218535</p>
+                    <p class="footer-creci">CRECI 218535</p>
 
-                <div class="footer-contact-list">
-                    <p>
-                        <i class="fas fa-map-marker-alt"></i>
-                        Av. Gov. Mário Covas Júnior, 2665 - Sala 1 - 1º Andar, Portão - Arujá-SP. CEP: 07412-000
-                    </p>
+                    <div class="footer-contact-list">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Av. Gov. Mário Covas Júnior, 2665 - Sala 1 - 1º Andar, Portão - Arujá-SP. CEP: 07412-000
+                        </p>
 
-                    <p>
-                        <a href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                        ricardonsouzaimoveis</a>
-                    </p>
+                        <p>
+                            <a href="https://www.instagram.com/ricardonsouzaimoveis" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            ricardonsouzaimoveis</a>
+                        </p>
 
-                    <p>
-                        <i class="fas fa-phone-alt"></i>
-                        <a href="tel:11970355935">(11) 97035-5935</a> / 
-                        <a href="tel:11954233209">(11) 95423-3209</a>
-                    </p>
+                        <p>
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:11970355935">(11) 97035-5935</a> /
+                            <a href="tel:11954233209">(11) 95423-3209</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <div class="footer-links">
+                        <a href="sobre.php">Sobre Nós</a>
+                        <a href="contato.php">Fale Conosco</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Imóveis</h4>
+                    <div class="footer-links">
+                        <a href="geral.php?tipo=residencia">Residencial</a>
+                        <a href="geral.php?tipo=comercio">Comercial</a>
+                        <a href="geral.php?tipo=industria">Industrial</a>
+                        <a href="geral.php?tipo=terreno">Terrenos</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Serviços</h4>
+                    <div class="footer-links">
+                        <p>Venda</p>
+                        <p>Locação</p>
+                        <p>Administração</p>
+                        <p>Suporte</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="footer-col">
-                <h4>Empresa</h4>
-                <div class="footer-links">
-                    <a href="sobre.php">Sobre Nós</a>
-                    <a href="contato.php">Fale Conosco</a>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <h4>Imóveis</h4>
-                <div class="footer-links">
-                    <a href="geral.php?tipo=residencia">Residencial</a>
-                    <a href="geral.php?tipo=comercio">Comercial</a>
-                    <a href="geral.php?tipo=industria">Industrial</a>
-                    <a href="geral.php?tipo=terreno">Terrenos</a>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <h4>Serviços</h4>
-                <div class="footer-links">
-                    <p>Venda</p>
-                    <p>Locação</p>
-                    <p>Administração</p>
-                    <p>Suporte</p>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ricardo Souza Imóveis. Todos os direitos reservados.</p>
+                <p>Desenvolvido por Trimod Tech Solutions.</p>
             </div>
         </div>
+    </footer>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 Ricardo Souza Imóveis. Todos os direitos reservados.</p>
-            <p>Desenvolvido por Trimod Tech Solutions.</p>
-        </div>
-    </div>
-</footer>
+    <script>
+        function abrirFiltros() {
+            document.getElementById('mobileFiltros').classList.add('active');
+        }
 
-<script>
-    function abrirFiltros() {
-        document.getElementById('mobileFiltros').classList.add('active');
-    }
+        function fecharFiltros() {
+            document.getElementById('mobileFiltros').classList.remove('active');
+        }
+    </script>
 
-    function fecharFiltros() {
-        document.getElementById('mobileFiltros').classList.remove('active');
-    }
-</script>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const menu = document.getElementById('menu');
 
-<script>
-    const menuToggle = document.getElementById('menuToggle');
-    const menu = document.getElementById('menu');
+        if (menuToggle && menu) {
+            menuToggle.addEventListener('click', function () {
+                menu.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
 
-    if (menuToggle && menu) {
-        menuToggle.addEventListener('click', function () {
-            menu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
+            document.addEventListener('click', function (event) {
+                const clicouNoMenu = menu.contains(event.target);
+                const clicouNoBotao = menuToggle.contains(event.target);
 
-        document.addEventListener('click', function (event) {
-            const clicouNoMenu = menu.contains(event.target);
-            const clicouNoBotao = menuToggle.contains(event.target);
-
-            if (!clicouNoMenu && !clicouNoBotao) {
-                menu.classList.remove('active');
-                menuToggle.classList.remove('active');
-            }
-        });
-    }
-</script>
+                if (!clicouNoMenu && !clicouNoBotao) {
+                    menu.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        }
+    </script>
 
 </body>
 

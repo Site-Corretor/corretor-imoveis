@@ -14,7 +14,7 @@ $visualizar = $u->visualizar();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
-    <link href="style.css?v=8" rel="stylesheet" />
+    <link href="style.css?v=11" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> -->
     <link rel="stylesheet" href="./css/all.min.css">
@@ -151,7 +151,13 @@ $visualizar = $u->visualizar();
                                         <?php echo $visualizar[$i]['cidade']; ?>
                                     </p>
 
-                                    <p class="preco-imovel"><?php echo 'R$ ' . number_format((float)$visualizar[$i]['preco'], 2, ',', '.'); ?></p>
+                                    <div class="preco-finalidade-wrap">
+                                        <p class="preco-imovel"><?php echo 'R$ ' . number_format((float)$visualizar[$i]['preco'], 2, ',', '.'); ?></p>
+                                        <p class="tipo-negocio-imovel">
+                                            <?php echo ($visualizar[$i]['finalidade'] == 'locacao') ? 'Locação' : 'Venda'; ?>
+                                        </p>
+                                    </div>
+
                                     <p class="border-descrica-casa"></p>
 
                                     <a href="<?php echo 'imovel.php?codigo=' . $visualizar[$i]['codigo']; ?>">
