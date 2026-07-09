@@ -463,12 +463,12 @@ if (isset($_SESSION['flash_erro'])) {
                     <textarea id="descricao" name="descricao" rows="5"><?php echo $editarCasa[0]['descricao']; ?></textarea>
                 </div>
 
-                <div class="admin-form-group admin-col-4">
+                <div class="admin-form-group admin-col-2">
                     <label for="preco">Preço</label>
                     <input type="text" id="preco" name="preco" value="<?php echo $editarCasa[0]['preco']; ?>">
                 </div>
                 
-                <div class="admin-form-group admin-col-4">
+                <div class="admin-form-group admin-col-2">
                     <label for="finalidade">Finalidade</label>
                     <select id="finalidade" name="finalidade" required>
                         <option value="venda" <?php echo ($editarCasa[0]['finalidade'] == 'venda') ? 'selected' : ''; ?>>Venda</option>
@@ -476,12 +476,12 @@ if (isset($_SESSION['flash_erro'])) {
                     </select>
                 </div>    
                 
-                <div class="admin-form-group admin-col-4">
+                <div class="admin-form-group admin-col-6">
                     <label for="cidade">Cidade</label>
                     <input type="text" id="cidade" name="cidade" value="<?php echo $editarCasa[0]['cidade']; ?>">
                 </div>
 
-                <div class="admin-form-group admin-col-4">
+                <div class="admin-form-group admin-col-2">
                     <label for="destaque">Imóvel destaque</label>
                     <select id="destaque" name="destaque">
                         <option value="<?php echo $editarCasa[0]['destaque']; ?>"><?php echo $editarCasa[0]['destaque']; ?></option>
