@@ -525,7 +525,7 @@ if (isset($_SESSION['flash_erro'])) {
                     <textarea id="descricao" name="descricao" rows="5"></textarea>
                 </div>
 
-                <div class="admin-form-group admin-col-2">
+                <div class="admin-form-group admin-col-3">
                     <label for="preco">Preço</label>
                     <input type="text" id="preco" name="preco">
                 </div>
@@ -539,12 +539,12 @@ if (isset($_SESSION['flash_erro'])) {
                     </select>
                 </div>
 
-                <div class="admin-form-group admin-col-5">
+                <div class="admin-form-group admin-col-3">
                     <label for="cidade">Cidade</label>
                     <input type="text" id="cidade" name="cidade">
                 </div>
 
-                <div class="admin-form-group admin-col-2">
+                <div class="admin-form-group admin-col-3">
                     <label for="destaque">Imóvel destaque</label>
                     <select id="destaque" name="destaque">
                         <option value="nao">Não</option>
