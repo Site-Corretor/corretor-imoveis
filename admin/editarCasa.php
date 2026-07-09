@@ -468,7 +468,7 @@ if (isset($_SESSION['flash_erro'])) {
                     <input type="text" id="preco" name="preco" value="<?php echo $editarCasa[0]['preco']; ?>">
                 </div>
                 
-                <div class="admin-form-group admin-col-2">
+                <div class="admin-form-group admin-col-3">
                     <label for="finalidade">Finalidade</label>
                     <select id="finalidade" name="finalidade" required>
                         <option value="venda" <?php echo ($editarCasa[0]['finalidade'] == 'venda') ? 'selected' : ''; ?>>Venda</option>
@@ -476,7 +476,7 @@ if (isset($_SESSION['flash_erro'])) {
                     </select>
                 </div>    
                 
-                <div class="admin-form-group admin-col-6">
+                <div class="admin-form-group admin-col-5">
                     <label for="cidade">Cidade</label>
                     <input type="text" id="cidade" name="cidade" value="<?php echo $editarCasa[0]['cidade']; ?>">
                 </div>
