@@ -219,6 +219,7 @@ if (isset($_POST['salvar_tudo'])) {
     $vagas = $_POST['vagas'];
     $descricao = $_POST['descricao'];
     $preco = $_POST['preco'];
+    $finalidade = $_POST['finalidade'];
     $cidade = $_POST['cidade'];
     $destaque = $_POST['destaque'];
 
@@ -233,8 +234,9 @@ if (isset($_POST['salvar_tudo'])) {
                 $banheiros,
                 $vagas,
                 $preco,
+                $finalidade,
                 $cidade,
-                $destaque,
+                $destaque
             );
 
             if (!$codigo) {
@@ -526,6 +528,15 @@ if (isset($_SESSION['flash_erro'])) {
                 <div class="admin-form-group admin-col-4">
                     <label for="preco">Preço</label>
                     <input type="text" id="preco" name="preco">
+                </div>
+
+                <div class="admin-form-group admin-col-4">
+                    <label for="finalidade">Finalidade</label>
+                    <select id="finalidade" name="finalidade" required>
+                        <option value="">Selecione</option>
+                        <option value="venda">Venda</option>
+                        <option value="locacao">Locação</option>
+                    </select>
                 </div>
 
                 <div class="admin-form-group admin-col-4">

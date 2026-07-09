@@ -12,6 +12,7 @@ $descricao = isset($imovel['descricao']) ? trim($imovel['descricao']) : '';
 $cidade = isset($imovel['cidade']) ? $imovel['cidade'] : '';
 $preco = isset($imovel['preco']) ? $imovel['preco'] : '';
 $titulo = isset($imovel['titulo']) ? $imovel['titulo'] : '';
+$finalidade = isset($imovel['finalidade']) ? $imovel['finalidade'] : 'venda';
 
 $dormitorios = isset($imovel['dormitorios']) ? $imovel['dormitorios'] : '';
 $banheiros = isset($imovel['banheiros']) ? $imovel['banheiros'] : '';
@@ -27,7 +28,7 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <link href="style.css?v=6" rel="stylesheet" />
+    <link href="style.css?v=11" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"> -->
     <link rel="stylesheet" href="./css/all.min.css">
@@ -147,7 +148,12 @@ $total_area = isset($imovel['total_area']) ? $imovel['total_area'] : '';
                             <p class="descricao-texto-casa-separada">Descrição não informada no momento.</p>
                         <?php } ?>
 
-                        <p class="preco-destaque"><?php echo 'R$ ' . number_format((float)$preco, 2, ',', '.'); ?></p>
+                        <div class="preco-finalidade-wrap">
+                            <p class="preco-destaque"><?php echo 'R$ ' . number_format((float)$preco, 2, ',', '.'); ?></p>
+                            <p class="tipo-negocio-imovel">
+                                <?php echo ($finalidade == 'locacao') ? 'Locação' : 'Venda'; ?>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

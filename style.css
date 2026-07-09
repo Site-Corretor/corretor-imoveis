@@ -628,6 +628,36 @@ section.main .center {
     letter-spacing: -0.03em;
 }
 
+.preco-finalidade-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.preco-imovel,
+.preco-destaque {
+    margin-bottom: 0;
+}
+
+.tipo-negocio-imovel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: 0;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #f3ebe2;
+    color: #7c654a;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
 /* =========================================================
    BOTÕES PADRÃO
 ========================================================= */

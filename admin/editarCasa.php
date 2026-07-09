@@ -177,6 +177,7 @@ if (isset($_POST['salvar_tudo'])) {
     $vagas = $_POST['vagas'];
     $descricao = $_POST['descricao'];
     $preco = $_POST['preco'];
+    $finalidade = $_POST['finalidade'];
     $cidade = $_POST['cidade'];
     $destaque = $_POST['destaque'];
 
@@ -194,8 +195,9 @@ if (isset($_POST['salvar_tudo'])) {
                 $banheiros,
                 $vagas,
                 $preco,
+                $finalidade,
                 $cidade,
-                $destaque,
+                $destaque
             );
         } else {
             if (is_array($casaDestaque) && count($casaDestaque) >= 6 && $editarCasa[0]['destaque'] != 'sim') {
@@ -213,8 +215,9 @@ if (isset($_POST['salvar_tudo'])) {
                     $banheiros,
                     $vagas,
                     $preco,
+                    $finalidade,
                     $cidade,
-                    $destaque,
+                    $destaque
                 );
             }
         }
@@ -464,7 +467,15 @@ if (isset($_SESSION['flash_erro'])) {
                     <label for="preco">Preço</label>
                     <input type="text" id="preco" name="preco" value="<?php echo $editarCasa[0]['preco']; ?>">
                 </div>
-
+                
+                <div class="admin-form-group admin-col-4">
+                    <label for="finalidade">Finalidade</label>
+                    <select id="finalidade" name="finalidade" required>
+                        <option value="venda" <?php echo ($editarCasa[0]['finalidade'] == 'venda') ? 'selected' : ''; ?>>Venda</option>
+                        <option value="locacao" <?php echo ($editarCasa[0]['finalidade'] == 'locacao') ? 'selected' : ''; ?>>Locação</option>
+                    </select>
+                </div>    
+                
                 <div class="admin-form-group admin-col-4">
                     <label for="cidade">Cidade</label>
                     <input type="text" id="cidade" name="cidade" value="<?php echo $editarCasa[0]['cidade']; ?>">
